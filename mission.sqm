@@ -1,0 +1,1147 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"a3_map_altis",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_Civil",
+		"A3_Characters_F_INDEP",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Soft_F_TruckHeavy"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_Civil",
+		"a3_characters_f",
+		"A3_Characters_F_INDEP",
+		"A3_Characters_F_BLUFOR",
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Soft_F_TruckHeavy",
+		"a3_map_altis"
+	};
+	randomSeed=1010507;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=8;
+		class Item0
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16706.225,11.08446,12512.796};
+					azimut=133.795;
+					id=0;
+					side="CIV";
+					vehicle="C_man_polo_1_F";
+					leader=1;
+					skill=0.60000002;
+					text="pyrCivShop";
+				};
+			};
+		};
+		class Item1
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16571.225,11,12787.149};
+					azimut=484.22;
+					id=1;
+					side="GUER";
+					vehicle="I_Soldier_TL_F";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					init="this setface ""PersianHead_A3_01""; removebackpack this;removeallweapons this;removevest this;this setObjectTexture [0, ""textures\copofficer.paa""];this addheadgear ""H_Beret_blk_police"";";
+				};
+			};
+		};
+		class Item2
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16552.998,11.065351,12794.586};
+					azimut=484.60901;
+					id=2;
+					side="GUER";
+					vehicle="I_soldier_F";
+					leader=1;
+					skill=0.60000002;
+					text="pyrCopObj";
+					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
+					description="Patrol Officer";
+				};
+			};
+		};
+		class Item3
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16516.188,10.381682,12778.459};
+					azimut=41.966;
+					id=3;
+					side="GUER";
+					vehicle="I_soldier_F";
+					leader=1;
+					skill=0.60000002;
+					text="pyrCopCar";
+					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";";
+					description="Patrol Officer";
+					syncId=0;
+					synchronizations[]={0};
+				};
+			};
+		};
+		class Item4
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16642.729,11,12808.923};
+					azimut=576.53497;
+					id=4;
+					side="GUER";
+					vehicle="I_soldier_F";
+					leader=1;
+					skill=0.60000002;
+					text="pyrLic";
+					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
+					description="Patrol Officer";
+				};
+			};
+		};
+		class Item5
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3578.4241,9.8139162,13022.287};
+					azimut=44.7542;
+					id=5;
+					side="CIV";
+					vehicle="C_man_polo_1_F";
+					leader=1;
+					skill=0.60000002;
+					text="kavCivShop";
+					init="this setPos [getPos kavCivShop select 0,getPos kavCivShop select 1,3];";
+				};
+			};
+		};
+		class Item6
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16587.041,11,12813.784};
+					azimut=468.56;
+					id=6;
+					side="GUER";
+					vehicle="I_soldier_F";
+					leader=1;
+					skill=0.60000002;
+					text="pyrCopAir";
+					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
+					description="Patrol Officer";
+				};
+			};
+		};
+		class Item7
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={8904.8623,8.6077776,8176.228};
+					id=7;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=2;
+		class Item0
+		{
+			position[]={16553.717,11.058635,12794.12};
+			azimut=125.774;
+			id=8;
+			side="EMPTY";
+			vehicle="Box_NATO_Ammo_F";
+			skill=0.60000002;
+			text="pyrCopObjSpawn";
+			init="this allowDamage false; this setPos [getPos pyrCopObjSpawn select 0,getPos pyrCopObjSpawn select 1,13]; clearMagazineCargo this;";
+		};
+		class Item1
+		{
+			position[]={3598.9917,12.47351,12967.934};
+			azimut=217.93068;
+			id=9;
+			side="EMPTY";
+			vehicle="I_Truck_02_covered_F";
+			skill=0.60000002;
+			text="tp1";
+		};
+	};
+	class Markers
+	{
+		items=70;
+		class Item0
+		{
+			position[]={9142.8018,16.911982,21480.648};
+			name="airportAriati";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item1
+		{
+			position[]={11526.633,22.950001,11696.008};
+			name="airportAAC";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item2
+		{
+			position[]={21114.922,20.789553,7316.4873};
+			name="airportFeres";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item3
+		{
+			position[]={23149.527,3.1900001,18689.072};
+			name="airportAlmyra";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item4
+		{
+			position[]={26984.432,21.291182,24708.021};
+			name="airportMolos";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item5
+		{
+			position[]={14748.943,17.879999,16465.547};
+			name="airport";
+			type="c_plane";
+			a=0.75;
+			b=0.75;
+		};
+		class Item6
+		{
+			position[]={3303.1602,134.46503,21007.607};
+			name="capOreokastro";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=3000;
+			b=3000;
+			angle=-44.940102;
+			drawBorder=1;
+		};
+		class Item7
+		{
+			position[]={7703.0454,-0.27818584,23985.939};
+			name="capAtsalis";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=2000;
+			b=2200;
+			angle=-134.89999;
+			drawBorder=1;
+		};
+		class Item8
+		{
+			position[]={11190.675,149.20073,8299.1758};
+			name="capVikos";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorGUER";
+			fillName="Border";
+			a=3000;
+			b=2600;
+			drawBorder=1;
+		};
+		class Item9
+		{
+			position[]={14103.176,0.12702717,6239.6934};
+			name="capPyrgi";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorGUER";
+			fillName="Border";
+			a=500;
+			b=700;
+			angle=132.384;
+			drawBorder=1;
+		};
+		class Item10
+		{
+			position[]={10611.443,31.369553,21915.697};
+			name="capNera";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1500;
+			b=1600;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item11
+		{
+			position[]={8190.1851,69.724579,19499.275};
+			name="capPyrsos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1500;
+			b=1800;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item12
+		{
+			position[]={5637.5278,123.7821,16943.672};
+			name="capGori";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1500;
+			b=1790;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item13
+		{
+			position[]={3859.1235,22.348333,15159.288};
+			name="capNothing";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=700;
+			b=1500;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item14
+		{
+			position[]={3531.4233,7.2402158,13062.073};
+			name="capKavala";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1000;
+			b=1500;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item15
+		{
+			position[]={3085.1606,49.337303,10094.211};
+			name="capAthanos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1400;
+			b=1900;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item16
+		{
+			position[]={5682.9263,45.058632,10939.978};
+			name="capPanochori";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1000;
+			b=1500;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item17
+		{
+			position[]={7034.7759,146.77817,13168.166};
+			name="capNothing2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1500;
+			b=2120;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item18
+		{
+			position[]={8771.6924,31.931017,10878.044};
+			name="capZaros";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1900;
+			b=705;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item19
+		{
+			position[]={11211.821,29.65576,11556.516};
+			name="capAAC";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorGUER";
+			fillName="Border";
+			a=1000;
+			b=500;
+			angle=-31.5397;
+			drawBorder=1;
+		};
+		class Item20
+		{
+			position[]={10261.829,39.745331,13512.276};
+			name="capPoliakko";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1000;
+			b=1500;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item21
+		{
+			position[]={8807.1211,104.01154,16086.293};
+			name="capDionysios";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1310;
+			b=1800;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item22
+		{
+			position[]={11684.303,22.604502,14948.173};
+			name="capNeochori";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1000;
+			b=1500;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item23
+		{
+			position[]={13122.859,-0.032084309,12674.613};
+			name="capMarky";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1150;
+			b=1100;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item24
+		{
+			position[]={11375.455,93.852928,18658.402};
+			name="capKoroni";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1310;
+			b=1800;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item25
+		{
+			position[]={14102.106,17.950779,16379.986};
+			name="capAirport";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1700;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item26
+		{
+			position[]={12959.645,18.638222,17377.832};
+			name="capNothing3";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1600;
+			b=690;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item27
+		{
+			position[]={16146.266,14.586026,16700.609};
+			name="capBorder";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorGUER";
+			fillName="Border";
+			a=2500;
+			b=400;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item28
+		{
+			position[]={14387.766,19.613342,22703.162};
+			name="capAgrios";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=2000;
+			b=1600;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item29
+		{
+			position[]={13700.835,27.999016,20007.504};
+			name="capAthira";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=760;
+			b=2010;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item30
+		{
+			position[]={16520.686,33.309959,18811.342};
+			name="capZeloran";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1700;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item31
+		{
+			position[]={16324.637,13.778687,20779.693};
+			name="capNychi";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorWEST";
+			fillName="Border";
+			a=1600;
+			b=690;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item32
+		{
+			position[]={16443.746,0.060458791,15252.076};
+			name="capAnthrakia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1700;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item33
+		{
+			position[]={18860.369,35.930744,17685.109};
+			name="capPetros";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1700;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item34
+		{
+			position[]={20640.637,0.092135057,19754.406};
+			name="capPefkas";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1000;
+			b=1000;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item35
+		{
+			position[]={22653.156,19.128496,21585.5};
+			name="capNidasos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1700;
+			b=865;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item36
+		{
+			position[]={24332.574,7.899375,23745.266};
+			name="capAndreas";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1000;
+			b=1200;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item37
+		{
+			position[]={27431.365,4.881062,24501.176};
+			name="capMolos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1700;
+			b=1500;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item38
+		{
+			position[]={25463.445,52.896671,21768.588};
+			name="capSofia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1600;
+			b=970;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item39
+		{
+			position[]={22766.621,13.333848,19065.822};
+			name="capDelfinaki";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=2200;
+			b=970;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item40
+		{
+			position[]={27281.459,10.496687,20809.26};
+			name="capGatolia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=2200;
+			b=970;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item41
+		{
+			position[]={24463.611,0.047854494,17382.684};
+			name="capAlmyra";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=2200;
+			b=1400;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item42
+		{
+			position[]={21376.447,13.778645,15356.143};
+			name="capLimni";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1400;
+			b=2600;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item43
+		{
+			position[]={18184.736,16.668947,14697.365};
+			name="capCharkia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1300;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item44
+		{
+			position[]={19332.76,26.297682,13557.328};
+			name="capDorida";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1300;
+			b=800;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item45
+		{
+			position[]={20617.512,51.675808,12281.69};
+			name="capChalkeia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1300;
+			b=1000;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item46
+		{
+			position[]={21415.945,1.8267443,10639.721};
+			name="capSurf";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1900;
+			b=705;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item47
+		{
+			position[]={18880.264,24.085754,8068.6733};
+			name="Livadi";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1700;
+			b=705;
+			angle=-45.400002;
+			drawBorder=1;
+		};
+		class Item48
+		{
+			position[]={16831.842,21.119383,12771.416};
+			name="capPyrgos";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1200;
+			b=1000;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item49
+		{
+			position[]={15341.682,22.461004,10981.486};
+			name="capFaronaki";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1300;
+			b=1000;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item50
+		{
+			position[]={18486.824,62.427536,10710.65};
+			name="capWindmills";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1300;
+			b=1410;
+			angle=-45.200001;
+			drawBorder=1;
+		};
+		class Item51
+		{
+			position[]={16856.08,27.301758,9065.6162};
+			name="capEkali";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1410;
+			b=1000;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item52
+		{
+			position[]={19913.365,61.863159,6065.4111};
+			name="capWindmills2";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1410;
+			b=1000;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item53
+		{
+			position[]={21475.148,17.117983,7371.6543};
+			name="capFeres";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1600;
+			b=1000;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item54
+		{
+			position[]={22543.111,0.032968789,8453.126};
+			name="capTrachia";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=1600;
+			b=500;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item55
+		{
+			position[]={21635.787,40.308426,5061.8701};
+			name="capBowls";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=500;
+			b=500;
+			angle=45.025799;
+			drawBorder=1;
+		};
+		class Item56
+		{
+			position[]={16717.238,11.444096,12514.396};
+			name="pyrCivShopSpawn";
+			type="Empty";
+			angle=144.42799;
+		};
+		class Item57
+		{
+			position[]={16706.129,11.082737,12513.989};
+			name="pyrCar";
+			text="Shop";
+			type="c_car";
+			colorName="ColorWhite";
+			a=0.80000001;
+			b=0.80000001;
+		};
+		class Item58
+		{
+			position[]={16567.316,11,12731.633};
+			name="pyrCopCarSpawn";
+			type="Empty";
+			angle=36.999199;
+		};
+		class Item59
+		{
+			position[]={3756.1165,18.849142,12990.643};
+			name="hospital";
+			type="loc_Hospital";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item60
+		{
+			position[]={16812.123,20.731565,12789.36};
+			name="flagCommun";
+			type="flag_CSAT";
+			a=0.75;
+			b=0.75;
+		};
+		class Item61
+		{
+			position[]={3574.8032,9.1844301,13038.267};
+			name="kavCivShopSpawn";
+			type="Empty";
+			angle=134.591;
+		};
+		class Item62
+		{
+			position[]={3575.012,9.3728561,13029.914};
+			name="KavShop";
+			text="Shop";
+			type="c_car";
+			colorName="ColorWhite";
+			a=0.80000001;
+			b=0.80000001;
+			angle=1.64947;
+		};
+		class Item63
+		{
+			position[]={6154.1069,43,16240.847};
+			name="fac";
+			text="Factory";
+			type="loc_Stack";
+			colorName="ColorCIV";
+			a=0.75;
+			b=0.75;
+		};
+		class Item64
+		{
+			position[]={4287.9438,50.44902,12617.17};
+			name="mine";
+			text="Mines";
+			type="hd_dot";
+			colorName="ColorCIV";
+		};
+		class Item65
+		{
+			position[]={20599.592,51.527409,20103.711};
+			name="hospital2";
+			type="loc_Hospital";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item66
+		{
+			position[]={20934.098,12.703225,19237.986};
+			name="fortress";
+			type="loc_Ruin";
+			colorName="ColorEAST";
+			a=0.75;
+			b=0.75;
+		};
+		class Item67
+		{
+			position[]={12601.24,34.00404,16348.683};
+			name="fac2";
+			text="Factory";
+			type="loc_Stack";
+			colorName="ColorCIV";
+			a=0.75;
+			b=0.75;
+		};
+		class Item68
+		{
+			position[]={11031.494,140.46579,8340.209};
+			name="flagAnarchists";
+			type="flag_FIA";
+			a=0.75;
+			b=0.75;
+		};
+		class Item69
+		{
+			position[]={3536.8745,8.1984282,13112.687};
+			name="flagNATO";
+			type="flag_NATO";
+			a=0.75;
+			b=0.75;
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=8325744;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=7037469;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=414477;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};

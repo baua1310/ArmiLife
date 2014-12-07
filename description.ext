@@ -1,0 +1,30 @@
+author = "Armitxes";
+onLoadName = "ArmiLife RPG v0.1";
+onLoadMission = "www.armitxes.dev";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 5;
+disabledAI = true;
+disableChannels[]={0,1,2};
+enableDebugConsole = 1;
+respawnDialog = 0;
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 75;
+};
+
+wreckLimit = 3;
+wreckRemovalMinTime = 30;
+wreckRemovalMaxTime = 320;
+corpseLimit = 20;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 300;
+
+#include "gui\init.h"
+
+class RscTitles {
+	#include "gui\overlay.hpp"
+};
