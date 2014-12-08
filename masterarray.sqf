@@ -16,31 +16,32 @@ capAreas = [
 // Items
 productionResources = [
   "Iron","Wood","Clean Water","Gold","Silver","Copper","Wheat","Oil","Fish","Stone",
-  "Metal","Diamond","Apple","Electricity","Bauxite","Wool","Dirt","Orange","Potatoes","Natural Rubber"
+  "Metal","Diamond","Apple","Electricity","Bauxite","Wool","Dirt","Orange","Potatoes","Natural Rubber",
+  "Turtle","Snake","Fish","Rabbit","Shark"
 ];
 productionComponents = [
-  ["Wood Plank",[ [[true,1,1] ],5],false ],
-  ["Stick",[ [[false,0,2] ],2],false ],
-  ["Axe",[ [[false,1,2],[true,0,3] ],1],true ],
-  ["Pickaxe",[[[false,1,2],[true,0,3]],1],true ],
-  ["Aluminium",[ [[true,14,2]],1],false ],
-  ["String",[ [[true,15,1]],5 ],false], //5
-  ["Fishing Hook",[ [[true,0,3]],1],false ],
-  ["Fishing Rod",[ [[false,1,2],[false,5,2],[false,6,1]],1],true ],
-  ["Sand",[ [[true,16,1]],1],false ],
-  ["Glass",["Furnance",[[false,8,1]],1],false ],
-  ["Shovel",[ [[false,1,2],[true,0,3] ],1],true ], //10
-  ["Diamond Ring",[ [[true,11,3], [true,4,9]] ,6],false],
-  ["Cable",[ [[false,13,1],[true,19,3]] ,4],false],
-  ["Copper Plate",[ [[true,5,1]] ,1],false],
-  ["Fiber Optic Cable",[ [[false,9,3],[true,19,3]], 2],false],
-  ["Stone Bricks",[ [[true,9,3]], 1], false] // 15
+  ["Wood Plank",[ [[0,1,1] ],5],false ],
+  ["Stick",[ [[1,0,2] ],2],false ],
+  ["Axe",[ [[1,1,2],[true,0,3] ],1],true ],
+  ["Pickaxe",[[[1,1,2],[0,0,3]],1],true ],
+  ["Aluminium",[ [[0,14,2]],1],false ],
+  ["String",[ [[1,15,1]],5 ],false], //5
+  ["Fishing Hook",[ [[0,0,3]],1],false ],
+  ["Fishing Rod",[ [[1,1,2],[1,5,2],[1,6,1]],1],true ],
+  ["Sand",[ [[0,16,1]],1],false ],
+  ["Glass",["Furnance",[[1,8,1]],1],false ],
+  ["Shovel",[ [[1,1,2],[0,0,3] ],1],true ], //10
+  ["Diamond Ring",[ [[0,11,3], [0,4,9]] ,6],false],
+  ["Cable",[ [[1,13,1],[0,19,3]] ,4],false],
+  ["Copper Plate",[ [[0,5,1]] ,1],false],
+  ["Fiber Optic Cable",[ [[1,9,3],[0,19,3]], 2],false],
+  ["Stone Bricks",[ [[0,9,3]], 1], false] // 15
 ];
 vehiclesArray = [
-  ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [false,10,4],1 ] ]
+  ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [1,10,4],1 ] ]
 ];
 placeableObjects = [
-  ["Fireplace","FirePlace_burning_F",[ [[true,9,5],[true,1,5]],1] ]
+  ["Fireplace","FirePlace_burning_F",[ [[0,9,5],[0,1,5]],1] ]
 ];
 // End Items
 masterarray = [productionComponents, vehiclesArray, placeableObjects];
