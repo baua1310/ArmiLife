@@ -22,7 +22,7 @@ productionResources = [
 productionComponents = [
   ["Wood Plank",[ [[0,1,1] ],5],false ],
   ["Stick",[ [[1,0,2] ],2],false ],
-  ["Axe",[ [[1,1,2],[true,0,3] ],1],true ],
+  ["Axe",[ [[1,1,2],[0,0,3] ],1],true ],
   ["Pickaxe",[[[1,1,2],[0,0,3]],1],true ],
   ["Aluminium",[ [[0,14,2]],1],false ],
   ["String",[ [[1,15,1]],5 ],false], //5
