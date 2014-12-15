@@ -6,3 +6,4 @@ PLAYERDATA = [1,10000,2000,[ [0,2,5],[1,4,10] ],[0,4],[0,0,0],0,0,0,0,100,80];
 handItem = "Empty Hands";
 handItems = ["Empty Hands","Fists"];
 isBusy = false;
+furnances = ["i_stone_housebig_v2"];

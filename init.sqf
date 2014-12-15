@@ -16,7 +16,7 @@ waitUntil { scriptDone _w; };
 if(!isDedicated) then {
   //Stats loaded
   ["init"] execVM "gui\_controller.sqf";
-  
+  execVM "events\onRespawn.sqf";
   player addEventHandler ["respawn", { _this execVM "events\onRespawn.sqf"; }];
   onKeyDown = compile preprocessFile "events\onKeyDown.sqf";
   onKeyPress = compile preprocessFile "events\onKeyUp.sqf";
