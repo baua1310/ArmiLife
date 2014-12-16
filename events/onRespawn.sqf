@@ -1,12 +1,12 @@
 _pPos = PLAYERDATA select 5;
 
 waitUntil {alive player};
-removeHeadgear player:
+removeHeadgear player;
 removeGoggles player;
 removeVest player;
 removeBackpack player;
 removeUniform player;
-removeAllWeapons player:
+removeAllWeapons player;
 removeAllAssignedItems player;
 
 if (_pPos == [0,0,0]) then {
