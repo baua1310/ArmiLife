@@ -35,7 +35,8 @@ productionComponents = [
   ["Cable",[ [[1,13,1],[0,19,3]] ,4],false],
   ["Copper Plate",[ [[0,5,1]] ,1],false],
   ["Fiber Optic Cable",[ [[1,9,3],[0,19,3]], 2],false],
-  ["Stone Bricks",[ [[0,9,3]], 1], false] // 15
+  ["Stone Bricks",[ [[0,9,3]], 1], false], // 15
+  ["Credit Card",[ [[1,4,1]], 1], true]
 ];
 vehiclesArray = [
   ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [1,10,4],1 ] ]
