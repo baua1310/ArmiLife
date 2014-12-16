@@ -24,6 +24,14 @@ if (!isBusy) then {
       };
     };
     case "Pickaxe": {};
+    case "Credit Card": {
+       _mapObjects = ["atm_",2] call getMapObjects;
+      if(count _mapObjects > 0) then {
+        switch (_mapObjects select 0) do {
+          case "atm_": { titleText ["Welcome to your bank account","PLAIN"]; };
+        };
+      };
+    };
   };
   isBusy = false;
 };
