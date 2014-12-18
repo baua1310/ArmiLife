@@ -19,4 +19,4 @@ if (str(_pPos) == "[0,0,0]") then {
 };
 
 PLAYERDATA set [5, _pPos];
-player setPos _pPos;
+//player setPos _pPos;
