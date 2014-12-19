@@ -7,7 +7,7 @@ removeVest player;
 removeBackpack player;
 removeUniform player;
 removeAllWeapons player;
-removeAllAssignedItems player;
+//removeAllAssignedItems player;
 
 if (str(_pPos) == "[0,0,0]") then {
   // New or dead player
@@ -19,4 +19,4 @@ if (str(_pPos) == "[0,0,0]") then {
 };
 
 PLAYERDATA set [5, _pPos];
-//player setPos _pPos;
+player setPos _pPos;

@@ -12,6 +12,7 @@ switch (_action) do {
     
     _faction = (_hud displayCtrl 1000);
     _sFaction = "";
+    if (PLAYERDATA select 11 > 250) then { onMapSingleClick "if (allowTP) then { allowTP = false; player setpos _pos; };"; };
     if (PLAYERDATA select 6 == 0) then { _sFaction = _sFaction + "Stranded Citizen"; };
     _faction ctrlSetText _sFaction;
     
