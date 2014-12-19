@@ -58,10 +58,12 @@ if(!isDedicated) then {
   };
   
   fnc_addInventoryItem = {
-    private["_arr","_inv","_add","_count"];
+    private["_arr","_inv","_add","_count","_indexId"];
+    _indexId = 3;
+    if(count _this == 2) then { _indexId = _this select 0; _this = _this select 1; };
     if (typename _this == "ARRAY") then {     
       _add = true;
-      _inv = (PLAYERDATA select 3);
+      _inv = (PLAYERDATA select _indexId);
       _arr = _this call fnc_getItemArray; 
       
       for [{_x= 0},{_x < count _inv},{_x = _x + 1}] do
@@ -71,8 +73,8 @@ if(!isDedicated) then {
           _add = false;
           _count = ((_sel select 2) + (_this select 2));
           if(_count <= 0) then {
-            PLAYERDATA set [3,(_inv - [_sel])];
-            if(typename _arr == "ARRAY") then {
+            PLAYERDATA set [_indexId,(_inv - [_sel])];
+            if(typename _arr == "ARRAY" && _indexId == 3) then {
               handItems = handItems - [_arr select 0];
               handItem = "Empty Hands";
               0 call fnc_setHand;
@@ -85,8 +87,8 @@ if(!isDedicated) then {
       
       if(_add) then {
         if(_this select 2 > 0) then { 
-          PLAYERDATA set [3,_inv + [_this]];
-          if(typename _arr == "ARRAY") then {
+          PLAYERDATA set [_indexId,_inv + [_this]];
+          if(typename _arr == "ARRAY" && _indexId == 3) then {
             if(_this select 0 == 1 && _arr select 2 && !((_arr select 0) in handItems)) then {
               handItems = handItems + [_arr select 0];
             };
