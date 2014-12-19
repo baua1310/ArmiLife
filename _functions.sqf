@@ -10,6 +10,16 @@ if(!isDedicated) then {
     _fncreturn
   };
   
+  fnc_getProductionPos = {
+    _return = false;
+    switch (_this select 0) do {
+      case 1: { _return = 1; };
+      case 2: { _return = 2; };
+      case 3: { _return = 2; };
+    };
+    _return
+  };
+  
   fnc_setMoney = {
     if (typename (_this select 1) == "SCALAR") then {
       private["_hud","_acc","_cash","_target"];
