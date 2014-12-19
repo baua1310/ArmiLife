@@ -97,4 +97,19 @@ if(!isDedicated) then {
       };
     };
   };
+  
+  fnc_getItemAmount = {
+    private["_sArray"];
+    _result = 0;
+    _sArray = _this select 0;
+    _findItem = _this select 1;
+    
+    {
+      if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
+        _result = _x select 2;
+      };
+    } forEach _sArray;
+    
+    _result
+  };
 };           
