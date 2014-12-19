@@ -99,7 +99,7 @@ if(!isDedicated) then {
   };
   
   fnc_getItemAmount = {
-    private["_sArray"];
+    private["_sArray","_findItem"];
     _result = 0;
     _sArray = _this select 0;
     _findItem = _this select 1;
