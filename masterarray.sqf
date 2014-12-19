@@ -29,7 +29,7 @@ productionComponents = [
   ["Fishing Hook",[ [[0,0,3]],1],false ],
   ["Fishing Rod",[ [[1,1,2],[1,5,2],[1,6,1]],1],true ],
   ["Sand",[ [[0,16,1]],1],false ],
-  ["Glass",["Furnance",[[1,8,1]],1],false ],
+  ["Glass",[ [[1,8,1]],1],false,"Furnance" ],
   ["Shovel",[ [[1,1,2],[0,0,3] ],1],true ], //10
   ["Diamond Ring",[ [[0,11,3], [0,4,9]] ,6],false],
   ["Cable",[ [[1,13,1],[0,19,3]] ,4],false],
