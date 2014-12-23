@@ -113,9 +113,9 @@ if(!isDedicated) then {
     _result
   };
 
+  // call with check = ["markerpoint", "markertocheckagainst", "type"] call markerCheck; for markers
+  // call with check = [object, "markertocheckagainst", "type"] call markerCheck; for objects
   fnc_isInMarker = {
-    // call with check = ["markerpoint", "markertocheckagainst", "type"] call markerCheck; for markers
-    // call with check = [object, "markertocheckagainst", "type"] call markerCheck; for objects
     private ["_p","_m", "_t", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
     
     _p = _this select 0; // object
