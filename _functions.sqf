@@ -141,7 +141,8 @@ if(!isDedicated) then {
       _xmin = _mpx - _msx;_xmax = _mpx + _msx;_ymin = _mpy - _msy;_ymax = _mpy + _msy;
       if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; } else { _ret=false; };
     } else {
-      _res = (((_rpx-_mpx)^2)/(_msx^2)) + (((_rpy-_mpy)^2)/(_msy^2));if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
+      _res = (((_rpx-_mpx)^2)/(_msx^2)) + (((_rpy-_mpy)^2)/(_msy^2));
+      if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
     };
     _ret;
   };
