@@ -818,7 +818,7 @@ class Mission
 		class Item47
 		{
 			position[]={18880.264,24.085754,8068.6733};
-			name="Livadi";
+			name="capLivadi";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorEAST";
