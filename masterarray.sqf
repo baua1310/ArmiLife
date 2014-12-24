@@ -8,9 +8,23 @@ capAreas = [
   ["capAgrios",0,100],["capDionysios",0,100],
   ["capKoroni",0,100],["capAthira",0,100],
   ["capPoliakko",0,100],["capMarky",0,100],
-  ["capNeochori",0,100],["capKoroni",0,100],
+  ["capNeochori",0,100],["capBorder",0,100],
   ["capNothing3",0,100],["capAirport",0,100],
-  ["capNychi",0,100],["capZeloran",0,100]
+  ["capNychi",0,100],["capZeloran",0,100],
+  ["capVikos",0,100],["capPyrgi",0,100],
+  ["capAAC",0,100],["capAnthrakia",0,100],
+  ["capPetros",0,100],["capPefkas",0,100],
+  ["capNidasos",0,100],["capAndreas",0,100],
+  ["capMolos",0,100],["capSofia",0,100],
+  ["capDelfinaki",0,100],["capGatolia",0,100],
+  ["capAlmyra",0,100],["capLimni",0,100],
+  ["capCharkia",0,100],["capDorida",0,100],
+  ["capSofia",0,100],["capWindmills",0,100],
+  ["capChalkeia",0,100],["capSurf",0,100],
+  ["capLivadi",0,100],["capFaronaki",0,100],
+  ["capEkali",0,100],["capWindmills2",0,100],
+  ["capFeres",0,100],["capTrachia",0,100],
+  ["capBowls",0,100]
 ];
 
 // Items
