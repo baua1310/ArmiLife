@@ -113,15 +113,14 @@ if(!isDedicated) then {
     _result
   };
 
-  // call with check = ["markerpoint", "markertocheckagainst", "type"] call markerCheck; for markers
-  // call with check = [object, "markertocheckagainst", "type"] call markerCheck; for objects
+  // call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
+  // call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects
   fnc_isInMarker = {
-    private ["_p","_m", "_t", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
+    private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
     
     _p = _this select 0; // object
     _m = _this select 1; // marker
-    _t = _this select 2; // marker shape "E" or "R"
-    //marker shape, "E" or "R"
+    
     if (typeName _p == "OBJECT") then {
       _px = position _p select 0;
       _py = position _p select 1;
@@ -137,7 +136,7 @@ if(!isDedicated) then {
     _ma = -markerDir _m;
     _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
     _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-    if (_t == "R") then {
+    if ((markerShape _m) == "RECTANGLE") then {
       _xmin = _mpx - _msx;_xmax = _mpx + _msx;_ymin = _mpy - _msy;_ymax = _mpy + _msy;
       if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; } else { _ret=false; };
     } else {
