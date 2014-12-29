@@ -55,6 +55,10 @@ productionComponents = [
 ];
 vehiclesArray = [
   ["Quadbike","C_Quadbike_01_F",[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],
+  ["Hatchback","C_Hatchback_01_F",[ [[1,17,4],[1,12,5],[1,4,25]],1 ] ],
+  ["SUV","C_SUV_01_F",[ [[1,17,4],[1,12,6],[1,4,28]],1 ] ],
+  ["Pickup Offroad","C_Offroad_01_F",[ [[1,17,4],[1,12,7],[1,4,30]],1 ] ],
+  ["Hatchback Sport","C_Hatchback_01_sport_F",[ [[1,17,4],[1,12,9],[1,4,34]],1 ] ],
   ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [[1,10,4]],1 ] ]
 ];
 placeableObjects = [
