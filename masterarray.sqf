@@ -31,7 +31,7 @@ capAreas = [
 productionResources = [
   "Iron","Wood","Clean Water","Gold","Silver","Copper","Wheat","Oil","Fish","Stone",
   "Metal","Diamond","Apple","Electricity","Bauxite","Wool","Dirt","Orange","Potatoes","Natural Rubber",
-  "Turtle","Snake","Fish","Rabbit","Shark"
+  "Turtle","Snake","Fish","Rabbit","Shark","Plastic"
 ];
 productionComponents = [
   ["Wood Plank",[ [[0,1,1] ],5],false ],
@@ -50,10 +50,12 @@ productionComponents = [
   ["Copper Plate",[ [[0,5,1]] ,1],false],
   ["Fiber Optic Cable",[ [[1,9,3],[0,19,3]], 2],false],
   ["Stone Bricks",[ [[0,9,3]], 1], false], // 15
-  ["Credit Card",[ [[1,4,1]], 1], true]
+  ["Credit Card",[ [[1,4,1]], 1], true],
+  ["Tires",[ [[0,19,10],[1,4,3]], 1],false]
 ];
 vehiclesArray = [
-  ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [1,10,4],1 ] ]
+  ["Quadbike","C_Quadbike_01_F",[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],
+  ["MH-9 Hummingbird","B_Heli_Light_01_F",[ [[1,10,4]],1 ] ]
 ];
 placeableObjects = [
   ["Fireplace","FirePlace_burning_F",[ [[0,9,5],[0,1,5]],1] ]
