@@ -1,5 +1,4 @@
 class mainOverlay {
-
 	idd = -1;
 	movingEnable = 0;
 	enableSimulation = 0;
@@ -13,7 +12,7 @@ class mainOverlay {
     class lblFaction: Life_RscStructuredText
     {
     	idc = 1000;
-    	text = "Faction"; //--- ToDo: Localize;
+    	text = "Faction";
     	x = 0.00593747 * safezoneW + safezoneX;
     	y = 0.00697736 * safezoneH + safezoneY;
     	w = 0.262969 * safezoneW;
@@ -26,7 +25,7 @@ class mainOverlay {
     class lblBalance: Life_RscStructuredText
     {
     	idc = 1001;
-    	text = "Money"; //--- ToDo: Localize;
+    	text = "Money";
     	x = 0.731094 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.262969 * safezoneW;
@@ -66,7 +65,7 @@ class mainOverlay {
     class lblNutrition: Life_RscStructuredText
     {
     	idc = 1004;
-    	text = "Nutrition"; //--- ToDo: Localize;
+    	text = "Nutrition";
     	x = 0.587656 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.135469 * safezoneW;

@@ -2,8 +2,7 @@ _items = PLAYERDATA select 12;
 
 if (typeName _this == "ARRAY") then {
   _itemArr = _this call fnc_getItemArray;
-  _index = _this call fnc_getProductionPos;
-  _prodArray = _itemArr select _index;
+  _prodArray = _itemArr select 2;
   
   _prodItems = _prodArray select 0;
   

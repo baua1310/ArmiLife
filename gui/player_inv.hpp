@@ -2,7 +2,6 @@
 #define item_list 2005
 #define player_list 2006
 #define carry_weight 2009
-#define item_edit 2010
 
 class playerSettings {
 
@@ -130,15 +129,12 @@ class playerSettings {
 			w = 0.13; h = 0.036;
 		};
 		
-		class itemEdit : Life_RscEdit {
-		
-		idc = item_edit;
-		
-		text = "1";
-		sizeEx = 0.030;
-		x = 0.62; y = 0.61;
-		w = 0.275; h = 0.03;
-		
+		class itemEdit : Life_RscEdit {		
+  		idc = 2010;
+  		text = "1";
+  		sizeEx = 0.030;
+  		x = 0.62; y = 0.61;
+  		w = 0.275; h = 0.03;		
 		};
 		class iNearPlayers : Life_RscCombo
 		{
@@ -153,7 +149,7 @@ class playerSettings {
 			idc = 2002;
 			text = "Drop";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_giveItem;";
+			onButtonClick = " ""drop"" call fnc_INVaction; ";
 			
 			x = 0.765;
 			y = 0.70;
@@ -166,7 +162,7 @@ class playerSettings {
 			
 			text = "Use";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "execVM ''";
+			onButtonClick = "";
 			
 			x = 0.62;
 			y = 0.70;
@@ -179,7 +175,7 @@ class playerSettings {
 			
 			text = "Destroy";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_removeItem;";
+			onButtonClick = " ""destroy"" call fnc_INVaction; ";
 			
 			x = 0.475;
 			y = 0.70;
@@ -214,7 +210,7 @@ class playerSettings {
 			text = "My Faction";
 			onButtonClick = "if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.8 - (1 / 25);
+			y = 0.805;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -315,4 +311,25 @@ class playerSettings {
 			h = (1 / 25);
 		};
 	};
+};
+
+class ArmiPhone {
+	idd = -1;
+	movingEnable = 0;
+	enableSimulation = 0;
+
+  class controlsBackground {
+    class bgPhone: RscPicture
+    {
+    	idc = 1200;
+    	text = "img\phone.paa";
+    	x = 0.0617187 * safezoneW + safezoneX;
+    	y = 0.159 * safezoneH + safezoneY;
+    	w = 0.144375 * safezoneW;
+    	h = 0.396 * safezoneH;
+      colorText[] = {1,1,1,1};
+    };  
+  };
+  class controls {
+  };
 };

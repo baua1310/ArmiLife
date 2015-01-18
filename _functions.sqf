@@ -10,16 +10,6 @@ if(!isDedicated) then {
     _fncreturn
   };
   
-  fnc_getProductionPos = {
-    _return = false;
-    switch (_this select 0) do {
-      case 1: { _return = 1; };
-      case 2: { _return = 2; };
-      case 3: { _return = 2; };
-    };
-    _return
-  };
-  
   fnc_setMoney = {
     if (typename (_this select 1) == "SCALAR") then {
       private["_hud","_acc","_cash","_target"];
@@ -144,5 +134,44 @@ if(!isDedicated) then {
       if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
     };
     _ret;
+  };
+  
+  fnc_INVaction = {
+    private ["_ctrl","_selection","_itemArray","_pos","_attachedArray","_itemCode","_classname","_item","_amount","_amountInv"];
+    _ctrl = ((findDisplay 2001) displayCtrl 2005);
+    _selection = lbCurSel 2005;
+    _attachedArray = call compile (_ctrl lbData _selection);
+    _itemCode = _attachedArray select 0;
+    _itemArray = _attachedArray select 1;
+    _pos = (position player);
+    
+    _amount = parseNumber (ctrlText 2010);
+    _amountInv = _itemCode select 2;
+        
+    if (typeName _amount != "SCALAR" || _amount < 0) then { _amount = 0; };
+    if (_amount > _amountInv) then { _amount = _amountInv; };
+    
+    switch (_this) do {
+      case "drop": {
+        if (_amount > 0) then {
+          if(_amountInv == _amount) then { __ctrl lbDelete _selection; };
+          [_itemCode select 0, _itemCode select 1, -_amount] call fnc_addInventoryItem;
+          _classname = "Land_Suitcase_F";
+          if(count _itemArray > 1 && _itemArray select 1 != "") then { _classname = _itemArray select 1; };
+          _item = _classname createVehicle _pos;
+          _item setPos _pos;
+          _itemCode set [2,_amount];
+          _item setVariable ["itemData",itemCode,true];
+        };
+      };
+      case "destroy": {
+        if (_amount > 0) then {
+          if(_amountInv == _amount) then { __ctrl lbDelete _selection; };
+          [_itemCode select 0, _itemCode select 1, -_amount] call fnc_addInventoryItem;
+        };
+      };
+    };
+    
+    closeDialog 0;
   };
 };           

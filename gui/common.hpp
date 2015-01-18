@@ -64,35 +64,6 @@ class Life_RscHud
 	text = "";
 };
 
-/*   Smartphone replace
-class Life_RscListNBox
-{
-	style = 16;
-	type = 102;
-	shadow = 0;
-	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	color[] = {0.95,0.95,0.95,1};
-	colorText[] = {1,1,1,1.0};
-	colorDisabled[] = {1,1,1,0.25};
-	colorScrollbar[] = {0.95,0.95,0.95,1};
-	colorSelect[] = {0,0,0,1};
-	colorSelect2[] = {0,0,0,1};
-	colorSelectBackground[] = {0.8,0.8,0.8,1};
-	colorSelectBackground2[] = {1,1,1,0.5};
-	soundSelect[] = {"",0.1,1};
-	soundExpand[] = {"",0.1,1};
-	soundCollapse[] = {"",0.1,1};
-	period = 1.2;
-	maxHistoryDelay = 0.5;
-	autoScrollSpeed = -1;
-	autoScrollDelay = 5;
-	autoScrollRewind = 0;
-	class ListScrollBar: Life_RscScrollBar{};
-	class ScrollBar: Life_RscScrollBar{};
-};
-*/
-
 class Life_RscListNBox
 {
 	style = 16;
@@ -178,7 +149,7 @@ class Life_RscTitle : Life_RscText {
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
-class life_RscPicture {
+class RscPicture {
 	shadow = 0;
 	type = 0;
 	style = 48;
@@ -201,7 +172,7 @@ class Life_RscTextMulti : Life_RscText
 	style = 0 + 16 + 0x200;
 };
 
-class Life_RscPictureKeepAspect : Life_RscPicture 
+class Life_RscPictureKeepAspect : RscPicture 
 {
 	style = 0x30 + 0x800;
 };
