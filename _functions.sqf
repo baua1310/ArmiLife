@@ -1,11 +1,5 @@
 if(!isDedicated) then {
-  fnc_setBank = {
-    PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
-  };
-  fnc_setCash = {
-    PLAYERDATA set [1, (PLAYERDATA select 1) + (_this select 0)];
-  };
-  
+
   ARM_bannedTimer = 0;
   fnc_armiChat = {
     _banTime = (ARM_bannedTimer-time);
