@@ -149,7 +149,7 @@ class Life_RscTitle : Life_RscText {
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
-class RscPicture {
+class ARM_RscPicture {
 	shadow = 0;
 	type = 0;
 	style = 48;
@@ -172,7 +172,7 @@ class Life_RscTextMulti : Life_RscText
 	style = 0 + 16 + 0x200;
 };
 
-class Life_RscPictureKeepAspect : RscPicture 
+class Life_RscPictureKeepAspect : ARM_RscPicture 
 {
 	style = 0x30 + 0x800;
 };
@@ -247,6 +247,22 @@ class Life_RscButton
 	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+};
+
+class ARM_RscFrameButton : Life_RscButton {
+	idc = -1;
+	style = 64;
+	sizeEx = 0.02;
+	text = "";
+  colorText[]               = {-1,-1,-1,-1};
+  colorActive[]             = {-1,-1,-1,-1};
+  colorDisabled[]           = {-1,-1,-1,-1};
+  colorBackground[]         = {-1,-1,-1,-1};
+  colorBackgroundActive[]   = {-1,-1,-1,-1};
+  colorBackgroundDisabled[] = {-1,-1,-1,-1};
+  colorFocused[]            = {-1,-1,-1,-1};
+  colorShadow[]             = {-1,-1,-1,-1};
+  colorBorder[]             = {-1,-1,-1,-1};
 };
 
 class Life_RscButtonTextOnly : Life_RscButton {

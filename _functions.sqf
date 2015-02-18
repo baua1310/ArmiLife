@@ -1,3 +1,31 @@
+// SECTORS
+
+// ["capBorder",0,50] call fnc_set_sector;
+fnc_set_sector = {
+  private["_markerName","_newOwner","_elec"];
+  _markerName = _this select 0;
+  _newOwner = _this select 1;
+  _elec = _this select 2;
+  
+  for "_k" from 0 to ((count(capAreas))-1) do
+  {
+    _curCap = capAreas select _k; 
+    if(_curCap select 0 == _markerName) exitWith {
+      _curCap set [1,_newOwner];
+      _curCap set [2,_elec];
+      capAreas set [_k,_curCap];
+    };
+  };
+  
+  switch (_newOwner) do {
+    case 0: { _markerName setMarkerColor "ColorWEST"; };
+    case 1: { _markerName setMarkerColor "ColorEAST"; };
+    case 2: { _markerName setMarkerColor "ColorGUER"; };
+  };
+  
+  // Add save
+};
+
 if(!isDedicated) then {
   fnc_getItemArray = {
     _fncreturn = [];  

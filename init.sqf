@@ -10,7 +10,11 @@ _w = execVM "masterarray.sqf";
 waitUntil { scriptDone _w; };
 _w = execVM "variables.sqf";
 waitUntil { scriptDone _w; };
+_w = execVM "debug.sqf";
+waitUntil { scriptDone _w; };
 _w = execVM "_functions.sqf";
+waitUntil { scriptDone _w; };
+_w = execVM "server\mapInit.sqf";
 waitUntil { scriptDone _w; };
 
 if(!isDedicated) then {

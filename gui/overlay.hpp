@@ -16,7 +16,7 @@ class mainOverlay {
     	x = 0.00593747 * safezoneW + safezoneX;
     	y = 0.00697736 * safezoneH + safezoneY;
     	w = 0.262969 * safezoneW;
-    	h = 0.0340016 * safezoneH;
+    	h = 0.05;
     	colorBackground[] = {0,0,0,0.6};
       class Attributes {
         valign = "middle";
@@ -29,7 +29,7 @@ class mainOverlay {
     	x = 0.731094 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.262969 * safezoneW;
-    	h = 0.0340016 * safezoneH;
+    	h = 0.05;
     	colorBackground[] = {0,0,0,0.6};
       class Attributes {
         align = "right";
@@ -42,7 +42,7 @@ class mainOverlay {
     	x = 0.276875 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.135469 * safezoneW;
-    	h = 0.0340016 * safezoneH;
+    	h = 0.05;
     	colorBackground[] = {0,0,0,0.6};
       class Attributes {
         align = "center";
@@ -55,7 +55,7 @@ class mainOverlay {
     	x = 0.420312 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.159375 * safezoneW;
-    	h = 0.0340016 * safezoneH;
+    	h = 0.05;
     	colorBackground[] = {0,0,0,0.6};
       class Attributes {
         align = "center";
@@ -69,7 +69,7 @@ class mainOverlay {
     	x = 0.587656 * safezoneW + safezoneX;
     	y = 0.00697734 * safezoneH + safezoneY;
     	w = 0.135469 * safezoneW;
-    	h = 0.0340016 * safezoneH;
+    	h = 0.05;
     	colorBackground[] = {0,0,0,0.6};
       class Attributes {
         align = "center";

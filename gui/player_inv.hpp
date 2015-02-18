@@ -322,7 +322,7 @@ class ArmiPhone {
     class bgPhone: ARM_RscPicture
     {
     	idc = 1200;
-    	text = "armitxes\img\phone.paa";
+    	text = "img\phone.paa";
     	x = 0.0818 * safezoneW + safezoneX;
     	y = 0.17 * safezoneH + safezoneY;
     	w = 0.244375 * safezoneW;
