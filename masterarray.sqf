@@ -31,7 +31,7 @@ capAreas = [
 productionResources = [
   "Iron","Wood","Clean Water","Gold","Silver","Copper","Wheat","Oil","Fish","Stone",
   "Metal","Diamond","Apple","Electricity","Bauxite","Wool","Dirt","Orange","Potatoes","Natural Rubber",
-  "Turtle","Snake","Fish","Rabbit","Shark","Plastic"
+  "Turtle","Snake","Fish","Rabbit","Shark","Plastic","Nitric Acid"
 ];
 productionComponents = [
   ["Wood Plank","",[ [[0,1,1] ],5],false ],
@@ -62,7 +62,8 @@ productionComponents = [
   ["Water Canteen","Land_Canteen_F",[[],0],false,"durst = durst - 80;" ], //25
   ["Cereals Box","Land_CerealsBox_F",[[],0],false,"hunger = hunger - 40;" ],
   ["Powdered Milk","Land_PowderedMilk_F",[[],0],false,"hunger = hunger - 15; durst = durst - 100;" ],
-  ["Rice Box","Land_RiceBox_F",[[],0],false,"hunger = hunger - 60;" ]
+  ["Rice Box","Land_RiceBox_F",[[],0],false,"hunger = hunger - 60;" ],
+  ["C4","Land_RiceBox_F",[[],1],false,"hunger = hunger - 60;" ]
 ];
 vehiclesArray = [
   ["Quadbike","C_Quadbike_01_F",[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],

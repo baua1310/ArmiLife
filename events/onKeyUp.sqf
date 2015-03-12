@@ -5,7 +5,7 @@ _shift   = _this select 2;
 _handled = true;
 
 switch (_key) do {
-  case 57: {execVM "events\onMapInteraction.sqf";};
+  case 57: { if(speed (vehicle player) == 0) then { execVM "events\onMapInteraction.sqf"; }; };
   case 3: {["inv"] execVM "gui\_controller.sqf";};
   case 4: {
     _move = "AmovPercMstpSsurWnonDnon";

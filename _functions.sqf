@@ -200,7 +200,7 @@ if(!isDedicated) then {
   };
   
   fnc_INVaction = {
-    private ["_ctrl","_selection","_itemArray","_pos","_attachedArray","_itemCode","_classname","_item","_amount","_amountInv"];
+    private ["_ctrl","_selection","_itemArray","_pos","_attachedArray","_itemCode","_classname","_item","_amount","_amountInv","_itemSqf"];
     _ctrl = ((findDisplay 2001) displayCtrl 2005);
     _selection = lbCurSel 2005;
     _attachedArray = call compile (_ctrl lbData _selection);
@@ -215,6 +215,17 @@ if(!isDedicated) then {
     if (_amount > _amountInv) then { _amount = _amountInv; };
     
     switch (_this) do {
+      case "use": {
+        switch (_itemCode select 0) do {
+          case 1: {
+            _itemSqf = _itemArray select 4;
+            if (typeName _itemSqf == "STRING") then { call compile _itemSqf; };
+          };
+          case 2: { (_itemArray select 1) createVehicle (position player); };
+          case 3: { (_itemArray select 1) createVehicle (position player); };
+        };
+        [_itemCode select 0, _itemCode select 1, -1] call fnc_addInventoryItem;
+      };
       case "drop": {
         if (_amount > 0) then {
           if(_amountInv == _amount) then { __ctrl lbDelete _selection; };
