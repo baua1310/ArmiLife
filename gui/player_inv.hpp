@@ -406,7 +406,7 @@ class ArmiPhone {
     	y = 0.17 * safezoneH + safezoneY;
     	w = 0.244375 * safezoneW;
     	h = 0.396 * safezoneH;
-      colorText[] = {1,1,1,1};
+        colorText[] = {1,1,1,1};
     };  
   };
   class objects {};  
@@ -475,4 +475,75 @@ class ArmiPhone {
       action = "createDialog 'MainMenu';";
     };
   };
+};
+
+class ArmiID {
+    idd = -1;
+    movingEnable = 1;
+    enableSimulation = true;
+
+    class controlsBackground {
+        class bgID: ARM_RscPicture
+        {
+            idc = 1200;
+            text = "img\id.paa";
+            x = 0.235902 * safezoneW + safezoneX;
+            y = 0.15 * safezoneH + safezoneY;
+            w = 0.4 * safezoneW;
+            h = 0.6 * safezoneH;
+        }; 
+    };
+    class objects {};  
+    class controls {
+        class lblName: Life_RscText
+        {
+            idc = 1000;
+            text = "Name: John Smith";
+            x = 0.338 * safezoneW + safezoneX;
+            y = 0.2 * safezoneH + safezoneY;
+            w = 0.15 * safezoneW;
+            h = 0.03 * safezoneH;
+            colorText[] = { 0, 0, 0, 1 };
+        };
+        class lblFaction: Life_RscText
+        {
+            idc = 1001;
+            text = "Faction: Factionless";
+            x = 0.338 * safezoneW + safezoneX;
+            y = 0.225 * safezoneH + safezoneY;
+            w = 0.15 * safezoneW;
+            h = 0.03 * safezoneH;
+            colorText[] = { 0, 0, 0, 1 };
+        };
+        class lblRank: Life_RscText
+        {
+            idc = 1002;
+            text = "Rank: None";
+            x = 0.338 * safezoneW + safezoneX;
+            y = 0.250 * safezoneH + safezoneY;
+            w = 0.15 * safezoneW;
+            h = 0.03 * safezoneH;
+            colorText[] = { 0, 0, 0, 1 };
+        };
+        class lblTest: Life_RscText
+        {
+            idc = 1003;
+            text = "Test: None";
+            x = 0.338 * safezoneW + safezoneX;
+            y = 0.275 * safezoneH + safezoneY;
+            w = 0.15 * safezoneW;
+            h = 0.03 * safezoneH;
+            colorText[] = { 0, 0, 0, 1 };
+        };
+        class lblUID: Life_RscText
+        {
+            idc = 1004;
+            text = "1234567890987654321";
+            x = 0.3 * safezoneW + safezoneX;
+            y = 0.33 * safezoneH + safezoneY;
+            w = 0.15 * safezoneW;
+            h = 0.03 * safezoneH;
+            colorText[] = { 0, 0, 0, 1 };
+        };
+    };
 };
