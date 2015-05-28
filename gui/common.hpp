@@ -178,27 +178,27 @@ class Life_RscPictureKeepAspect : ARM_RscPicture
 };
 
 class Life_RscStructuredText {
-	type = 13;
-	style = 0;
-	x = 0;
-	y = 0;
-	h = 0.035;
-	w = 0.1;
-	text = "";
-	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorText[] = {1, 1, 1, 1.0};
+    type = 13;
+    style = 0;
+    x = 0;
+    y = 0;
+    h = 0.035;
+    w = 0.1;
+    text = "";
+    size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+    colorText[] = {1, 1, 1, 1.0};
+    shadow = 1;
+
+    class Attributes {
+	font = "PuristaMedium";
+	color = "#ffffff";
+	align = "left";
 	shadow = 1;
-	
-	class Attributes {
-		font = "PuristaMedium";
-		color = "#ffffff";
-		align = "left";
-		shadow = 1;
-	};
+    };
 };
 
 class Life_RscActiveText {
-idc = -1;
+    idc = -1;
     type = 11;
     style = 0;
     x = 0;

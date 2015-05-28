@@ -5,13 +5,17 @@ RESISTANCE setFriend [EAST, 1];
 EAST setFriend [RESISTANCE, 1];
 RESISTANCE setFriend [WEST, 1];
 WEST setFriend [RESISTANCE, 1];
-         
+
+enableDebug = !isDedicated && isServer;
+        
 _w = execVM "masterarray.sqf";
 waitUntil { scriptDone _w; };
 _w = execVM "variables.sqf";
 waitUntil { scriptDone _w; };
-_w = execVM "debug.sqf";
-waitUntil { scriptDone _w; };
+if (enableDebug) then {
+  _w = execVM "debug.sqf";
+  waitUntil { scriptDone _w; };
+};
 _w = execVM "_functions.sqf";
 waitUntil { scriptDone _w; };
 _w = execVM "server\mapInit.sqf";

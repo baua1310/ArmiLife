@@ -14,7 +14,8 @@ switch (_key) do {
     } else {player switchMove _move;};
   };
   case 15: {if (_shift) then {1 call fnc_setHand;} else {2 call fnc_setHand;};};
-  default { _handled = false; };
+  case 23: {["icall"] execVM "gui\inventory.sqf";};
+	default { _handled = false; };
 };
 
 _handled

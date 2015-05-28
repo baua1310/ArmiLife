@@ -10,7 +10,7 @@ fnc_set_sector = {
   for "_k" from 0 to ((count(capAreas))-1) do
   {
     _curCap = capAreas select _k; 
-    if(_curCap select 0 == _markerName) exitWith {
+    if (_curCap select 0 == _markerName) exitWith {
       _curCap set [1,_newOwner];
       _curCap set [2,_elec];
       capAreas set [_k,_curCap];
@@ -18,9 +18,9 @@ fnc_set_sector = {
   };
   
   switch (_newOwner) do {
-    case 0: { _markerName setMarkerColor "ColorWEST"; };
-    case 1: { _markerName setMarkerColor "ColorEAST"; };
-    case 2: { _markerName setMarkerColor "ColorGUER"; };
+    case 1: { _markerName setMarkerColor "ColorWEST"; };
+    case 2: { _markerName setMarkerColor "ColorEAST"; };
+    case 3: { _markerName setMarkerColor "ColorGUER"; };
   };
   
   // Add save
@@ -199,6 +199,42 @@ if(!isDedicated) then {
     _ret;
   };
   
+	fnc_facIDtoName = {
+			private ["_faction"];
+			_faction = "Factionless";
+			switch (_this) do {
+					case 1: { _faction = "Democratic Republic"; };
+					case 2: { _faction = "Communists"; };
+					case 3: { _faction = "Anarchists"; };
+			};
+			_faction
+	};
+
+	fnc_timer = {
+			private ["_dsp","_op","_rt","_time","_smove","_txt"];
+			_time = _this select 0;
+			_txt =  _this select 1;
+			_smove = _this select 2;
+			_emove = _this select 3;
+			if (typeName _time == "SCALAR") then {
+				if (!(createDialog "progressBar")) exitWith {hint "Dialog Error!"; true};
+				if (!isNil "_smove") then { player playMove _smove; };
+				disableSerialization;
+				_dsp = findDisplay 2459; (_dsp displayCtrl 1) progressSetPosition 1;
+				_op = ( _time / 100 );
+				_rt = _time;
+				while { _time >= 0 } do {
+						_time = _time - 1;
+						sleep 1;
+						_rt = _time / _op;
+						(_dsp displayCtrl 1) progressSetPosition (_rt/100);
+				};
+				if (!isNil "_emove") then { player playMove _emove; };
+				closeDialog 2459;
+			} else {diag_log "ERROR: fnc_timer - param not scalar";};
+			true
+	};
+
   fnc_INVaction = {
     private ["_ctrl","_selection","_itemArray","_pos","_attachedArray","_itemCode","_classname","_item","_amount","_amountInv","_itemSqf"];
     _ctrl = ((findDisplay 2001) displayCtrl 2005);

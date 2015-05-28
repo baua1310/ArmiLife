@@ -9,7 +9,9 @@ class Mission
 		"A3_Characters_F_Civil",
 		"A3_Characters_F_INDEP",
 		"A3_Weapons_F_Ammoboxes",
-		"A3_Soft_F_TruckHeavy"
+		"A3_Soft_F_TruckHeavy",
+		"rds_A2_Civilians",
+		"A3_Structures_F_Civ_InfoBoards"
 	};
 	addOnsAuto[]=
 	{
@@ -19,6 +21,7 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_TruckHeavy",
+		"A3_Structures_F_Civ_InfoBoards",
 		"a3_map_altis"
 	};
 	randomSeed=1010507;
@@ -209,7 +212,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			position[]={16553.717,11.058635,12794.12};
@@ -231,10 +234,21 @@ class Mission
 			skill=0.60000002;
 			text="tp1";
 		};
+		class Item2
+		{
+			position[]={3695.7366,10.379351,13150.771};
+			azimut=91.022903;
+			id=10;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			text="info";
+			init="this setPos (this modelToWorld[0,0,11.07]); this addAction [""<t color='#FF0000'>Declare War</t>"",""war.sqf"",""declare"",20,false,true,"""",""isNMayor""]; this enableSimulation false;";
+		};
 	};
 	class Markers
 	{
-		items=70;
+		items=71;
 		class Item0
 		{
 			position[]={9142.8018,16.911982,21480.648};
@@ -1052,6 +1066,15 @@ class Mission
 			type="flag_NATO";
 			a=0.75;
 			b=0.75;
+		};
+		class Item70
+		{
+			position[]={3690.6838,10.202419,13156.946};
+			name="govNato";
+			type="Select";
+			colorName="ColorWEST";
+			a=0.40000001;
+			b=0.40000001;
 		};
 	};
 };

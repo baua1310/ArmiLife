@@ -2,6 +2,8 @@ PLAYERDATA = [0];
 
 // NON-DB
 handItem = "Empty Hands";
+capWar = nil;
+antwort = 2;
 handItems = ["Empty Hands","Fists"];
 allowTP = false;
 isBusy = false;
@@ -17,3 +19,8 @@ laws = [
   ]
 ];
 taxes = [0,0];
+
+
+isNMayor = false;
+isCMayor = false;
+isAMayor = false;
