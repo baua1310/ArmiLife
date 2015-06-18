@@ -1,5 +1,4 @@
 // SECTORS
-
 // ["capBorder",0,50] call fnc_set_sector;
 fnc_set_sector = {
   private["_markerName","_newOwner","_elec"];
@@ -199,7 +198,7 @@ if(!isDedicated) then {
     _ret;
   };
   
-	fnc_facIDtoName = {
+	fnc_nationIDtoName = {
 			private ["_faction"];
 			_faction = "Factionless";
 			switch (_this) do {

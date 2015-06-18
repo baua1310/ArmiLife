@@ -2,7 +2,7 @@ if (!isBusy) then {
   isBusy = true;
   switch (handItem) do {
     case "Empty Hands": {
-      _mapObjects = [["water","sacks_goods","b_ficusc1s","bricks","garbage","atm_","phone"],2] call getMapObjects;
+      _mapObjects = [["water","sacks_goods","b_ficusc1s","b_ficusc2d","bricks","garbage","atm_","phone"],2] call getMapObjects;
       if(count _mapObjects > 0 && isNull cursorTarget) then {
         switch (_mapObjects select 0) do {
           case "sacks_goods": { [3,"Gathering goods...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer; [0,12,1] call fnc_addInventoryItem; [0,17,1] call fnc_addInventoryItem; [0,18,1] call fnc_addInventoryItem; titleText ["You gathered different fruits","PLAIN"]; };

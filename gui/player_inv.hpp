@@ -478,14 +478,14 @@ class ArmiPhone {
 };
 
 class ArmiID {
-    idd = -1;
+    idd = 1601;
     movingEnable = 1;
     enableSimulation = true;
 
     class controlsBackground {
         class bgID: ARM_RscPicture
         {
-            idc = 1200;
+            idc = -1;
             text = "img\id.paa";
             x = 0.235902 * safezoneW + safezoneX;
             y = 0.15 * safezoneH + safezoneY;
@@ -497,8 +497,8 @@ class ArmiID {
     class controls {
         class lblName: Life_RscText
         {
-            idc = 1000;
-            text = "Name: John Smith";
+            idc = 1;
+            text = "";
             x = 0.338 * safezoneW + safezoneX;
             y = 0.2 * safezoneH + safezoneY;
             w = 0.15 * safezoneW;
@@ -507,7 +507,7 @@ class ArmiID {
         };
         class lblFaction: Life_RscText
         {
-            idc = 1001;
+            idc = 2;
             text = "Faction: Factionless";
             x = 0.338 * safezoneW + safezoneX;
             y = 0.225 * safezoneH + safezoneY;
@@ -517,7 +517,7 @@ class ArmiID {
         };
         class lblRank: Life_RscText
         {
-            idc = 1002;
+            idc = 3;
             text = "Rank: None";
             x = 0.338 * safezoneW + safezoneX;
             y = 0.250 * safezoneH + safezoneY;
@@ -527,8 +527,8 @@ class ArmiID {
         };
         class lblTest: Life_RscText
         {
-            idc = 1003;
-            text = "Test: None";
+            idc = 4;
+            text = "";
             x = 0.338 * safezoneW + safezoneX;
             y = 0.275 * safezoneH + safezoneY;
             w = 0.15 * safezoneW;
@@ -537,13 +537,69 @@ class ArmiID {
         };
         class lblUID: Life_RscText
         {
-            idc = 1004;
-            text = "1234567890987654321";
+            idc = 5;
+            text = "";
             x = 0.3 * safezoneW + safezoneX;
             y = 0.33 * safezoneH + safezoneY;
             w = 0.15 * safezoneW;
             h = 0.03 * safezoneH;
             colorText[] = { 0, 0, 0, 1 };
+        };
+    };
+};
+
+
+class professions {
+    idd = 1602;
+    movingEnable = 1;
+    enableSimulation = true;
+
+    class controlsBackground {
+        class bgProfession: Life_RscBackground
+        {
+        	idc = -1;
+        	x = 0.235902 * safezoneW + safezoneX;
+        	y = 0.149928 * safezoneH + safezoneY;
+        	w = 0.528196 * safezoneW;
+        	h = 0.700143 * safezoneH;
+            colorBackground[] = { 1, 1, 1, 0.3 };
+        };
+    };
+    class objects {};  
+    class controls {
+        class lstProfessions: Life_RscListNBox
+        {
+        	idc = 1;
+        	x = 0.249107 * safezoneW + safezoneX;
+        	y = 0.219943 * safezoneH + safezoneY;
+        	w = 0.151856 * safezoneW;
+        	h = 0.588121 * safezoneH;
+        };
+        class lblProfessions: Life_RscStructuredText
+        {
+        	idc = -1;
+        	text = "Professions";
+        	x = 0.249107 * safezoneW + safezoneX;
+        	y = 0.177934 * safezoneH + safezoneY;
+        	w = 0.0726269 * safezoneW;
+        	h = 0.0280057 * safezoneH;
+        };
+        class lblProfDesc: Life_RscStructuredText
+        {
+        	idc = 2;
+        	text = "Please select a profession for more details.";
+        	x = 0.414168 * safezoneW + safezoneX;
+        	y = 0.219943 * safezoneH + safezoneY;
+        	w = 0.336725 * safezoneW;
+        	h = 0.532109 * safezoneH;
+        };
+        class btnJob: Life_RscButtonMenu
+        {
+        	text = "Accept Profession";
+        	x = 0.618844 * safezoneW + safezoneX;
+        	y = 0.780057 * safezoneH + safezoneY;
+        	w = 0.132049 * safezoneW;
+        	h = 0.0280057 * safezoneH;
         };
     };
 };

@@ -52,7 +52,7 @@ switch (_action) do {
 				capWar = _this select 1;
 				capFlag = _this select 4;
 				_capData = (capAreas select capWar);
-				_facName = (_capData select 1) call fnc_facIDtoName;
+				_facName = (_capData select 1) call fnc_nationIDtoName;
 				_message = format ['<t color="#FF0000" size="1.2">- WAR DECLARATION -</t><br /><br />%2 of the %1 was declared a warzone by %3',_facName,_capData select 0,_this select 2];
 				hint parseText _message;
 				warWinner = nil;
@@ -102,10 +102,10 @@ switch (_action) do {
 				if (isNil "warWinner") then {
 						capWar = _this select 1;
 						_capData = (capAreas select capWar);
-						_facOldName = (_capData select 1) call fnc_facIDtoName;
+						_facOldName = (_capData select 1) call fnc_nationIDtoName;
 						_capData set [1,_this select 0];
 						capAreas set [capWar,_capData];
-						_facNewName = (_capData select 1) call fnc_facIDtoName;
+						_facNewName = (_capData select 1) call fnc_nationIDtoName;
 						systemChat format ["!! %1 [ %2 ] is now claimed by %4 [ %3 ] !! but the war is not over.",_capData select 0,_facOldName,_facNewName,_this select 2];
 				};
 		};
@@ -113,7 +113,7 @@ switch (_action) do {
 		case "end": {
 				warWinner = true;
 				_capData = (capAreas select capWar);
-				_facName = (_capData select 1) call fnc_facIDtoName;
+				_facName = (_capData select 1) call fnc_nationIDtoName;
 				_msg = format ['<t color="#00FF00" size="1.2">- WAR ENDED -</t><br /><br />%1 has successfully taken %2<br /><br />CONGRATULATIONS!',_facName,_capData select 0];
 				hint parseText _msg;
 				sleep 10;

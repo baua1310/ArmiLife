@@ -117,6 +117,11 @@ if(!isDedicated) then {
     [_type,_id,_obj]
   };
   
+  /*
+  * DO NOT REMOVE THIS COMMENT!
+  * Script written by Armitxes.
+  * For usage visit: http://forums.bistudio.com/showthread.php?192645-RELEASE-Map-Interaction-Script
+  */  
   getMapObjects = {
     private ["_check","_near","_haystack","_compare","_needle"];
     _check = _this select 0;
