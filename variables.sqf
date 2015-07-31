@@ -21,8 +21,8 @@ laws = [
 taxes = [0,0];
 
 profs = [
-	["Medic","STR_prof_medic",5000,"((PLAYERDATA select 11) > 0)"],
-	["Judge","STR_prof_judge",30000,"((PLAYERDATA select 11) > 0)"]
+  ["Medic","STR_prof_medic",5000,"((PLAYERDATA select 11) > 0)"],
+  ["Judge","STR_prof_judge",30000,"((PLAYERDATA select 11) > 0)"]
 ];
 
 isNMayor = false;

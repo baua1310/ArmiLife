@@ -70,7 +70,7 @@ class Life_RscListNBox
 	type = 102;
 	shadow = 0;
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	color[] = {0.95,0.95,0.95,1};
 	colorText[] = {1,1,1,1.0};
 	colorDisabled[] = {1,1,1,0.25};
@@ -106,7 +106,7 @@ class Life_RscText {
 	shadow = 1;
 	colorShadow[] = {0, 0, 0, 0.5};
 	font = "PuristaMedium";
-	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	colorText[] = {1, 1, 1, 1.0};
 	colorBackground[] = {0, 0, 0, 0};
@@ -131,7 +131,7 @@ class Life_RscLine : Life_RscText {
 class Life_RscTree {
 	style = 2;
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	expandedTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\expandedTexture_ca.paa";
 	hiddenTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\hiddenTexture_ca.paa";
 	rowHeight = 0.0439091;
@@ -145,7 +145,7 @@ class Life_RscTree {
 
 class Life_RscTitle : Life_RscText {
 	style = 0;
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
@@ -229,7 +229,7 @@ class Life_RscButton
 	h = 0.039216;
 	shadow = 2;
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {1,1,1,1.0};
 	colorDisabled[] = {0.4,0.4,0.4,1};
 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])",0.7};
@@ -266,7 +266,7 @@ class ARM_RscFrameButton : Life_RscButton {
 };
 
 class Life_RscButtonTextOnly : Life_RscButton {
-	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	colorBackground[] = {1, 1, 1, 0};
 	colorBackgroundActive[] = {1, 1, 1, 0};
 	colorBackgroundDisabled[] = {1, 1, 1, 0};
@@ -281,7 +281,7 @@ class Life_RscShortcutButton {
 	default = 0;
 	shadow = 1;
 	w = 0.183825;
-	h = "(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20)";
+	h = "((((safezoneW / safezoneH) min 1.2) / 1.2) / 20)";
 	color[] = {1,1,1,1.0};
 	colorFocused[] = {1,1,1,1.0};
 	color2[] = {0.95,0.95,0.95,1};
@@ -1089,7 +1089,7 @@ class Life_RscCombo {
 	colorActive[] = {1, 0, 0, 1};
 	colorDisabled[] = {1, 1, 1, 0.25};
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	
 	class ComboScrollBar : Life_RscScrollBar {};
 };
@@ -1103,5 +1103,5 @@ class Life_RscToolbox {
 	colorDisable[] = {0.4, 0.4, 0.4, 1};
 	colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 };
