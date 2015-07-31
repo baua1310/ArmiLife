@@ -7,7 +7,6 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Civil",
-		"A3_Characters_F_INDEP",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_TruckHeavy",
 		"rds_A2_Civilians",
@@ -17,7 +16,6 @@ class Mission
 	{
 		"A3_Characters_F_Civil",
 		"a3_characters_f",
-		"A3_Characters_F_INDEP",
 		"A3_Characters_F_BLUFOR",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_TruckHeavy",
@@ -45,7 +43,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=8;
+		items=3;
 		class Item0
 		{
 			side="CIV";
@@ -67,91 +65,6 @@ class Mission
 		};
 		class Item1
 		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={16571.225,11,12787.149};
-					azimut=484.22;
-					id=1;
-					side="GUER";
-					vehicle="I_Soldier_TL_F";
-					leader=1;
-					rank="CAPTAIN";
-					skill=0.60000002;
-					init="this setface ""PersianHead_A3_01""; removebackpack this;removeallweapons this;removevest this;this setObjectTexture [0, ""textures\copofficer.paa""];this addheadgear ""H_Beret_blk_police"";";
-				};
-			};
-		};
-		class Item2
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={16552.998,11.065351,12794.586};
-					azimut=484.60901;
-					id=2;
-					side="GUER";
-					vehicle="I_soldier_F";
-					leader=1;
-					skill=0.60000002;
-					text="pyrCopObj";
-					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
-					description="Patrol Officer";
-				};
-			};
-		};
-		class Item3
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={16516.188,10.381682,12778.459};
-					azimut=41.966;
-					id=3;
-					side="GUER";
-					vehicle="I_soldier_F";
-					leader=1;
-					skill=0.60000002;
-					text="pyrCopCar";
-					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";";
-					description="Patrol Officer";
-					syncId=0;
-					synchronizations[]={0};
-				};
-			};
-		};
-		class Item4
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={16642.729,11,12808.923};
-					azimut=576.53497;
-					id=4;
-					side="GUER";
-					vehicle="I_soldier_F";
-					leader=1;
-					skill=0.60000002;
-					text="pyrLic";
-					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
-					description="Patrol Officer";
-				};
-			};
-		};
-		class Item5
-		{
 			side="CIV";
 			class Vehicles
 			{
@@ -160,7 +73,7 @@ class Mission
 				{
 					position[]={3578.4241,9.8139162,13022.287};
 					azimut=44.7542;
-					id=5;
+					id=1;
 					side="CIV";
 					vehicle="C_man_polo_1_F";
 					leader=1;
@@ -170,28 +83,7 @@ class Mission
 				};
 			};
 		};
-		class Item6
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={16587.041,11,12813.784};
-					azimut=468.56;
-					id=6;
-					side="GUER";
-					vehicle="I_soldier_F";
-					leader=1;
-					skill=0.60000002;
-					text="pyrCopAir";
-					init="this setObjectTexture [0, ""textures\cop.paa""];this addGoggles ""G_Shades_Black"";pyrCopObj setPos [getPos pyrCopObj select 0,getPos pyrCopObj select 1,15];";
-					description="Patrol Officer";
-				};
-			};
-		};
-		class Item7
+		class Item2
 		{
 			side="WEST";
 			class Vehicles
@@ -199,13 +91,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3547.3813,11.115369,12846.573};
-					id=7;
+					position[]={3686.2063,54.549435,12469.267};
+					id=2;
 					side="WEST";
 					vehicle="B_soldier_exp_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
+					text="p1";
 				};
 			};
 		};
@@ -217,7 +110,7 @@ class Mission
 		{
 			position[]={16553.717,11.058635,12794.12};
 			azimut=125.774;
-			id=8;
+			id=3;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			skill=0.60000002;
@@ -228,7 +121,7 @@ class Mission
 		{
 			position[]={3598.9917,12.47351,12967.934};
 			azimut=217.93068;
-			id=9;
+			id=4;
 			side="EMPTY";
 			vehicle="I_Truck_02_covered_F";
 			skill=0.60000002;
@@ -238,7 +131,7 @@ class Mission
 		{
 			position[]={3695.7366,10.379351,13150.771};
 			azimut=91.022903;
-			id=10;
+			id=5;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;

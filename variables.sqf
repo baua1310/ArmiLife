@@ -1,6 +1,8 @@
 PLAYERDATA = [0];
 
 // NON-DB
+playerarray=[p1];
+
 handItem = "Empty Hands";
 capWar = nil;
 antwort = 2;
