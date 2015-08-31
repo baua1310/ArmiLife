@@ -135,27 +135,27 @@ if(!isDedicated) then {
 	};
 
 	fnc_timer = {
-			private ["_dsp","_op","_rt","_time","_smove","_txt"];
-			_time = _this select 0;
-			_txt =  _this select 1;
-			_smove = _this select 2;
-			_emove = _this select 3;
-			if (typeName _time == "SCALAR") then {
-				if (!(createDialog "progressBar")) exitWith {hint "Dialog Error!"; true};
-				if (!isNil "_smove") then { player playMove _smove; };
-				disableSerialization;
-				_dsp = findDisplay 2459; (_dsp displayCtrl 1) progressSetPosition 1;
-				_op = ( _time / 100 );
-				_rt = _time;
-				while { _time >= 0 } do {
-						_time = _time - 1;
-						sleep 1;
-						_rt = _time / _op;
-						(_dsp displayCtrl 1) progressSetPosition (_rt/100);
-				};
-				if (!isNil "_emove") then { player playMove _emove; };
-				closeDialog 2459;
-			} else {diag_log "ERROR: fnc_timer - param not scalar";};
-			true
+		private ["_dsp","_op","_rt","_time","_smove","_txt"];
+		_time = _this select 0;
+		_txt =  _this select 1;
+		_smove = _this select 2;
+		_emove = _this select 3;
+		if (typeName _time == "SCALAR") then {
+			if (!(createDialog "progressBar")) exitWith {hint "Dialog Error!"; true};
+			if (!isNil "_smove") then { player playMove _smove; };
+			disableSerialization;
+			_dsp = findDisplay 2459; (_dsp displayCtrl 1) progressSetPosition 1;
+			_op = ( _time / 100 );
+			_rt = _time;
+			while { _time >= 1 } do {
+				_time = _time - 1;
+				sleep 1;
+				_rt = _time / _op;
+				(_dsp displayCtrl 1) progressSetPosition (_rt/100);
+			};
+			if (!isNil "_emove") then { player playMove _emove; };
+			closeDialog 2459;
+		} else {diag_log "ERROR: fnc_timer - param not scalar";};
+		true
 	};
 };           

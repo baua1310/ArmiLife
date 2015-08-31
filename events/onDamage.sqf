@@ -25,7 +25,7 @@ if((alive player) && !dmgSkip) then {
 	
 			if (dmgHead > dmgCap || dmgBody > dmgCap) then {
 				dmgSkip = true;
-				// Medic?
+				player playAction "Unconscious";
 				dmgSkip = false;
 			};
 		};
