@@ -75,47 +75,6 @@ if(!isDedicated) then {
     _target ctrlCommit 0;   
   };
   
-  fnc_addInventoryItem = {
-    private["_arr","_inv","_add","_count","_indexId"];
-    _indexId = 3;
-    if(count _this == 2) then { _indexId = _this select 0; _this = _this select 1; };
-    if (typename _this == "ARRAY") then {     
-      _add = true;
-      _inv = (PLAYERDATA select _indexId);
-      _arr = _this call fnc_getItemArray; 
-      
-      for [{_x= 0},{_x < count _inv},{_x = _x + 1}] do
-      {
-        _sel = _inv select _x;
-        if (((_sel select 0) == (_this select 0)) && ((_sel select 1) == (_this select 1))) exitWith {
-          _add = false;
-          _count = ((_sel select 2) + (_this select 2));
-          if(_count <= 0) then {
-            PLAYERDATA set [_indexId,(_inv - [_sel])];
-            if(typename _arr == "ARRAY" && _indexId == 3) then {
-              handItems = handItems - [_arr select 0];
-              handItem = "Empty Hands";
-              0 call fnc_setHand;
-            };
-          } else {
-            ((PLAYERDATA select 3) select _x) set [2, _count];         
-          };
-        };  
-      };
-      
-      if(_add) then {
-        if(_this select 2 > 0) then { 
-          PLAYERDATA set [_indexId,_inv + [_this]];
-          if(typename _arr == "ARRAY" && _indexId == 3) then {
-            if(_this select 0 == 1 && _arr select 2 && !((_arr select 0) in handItems)) then {
-              handItems = handItems + [_arr select 0];
-            };
-          };         
-        };
-      };
-    };
-  };
-  
   fnc_getItemAmount = {
     private["_sArray","_findItem"];
     _result = 0;
@@ -199,54 +158,4 @@ if(!isDedicated) then {
 			} else {diag_log "ERROR: fnc_timer - param not scalar";};
 			true
 	};
-
-  fnc_INVaction = {
-    private ["_ctrl","_selection","_itemArray","_pos","_attachedArray","_itemCode","_classname","_item","_amount","_amountInv","_itemSqf"];
-    _ctrl = ((findDisplay 2001) displayCtrl 2005);
-    _selection = lbCurSel 2005;
-    _attachedArray = call compile (_ctrl lbData _selection);
-    _itemCode = _attachedArray select 0;
-    _itemArray = _attachedArray select 1;
-    _pos = (position player);
-    
-    _amount = parseNumber (ctrlText 2010);
-    _amountInv = _itemCode select 2;
-        
-    if (typeName _amount != "SCALAR" || _amount < 0) then { _amount = 0; };
-    if (_amount > _amountInv) then { _amount = _amountInv; };
-    
-    switch (_this) do {
-      case "use": {
-        switch (_itemCode select 0) do {
-          case 1: {
-            _itemSqf = _itemArray select 4;
-            if (typeName _itemSqf == "STRING") then { call compile _itemSqf; };
-          };
-          case 2: { (_itemArray select 1) createVehicle (position player); };
-          case 3: { (_itemArray select 1) createVehicle (position player); };
-        };
-        [_itemCode select 0, _itemCode select 1, -1] call fnc_addInventoryItem;
-      };
-      case "drop": {
-        if (_amount > 0) then {
-          if(_amountInv == _amount) then { __ctrl lbDelete _selection; };
-          [_itemCode select 0, _itemCode select 1, -_amount] call fnc_addInventoryItem;
-          _classname = "Land_Suitcase_F";
-          if(count _itemArray > 1 && _itemArray select 1 != "") then { _classname = _itemArray select 1; };
-          _item = _classname createVehicle _pos;
-          _item setPos _pos;
-          _itemCode set [2,_amount];
-          _item setVariable ["itemData",itemCode,true];
-        };
-      };
-      case "destroy": {
-        if (_amount > 0) then {
-          if(_amountInv == _amount) then { __ctrl lbDelete _selection; };
-          [_itemCode select 0, _itemCode select 1, -_amount] call fnc_addInventoryItem;
-        };
-      };
-    };
-    
-    closeDialog 0;
-  };
 };           

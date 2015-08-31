@@ -31,11 +31,12 @@ if(!isDedicated) then {
 	["init"] execVM "gui\_controller.sqf";
 	execVM "events\onRespawn.sqf";
 	execVM "events\onScroll.sqf";
+	player addEventHandler ["handleDamage", {_this spawn compile (preprocessFile "events\onDamage.sqf")}];
 	player addEventHandler ["respawn", { _this execVM "events\onRespawn.sqf"; }];
 	onKeyDown = compile preprocessFile "events\onKeyDown.sqf";
 	onKeyPress = compile preprocessFile "events\onKeyUp.sqf";
 	setTerrainGrid 75;
-	waituntil {!(IsNull (findDisplay 46))};
+	waitUntil {!(isNull (findDisplay 46))};
 	(findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyDown"];
 	(findDisplay 46) displaySetEventHandler ["KeyUp", "_this call onKeyPress"];
 };
