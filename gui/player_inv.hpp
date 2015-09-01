@@ -78,6 +78,16 @@ class progressBar
 			x = 0.42 * safezoneW + safezoneX;
 			y = 0.2 * safezoneH + safezoneY;
 		};
+		class lblText:life_RscStructuredText
+        {
+            idc = 2;
+            text = "Loading...";
+            x = 0.42 * safezoneW + safezoneX;
+            y = 0.2 * safezoneH + safezoneY;
+            w = 0.242431 * safezoneW;
+            h = 0.14304 * safezoneH;
+            colorBackground[] = {0,0,0,0.5};
+        };
 	};
 };
 

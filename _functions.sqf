@@ -144,7 +144,9 @@ if(!isDedicated) then {
 			if (!(createDialog "progressBar")) exitWith {hint "Dialog Error!"; true};
 			if (!isNil "_smove") then { player playMove _smove; };
 			disableSerialization;
-			_dsp = findDisplay 2459; (_dsp displayCtrl 1) progressSetPosition 1;
+			_dsp = findDisplay 2459;
+			(_dsp displayCtrl 1) progressSetPosition 1;
+			(_dsp displayCtrl 2) ctrlSetText _txt;
 			_op = ( _time / 100 );
 			_rt = _time;
 			while { _time >= 1 } do {

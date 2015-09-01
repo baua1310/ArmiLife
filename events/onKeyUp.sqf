@@ -8,15 +8,20 @@ switch (_key) do {
 	case 57: { if(speed (vehicle player) == 0) then { execVM "events\onMapInteraction.sqf"; }; };
 	case 3: {["inv"] execVM "gui\_controller.sqf";};
 	case 4: {
-		_move = "amovpercmstpssurwnondnon";
-		if((animationState player) == _move) then {
+		if((animationState player) in moveSurrender) then {
 			player enableSimulation true;
 			player switchMove "";
 		} else {
-			[_move] spawn {
+			[] spawn {
 				player playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
-				waitUntil {(animationState player) == _this select 0};
+				waitUntil {(animationState player) in moveSurrender};
 				player enableSimulation false;
+				waitUntil {simulationEnabled player || player getVariable "restrained"};
+				player enableSimulation true;
+				if(player getVariable "restrained") then {
+					player playMove "AmovPercMstpSnonWnonDnon_Ease";
+					//player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
+				};
 			};
 		};
 	};
