@@ -32,7 +32,7 @@ class devcon {
     class btnExec: Life_RscButtonMenu
     {
     	idc = 2400;
-    	text = "Execute"; //--- ToDo: Localize;
+    	text = "Execute";
     	x = 0.0410937 * safezoneW + safezoneX;
     	y = 0.291 * safezoneH + safezoneY;
     	w = 0.061875 * safezoneW;
@@ -43,7 +43,7 @@ class devcon {
     class btnTeleport: Life_RscButtonMenu
     {
     	idc = 2401;
-    	text = "Teleport"; //--- ToDo: Localize;
+    	text = "Teleport";
     	x = 0.108125 * safezoneW + safezoneX;
     	y = 0.291 * safezoneH + safezoneY;
     	w = 0.0515625 * safezoneW;
@@ -54,7 +54,7 @@ class devcon {
     class btnTP2ME: Life_RscButtonMenu
     {
     	idc = 2402;
-    	text = "Teleport to me"; //--- ToDo: Localize;
+    	text = "Teleport to me";
     	x = 0.164844 * safezoneW + safezoneX;
     	y = 0.291 * safezoneH + safezoneY;
     	w = 0.0876563 * safezoneW;

@@ -1,0 +1,1 @@
+server setVariable ["restarting",false,true];

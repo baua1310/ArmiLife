@@ -18,15 +18,17 @@ if (enableDebug) then {
 };
 _w = execVM "_functions.sqf";
 waitUntil { scriptDone _w; };
-_w = execVM "events\onLogin.sqf";
-waitUntil { scriptDone _w; };
 
 if (isServer) then {
+	_w = execVM "server\init.sqf";
+	waitUntil { scriptDone _w; };
 	_w = execVM "server\mapInit.sqf";
 	waitUntil { scriptDone _w; };
 };
 
 if(!isDedicated) then {
+	_w = execVM "events\onLogin.sqf";
+	waitUntil { scriptDone _w; };
 	//Stats loaded
 	["init"] execVM "gui\_controller.sqf";
 	execVM "events\onRespawn.sqf";
