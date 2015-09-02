@@ -10,18 +10,15 @@ switch (_key) do {
 	case 4: {
 		if((animationState player) in moveSurrender) then {
 			player enableSimulation true;
-			player switchMove "";
+			player switchMove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
 		} else {
 			[] spawn {
 				player playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
 				waitUntil {(animationState player) in moveSurrender};
 				player enableSimulation false;
 				waitUntil {simulationEnabled player || player getVariable "restrained"};
-				player enableSimulation true;
-				if(player getVariable "restrained") then {
-					player playMove "AmovPercMstpSnonWnonDnon_Ease";
-					//player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
-				};
+				player enableSimulation true; sleep 1;
+				if (player getVariable "restrained") then { player playMove "AmovPercMstpSnonWnonDnon_Ease"; };
 			};
 		};
 	};

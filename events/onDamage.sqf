@@ -13,7 +13,7 @@ if((alive player) && !dmgSkip) then {
 		if(
 			[player, "capKavala"] call fnc_isInMarker ||
 			[player, "capPyrgos"] call fnc_isInMarker
-		) exitWith { systemChat "Some mystical power saved you from death."; };
+		) exitWith { dmgSkip = true; systemChat "Some mystical power saved you from death."; sleep 5; dmgSkip = false; };
 		
 		if(alive player) then {
 			switch (_selection) do {
