@@ -61,79 +61,79 @@ if(!isDedicated) then {
 	};
   
   fnc_setHand = {
-    private["_hud","_id","_count","_string"];        
-    disableSerialization;
-    _hud = uiNameSpace getVariable ["mainOverlay",displayNull];
-    _id = (handItems find handItem);
-    
-    _count = count handItems;
-    if(_this == 1 && _count > 1) then { if (_id != 0) then { _id = _id-1; } else { _id = _count-1; };  };
-    if(_this == 2 && _count > 1) then { if (_id != (_count-1)) then { _id = _id+1; } else { _id = 0; };  };
-    
-    _string = (handItems select _id);
-    _target = (_hud displayCtrl 1003);
-    handItem = _string;
-    _target ctrlSetText _string;
-    _target ctrlCommit 0;   
+		private["_hud","_id","_count","_string"];        
+		disableSerialization;
+		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
+		_id = (handItems find handItem);
+		
+		_count = count handItems;
+		if(_this == 1 && _count > 1) then { if (_id != 0) then { _id = _id-1; } else { _id = _count-1; };  };
+		if(_this == 2 && _count > 1) then { if (_id != (_count-1)) then { _id = _id+1; } else { _id = 0; };  };
+		
+		_string = (handItems select _id);
+		_target = (_hud displayCtrl 1003);
+		handItem = _string;
+		_target ctrlSetText _string;
+		_target ctrlCommit 0;   
   };
   
   fnc_getItemAmount = {
-    private["_sArray","_findItem"];
-    _result = 0;
-    _sArray = _this select 0;
-    _findItem = _this select 1;
-    
-    {
-      if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
-        _result = _x select 2;
-      };
-    } forEach _sArray;
-    
-    _result
+	private["_sArray","_findItem"];
+	_result = 0;
+	_sArray = _this select 0;
+	_findItem = _this select 1;
+	
+	{
+		if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
+			_result = _x select 2;
+		};
+	} forEach _sArray;
+	
+	_result
   };
 
-  // call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
-  // call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects
-  fnc_isInMarker = {
-    private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
-    
-    _p = _this select 0; // object
-    _m = _this select 1; // marker
-    
-    if (typeName _p == "OBJECT") then {
-      _px = position _p select 0;
-      _py = position _p select 1;
-    } else {
-      _px = getMarkerPos _p select 0;
-      _py = getMarkerPos _p select 1;
-    };
-    
-    _mpx = getMarkerPos _m select 0;
-    _mpy = getMarkerPos _m select 1;
-    _msx = getMarkerSize _m select 0;
-    _msy = getMarkerSize _m select 1;
-    _ma = -markerDir _m;
-    _rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
-    _rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
-    if ((markerShape _m) == "RECTANGLE") then {
-      _xmin = _mpx - _msx;_xmax = _mpx + _msx;_ymin = _mpy - _msy;_ymax = _mpy + _msy;
-      if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; } else { _ret=false; };
-    } else {
-      _res = (((_rpx-_mpx)^2)/(_msx^2)) + (((_rpy-_mpy)^2)/(_msy^2));
-      if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
-    };
-    _ret;
-  };
-  
+	// call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
+	// call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects
+	fnc_isInMarker = {
+		private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
+		
+		_p = _this select 0; // object
+		_m = _this select 1; // marker
+		
+		if (typeName _p == "OBJECT") then {
+			_px = position _p select 0;
+			_py = position _p select 1;
+		} else {
+			_px = getMarkerPos _p select 0;
+			_py = getMarkerPos _p select 1;
+		};
+		
+		_mpx = getMarkerPos _m select 0;
+		_mpy = getMarkerPos _m select 1;
+		_msx = getMarkerSize _m select 0;
+		_msy = getMarkerSize _m select 1;
+		_ma = -markerDir _m;
+		_rpx = ( (_px - _mpx) * cos(_ma) ) + ( (_py - _mpy) * sin(_ma) ) + _mpx;
+		_rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
+		if ((markerShape _m) == "RECTANGLE") then {
+			_xmin = _mpx - _msx;_xmax = _mpx + _msx;_ymin = _mpy - _msy;_ymax = _mpy + _msy;
+			if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; } else { _ret=false; };
+		} else {
+			_res = (((_rpx-_mpx)^2)/(_msx^2)) + (((_rpy-_mpy)^2)/(_msy^2));
+			if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
+		};
+		_ret;
+	};
+
 	fnc_nationIDtoName = {
-			private ["_faction"];
-			_faction = "Factionless";
-			switch (_this) do {
-					case 1: { _faction = "Democratic Republic"; };
-					case 2: { _faction = "Communists"; };
-					case 3: { _faction = "Anarchists"; };
-			};
-			_faction
+		private ["_faction"];
+		_faction = "Factionless";
+		switch (_this) do {
+			case 1: { _faction = "Democratic Republic"; };
+			case 2: { _faction = "Communists"; };
+			case 3: { _faction = "Anarchists"; };
+		};
+		_faction
 	};
 
 	fnc_timer = {
