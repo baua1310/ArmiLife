@@ -1,6 +1,4 @@
 PLAYERDATA = [0];
-
-// NON-DB
 playerarray=[p1];
 
 handItem = "Empty Hands";
@@ -12,6 +10,10 @@ allowTP = false;
 dmgSkip = false;
 dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 dmgCap = 0.99;
+
+// 0 = NATO | 1 = CSAT (get from DB, start with 100mio)
+bankSafes = [100000000,100000000];
+canRobBank = true;
 
 moveSurrender = ["amovpercmstpssurwnondnon"];
 

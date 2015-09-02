@@ -27,36 +27,38 @@ fnc_set_sector = {
 
 if(!isDedicated) then {
   
-  fnc_getItemArray = {
-    _fncreturn = [];  
-    switch (_this select 0) do {
-      case 0: { _fncreturn = productionResources select (_this select 1); };
-      case 1: { _fncreturn = productionComponents select (_this select 1); };
-      case 2: { _fncreturn = vehiclesArray select (_this select 1); };
-      case 3: { _fncreturn = placeableObjects select (_this select 1); };
-    }; 
-    _fncreturn
-  };
+	fnc_getItemArray = {
+		_fncreturn = [];  
+		switch (_this select 0) do {
+			case 0: { _fncreturn = productionResources select (_this select 1); };
+			case 1: { _fncreturn = productionComponents select (_this select 1); };
+			case 2: { _fncreturn = vehiclesArray select (_this select 1); };
+			case 3: { _fncreturn = placeableObjects select (_this select 1); };
+		}; 
+		_fncreturn
+	};
   
-  fnc_setMoney = {
-    if (typename (_this select 1) == "SCALAR") then {
-      private["_hud","_acc","_cash","_target"];
-      disableSerialization;
-      _hud = uiNameSpace getVariable ["mainOverlay",displayNull];
-      
-      _acc = PLAYERDATA select 1;
-      _cash = PLAYERDATA select 2;
-      
-      switch (_this select 0) do {
-        case 0: { PLAYERDATA set [2,_cash + (_this select 1)] };
-        case 1: { PLAYERDATA set [1,_acc + (_this select 1)] };
-      };
-      
-      _target = (_hud displayCtrl 1001);
-      _target ctrlSetText format["$%2 || Bank: $%1",_acc,_cash];
-      _target ctrlCommit 0; 
-    };
-  };
+	fnc_setMoney = {
+		if (typename (_this select 1) == "SCALAR") then {
+			private["_hud","_acc","_cash","_target","_pubPlrData"];
+			disableSerialization;
+			_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
+			_pubPlrData player getVariable "pubPlrData"];
+			
+			_acc = PLAYERDATA select 1 + (_this select 1);
+			_cash = PLAYERDATA select 2 + (_this select 1);
+			
+			switch (_this select 0) do {
+				case "cash": { _pubPlrData set [1,[_cash,PLAYERDATA select 1]]; PLAYERDATA set [2,_cash]; };
+				case "bank": { _pubPlrData set [1,[PLAYERDATA select 2,_acc]]; PLAYERDATA set [1,_acc]; };
+			};
+			player setVariable ["pubPlrData",_pubPlrData,true];
+			
+			_target = (_hud displayCtrl 1001);
+			_target ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
+			_target ctrlCommit 0; 
+		};
+	};
   
   fnc_setHand = {
     private["_hud","_id","_count","_string"];        

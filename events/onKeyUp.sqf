@@ -20,7 +20,6 @@ switch (_key) do {
 				player enableSimulation true;
 				if(player getVariable "restrained") then {
 					player playMove "AmovPercMstpSnonWnonDnon_Ease";
-					//player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
 				};
 			};
 		};
