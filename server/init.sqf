@@ -1,1 +1,1 @@
-server setVariable ["restarting",false,true];
+missionNamespace setVariable ["restarting",false,true];
