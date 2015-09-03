@@ -34,8 +34,15 @@ switch (_kind) do {
 		} else { systemChat "Doing a robbery during a robbery? Better not..."; };
 	};
 	case "player": {
-		if((animationState player) in moveSurrender) then {
-			_target setVariable ["restrained",true,true];
+		_victim = _this select 1;
+		if((animationState _victim) in moveSurrender) then {
+			_pubPlrData = _victim getVariable "pubPlrData";
+			_cash = (_pubPlrData select 1) select 0;
+			_steal = _cash;
+			if(_steal > 500) then { _steal=500;  };
+			[["cash",-_steal,"robbed"],"fnc_setMoney",_victim,false] call BIS_fnc_MP;
+			["cash",_steal] call fnc_setMoney;
+			systemChat format["You stole $%1!",_steal];
 		} else { systemChat "He hasn't even his hands up!"; };
 	};
 };
