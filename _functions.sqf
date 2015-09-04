@@ -1,32 +1,31 @@
 // SECTORS
 // ["capBorder",0,50] call fnc_set_sector;
 fnc_set_sector = {
-  private["_markerName","_newOwner","_elec"];
-  _markerName = _this select 0;
-  _newOwner = _this select 1;
-  _elec = _this select 2;
-  
-  for "_k" from 0 to ((count(capAreas))-1) do
-  {
-    _curCap = capAreas select _k; 
-    if (_curCap select 0 == _markerName) exitWith {
-      _curCap set [1,_newOwner];
-      _curCap set [2,_elec];
-      capAreas set [_k,_curCap];
-    };
-  };
-  
-  switch (_newOwner) do {
-    case 1: { _markerName setMarkerColor "ColorWEST"; };
-    case 2: { _markerName setMarkerColor "ColorEAST"; };
-    case 3: { _markerName setMarkerColor "ColorGUER"; };
-  };
-  
-  // Add save
+	private ["_markerName","_newOwner","_elec"];
+	_markerName = _this select 0;
+	_newOwner = _this select 1;
+	_elec = _this select 2;
+	
+	for "_k" from 0 to ((count(capAreas))-1) do
+	{
+		_curCap = capAreas select _k; 
+		if (_curCap select 0 == _markerName) exitWith {
+			_curCap set [1,_newOwner];
+			_curCap set [2,_elec];
+			capAreas set [_k,_curCap];
+		};
+	};
+	
+	switch (_newOwner) do {
+		case 1: { _markerName setMarkerColor "ColorWEST"; };
+		case 2: { _markerName setMarkerColor "ColorEAST"; };
+		case 3: { _markerName setMarkerColor "ColorGUER"; };
+	};
+	
+	// Add save
 };
 
 if(!isDedicated) then {
-  
 	fnc_getItemArray = {
 		_fncreturn = [];  
 		switch (_this select 0) do {
@@ -60,7 +59,7 @@ if(!isDedicated) then {
 		};
 	};
   
-  fnc_setHand = {
+	fnc_setHand = {
 		private["_hud","_id","_count","_string"];        
 		disableSerialization;
 		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
@@ -75,22 +74,29 @@ if(!isDedicated) then {
 		handItem = _string;
 		_target ctrlSetText _string;
 		_target ctrlCommit 0;   
-  };
+	};
   
-  fnc_getItemAmount = {
-	private["_sArray","_findItem"];
-	_result = 0;
-	_sArray = _this select 0;
-	_findItem = _this select 1;
-	
-	{
-		if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
-			_result = _x select 2;
-		};
-	} forEach _sArray;
-	
-	_result
-  };
+	fnc_setNutrition = {
+		_amount = _this select 1;
+		if (typeName _amount == "SCALAR") then {
+			PLAYERDATA set [10, (PLAYERDATA select 10)+_amount];
+		}
+	};
+  
+	fnc_getItemAmount = {
+		private ["_sArray","_findItem"];
+		_result = 0;
+		_sArray = _this select 0;
+		_findItem = _this select 1;
+		
+		{
+			if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
+				_result = _x select 2;
+			};
+		} forEach _sArray;
+		
+		_result
+	};
 
 	// call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
 	// call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects

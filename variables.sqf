@@ -18,7 +18,7 @@ canRobBank = true;
 moveSurrender = ["amovpercmstpssurwnondnon"];
 
 isBusy = false;
-furnances = ["i_stone_housebig_v2"];
+furnances = ["FirePlace_burning_F","i_stone_housebig_v2"];
 laws = [
 	[
 	"Government not formed - no existing laws",

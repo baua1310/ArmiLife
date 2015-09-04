@@ -31,7 +31,7 @@ capAreas = [
 productionResources = [
 	["Iron","AL_Iron"],["Wood","AL_Wood"],["Clean Water","AL_Water"],["Gold","AL_Gold"],["Silver","AL_Silver"],
 	["Copper","AL_Copper"],["Wheat","AL_Wheat"],["Oil","AL_Oil"],["Fish","AL_Fish"],["Stone","AL_Stone"],
-	["Metal","AL_Metal"],["Diamond","AL_Diamond"],["Apple","AL_Apple"],["Electricity","AL_Electricity"],["Bauxite","AL_Bauxite"],
+	["Metal","AL_Metal"],["Diamond","AL_Diamond"],["Apple","AL_Apple"],["Generator","AL_Generator"],["Bauxite","AL_Bauxite"],
 	["Wool","AL_Wool"],["Dirt","AL_Dirt"],["Orange","AL_Orange"],["Potatoes","AL_Potatoes"],["Natural Rubber","AL_NRubber"],
 	["Turtle","AL_Turtle"],["Snake","AL_Snake"],["Fish","AL_Fish"],["Rabbit","AL_Rabbit"],["Shark","AL_Shark"],
 	["Plastic","AL_Plastic"],["Nitric Acid","AL_NAcid"] //5

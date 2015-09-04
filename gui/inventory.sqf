@@ -2,15 +2,15 @@ _action = _this select 0;
 
 switch (_action) do {
 	case "icall": {
-  	disableSerialization;
-  	waitUntil { !(isNull (findDisplay  602)) };
-  	((findDisplay  602) displayCtrl 633) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,0] execVM 'gui\inventory.sqf'"]; // Uniform
-  	((findDisplay  602) displayCtrl 638) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,1] execVM 'gui\inventory.sqf'"]; // West
-  	((findDisplay  602) displayCtrl 619) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,2] execVM 'gui\inventory.sqf'"]; // Backpack
-  	((findDisplay  602) displayCtrl 640) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,3] execVM 'gui\inventory.sqf'"]; // Container
-  	((findDisplay  602) displayCtrl 632) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,4] execVM 'gui\inventory.sqf'"]; // Ground
-
-		//Geld
+		disableSerialization;
+		waitUntil { !(isNull (findDisplay  602)) };
+		((findDisplay  602) displayCtrl 633) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,0] execVM 'gearlogic.sqf'"]; // Uniform
+		((findDisplay  602) displayCtrl 638) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,1] execVM 'gearlogic.sqf'"]; // West
+		((findDisplay  602) displayCtrl 619) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,2] execVM 'gearlogic.sqf'"]; // Backpack
+		((findDisplay  602) displayCtrl 640) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,3] execVM 'gearlogic.sqf'"]; // Container
+		((findDisplay  602) displayCtrl 632) ctrlAddEventHandler ["LBDblClick", "['gear_use',_this,4] execVM 'gearlogic.sqf'"]; // Ground
+	
+		/* Geld
 		_GMenu = (findDisplay  602) ctrlCreate ["RscText",1928];
 		_GMenu ctrlSetPosition  [-0.07, 0.96, 0.36, 0.05];
 		_GMenu ctrlSetBackgroundColor [0, 0, 0, 0.65];
@@ -26,7 +26,7 @@ switch (_action) do {
 		_GMenu2str2 = format ["Kontostand: €%1",0];
 		_GMenu2 ctrlSetTooltip "Kontostand";
 		_GMenu2 ctrlSetText _GMenu2str2;
-		//Karma
+		//Karma */
 		_GMenu3 = (findDisplay  602) ctrlCreate ["RscText",1928];
 		_GMenu3 ctrlSetPosition  [0.698,0.959,0.201,0.05];
 		_GMenu3str3 = format ["Karma: %1",0];
@@ -86,7 +86,4 @@ switch (_action) do {
 		_GMenu18 ctrlSetBackgroundColor [0, 0, 0, 1];
 		_GMenu18 ctrlCommit 0;
 	};
-  case "gear_use": {
-    hint str(_this select 1);
-  };
 };
