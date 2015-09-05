@@ -2,8 +2,8 @@ _action = _this select 0;
 
 switch (_action) do {
 	case "gear_use": {
-		hint str(_this);
-		_itemClass = _this select 1;
+		_itemId = (_this select 1) select 1;
+		hint str(_itemId);
 		
 		if (!(createDialog "YesNo")) exitWith {hint "Dialog Error!";};
 		disableSerialization;

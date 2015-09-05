@@ -53,7 +53,7 @@ class devcon {
 		class btnTP2ME: Life_RscButtonMenu
 		{
 			idc = 2402;
-			text = "Teleport to me";yxc          
+			text = "Teleport to me";
 			x = 0.164844 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0876563 * safezoneW;

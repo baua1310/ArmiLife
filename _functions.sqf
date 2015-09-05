@@ -42,7 +42,7 @@ if(!isDedicated) then {
 			private["_hud","_acc","_cash","_target","_pubPlrData"];
 			disableSerialization;
 			_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
-			_pubPlrData player getVariable "pubPlrData"];
+			_pubPlrData = player getVariable "pubPlrData";
 			
 			_acc = PLAYERDATA select 1 + (_this select 1);
 			_cash = PLAYERDATA select 2 + (_this select 1);
@@ -80,7 +80,7 @@ if(!isDedicated) then {
 		_amount = _this select 1;
 		if (typeName _amount == "SCALAR") then {
 			PLAYERDATA set [10, (PLAYERDATA select 10)+_amount];
-		}
+		};
 	};
   
 	fnc_getItemAmount = {
