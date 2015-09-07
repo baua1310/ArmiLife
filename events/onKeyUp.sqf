@@ -23,7 +23,7 @@ switch (_key) do {
 		};
 	};
 	case 15: {if (_shift) then {1 call fnc_setHand;} else {2 call fnc_setHand;};};
-	case 23: {["icall"] execVM "gui\inventory.sqf";};
+	case 23: {INV_isOpen = true; ["icall"] execVM "gui\inventory.sqf";};
 	default { _handled = false; };
 };
 

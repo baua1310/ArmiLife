@@ -168,4 +168,18 @@ if(!isDedicated) then {
 		} else {diag_log "ERROR: fnc_timer - param not scalar";};
 		true
 	};
+	
+	fnc_getGearItems = {
+		private ["_got"];
+		_got = [];
+		{
+			_add = true;
+			for [{_i = 0;}, {_i < count _got}, {_i=_i+1;}] do {
+				_cn = (_got select _i) select 0;
+				if(_cn == _x) exitWith { _cn set [1,(_cn select 1)+1]; _got set [_i,_cn]; _add=false; }
+			};
+			if(_add) then { _got = _got + [ _x, 1 ]; };
+		} forEach (items player);
+		_got
+	};
 };           

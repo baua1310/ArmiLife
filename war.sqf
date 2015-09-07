@@ -27,7 +27,8 @@ switch (_action) do {
 						_display = findDisplay 1000;
 						_capData = (capAreas select capWar);
 						(_display displayCtrl 1) ctrlSetText format ["Do you really want to declare %1 a warzone?",_capData select 0];
-						waitUntil {!dialog};
+						antwort = 2;
+						waitUntil {isNull(findDisplay 1000)};
 						if (
 							antwort == 2
 							|| (_capData select 0) in ["capVikos","capKavala","capPyrgos"]
@@ -38,10 +39,10 @@ switch (_action) do {
 							capFlag = "Flag_White_F" createVehicle (getMarkerPos (_capData select 0));
 							[[[(PLAYERDATA select 6),capWar,name player,"declared",capFlag],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
 							switch (_capData select 1) do {
-									case 0: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_white_CO.paa"};
-									case 1: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";};
-									case 2: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";};
-									case 3: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_FIA_CO.paa";};
+								case 0: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_white_CO.paa"};
+								case 1: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";};
+								case 2: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";};
+								case 3: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_FIA_CO.paa";};
 							};
 						};
 				} else { systemChat "You can't declare war during a war."; };

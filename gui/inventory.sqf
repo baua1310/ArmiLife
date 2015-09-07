@@ -85,5 +85,8 @@ switch (_action) do {
 		_GMenu18 ctrlSetPosition [1.08,0.049,0.04,0];
 		_GMenu18 ctrlSetBackgroundColor [0, 0, 0, 1];
 		_GMenu18 ctrlCommit 0;
+		
+		waitUntil { isNull (findDisplay  602) };
+		INV_isOpen = false;
 	};
 };

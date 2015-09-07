@@ -6,6 +6,7 @@ handItems = ["Empty Hands","Fists"];
 capWar = nil;
 antwort = 2;
 allowTP = false;
+INV_isOpen = false;
 
 dmgSkip = false;
 dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
