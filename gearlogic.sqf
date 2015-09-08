@@ -12,7 +12,7 @@ switch (_action) do {
 		disableSerialization;
 		_display = findDisplay 1000;
 		_capData = (capAreas select capWar);
-		(_display displayCtrl 1) ctrlSetText format ["Do you really want to use 1 item of %1",_itemClass];
+		(_display displayCtrl 1) ctrlSetText format ["Do you really want to use 1 item of %1?",_itemClass];
 		antwort = 2;
 		waitUntil { isNull(findDisplay 1000); };
 		
