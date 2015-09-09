@@ -186,6 +186,8 @@ if(!isDedicated) then {
 	fnc_setBounty = {
 		if (typename (_this select 0) == "SCALAR") then {
 			PLAYERDATA set [9,(PLAYERDATA select 9) + (_this select 0)];
+			_pubPlrData = player getVariable "pubPlrData";
+			_pubPlrData set [5,PLAYERDATA select 9];
 		};
 	};
 };           
