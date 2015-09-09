@@ -188,6 +188,7 @@ if(!isDedicated) then {
 			PLAYERDATA set [9,(PLAYERDATA select 9) + (_this select 0)];
 			_pubPlrData = player getVariable "pubPlrData";
 			_pubPlrData set [5,PLAYERDATA select 9];
+			player setVariable ["pubPlrData",_pubPlrData,true];
 		};
 	};
 };           
