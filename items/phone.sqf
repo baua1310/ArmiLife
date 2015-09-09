@@ -43,11 +43,10 @@ if(_legit) then {
 			if(isNull "_caller") then { _by = "Anonymous"; };
 			_pck = [false,_caller,name _to,_title,_msg,false];
 			smsArray = smsArray + [ _pck ];
-			[[["addSms",_pck],"phone.sqf"],"BIS_fnc_execVM",_to,false] call BIS_fnc_MP;
+			[[["receiveSms",_pck],"phone.sqf"],"BIS_fnc_execVM",_to,false] call BIS_fnc_MP;
 		};
 		case "receiveSms": {
-			_data = _caller;
-			_caller = _data select 1;
+			_data = _caller; _caller = _data select 1;
 			smsArray = smsArray + [ [true,_caller,name player,_data select 3,_data select 4, true] ];
 			titleText ["YOU RECEIVED A NEW SMS","PLAIN"]; 
 		};

@@ -1,5 +1,4 @@
-if (!isBusy) then {
-	isBusy = true;
+if (!((animationState player) in moveBusy)) then {
 	_a = [];
 	switch (handItem) do {
 		case "Empty Hands": {
@@ -40,6 +39,4 @@ if (!isBusy) then {
 			player addItem (_x select 0);
 		};
 	} forEach _a;
-	hint str(_a);
-	isBusy = false;
-};
+} else { systemChat "I'm too busy atm."; };

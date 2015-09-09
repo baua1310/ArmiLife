@@ -182,4 +182,10 @@ if(!isDedicated) then {
 		} forEach (items player);
 		_got
 	};
+	
+	fnc_setBounty = {
+		if (typename (_this select 0) == "SCALAR") then {
+			PLAYERDATA set [9,(PLAYERDATA select 9) + (_this select 0)];
+		};
+	};
 };           

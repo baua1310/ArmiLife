@@ -14,7 +14,7 @@ class YesNo {
         class btnYes:Life_RscButtonMenu
         {
             idc = 1600;
-            text = "Yes"; //--- ToDo: Localize;
+            text = "Yes";
             x = 0.412312 * safezoneW + safezoneX;
             y = 0.555 * safezoneH + safezoneY;
             w = 0.0773717 * safezoneW;
@@ -30,7 +30,7 @@ class YesNo {
         class btnNo:Life_RscButtonMenu
         {
             idc = 1601;
-            text = "No"; //--- ToDo: Localize;
+            text = "No";
             x = 0.505158 * safezoneW + safezoneX;
             y = 0.555 * safezoneH + safezoneY;
             w = 0.0773717 * safezoneW;
@@ -46,7 +46,7 @@ class YesNo {
         class RscFrame_1800:life_RscFrame
         {
             idc = 1800;
-            text = " A decision must be made "; //--- ToDo: Localize;
+            text = " A decision must be made ";
             x = 0.371047 * safezoneW + safezoneX;
             y = 0.367963 * safezoneH + safezoneY;
             w = 0.252748 * safezoneW;
@@ -99,166 +99,160 @@ class playerSettings {
     enableSimulation = true;
 
     class controlsBackground {
-
-    class life_RscTitleBackground:life_RscText {
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-                    idc = -1;
-                    x = 0.1;
-                    y = 0.2;
-                    w = 0.8;
-                    h = (1 / 25);
-            };
-
-            class MainBackground:life_RscText {
-                    colorBackground[] = {0, 0, 0, 0.7};
-                    idc = -1;
-                    x = 0.1;
-                    y = 0.2 + (11 / 250);
-                    w = 0.8;
-                    h = 0.6 - (22 / 250);
-            };
-
-            class Title : life_RscTitle {
-                    colorBackground[] = {0, 0, 0, 0};
-                    idc = -1;
-                    text = "Player Menu";
-                    x = 0.1;
-                    y = 0.2;
-                    w = 0.8;
-                    h = (1 / 25);
-            };
-
-            class moneyStatusInfo : Life_RscStructuredText
-            {
-                    idc = 2015;
-                    sizeEx = 0.020;
-                    text = "";
-                    x = 0.105;
-                    y = 0.30;
-                    w = 0.3; h = 0.6;
-            };
-
-            class PlayersName : Title {
-                    idc = carry_weight;
-                    style = 1;
-                    text = "";
-            };
+		class life_RscTitleBackground:life_RscText {
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			x = 0.1;
+			y = 0.2;
+			w = 0.8;
+			h = (1 / 25);
+		};
+	
+		class MainBackground:life_RscText {
+			colorBackground[] = {0, 0, 0, 0.7};
+			idc = -1;
+			x = 0.1;
+			y = 0.2 + (11 / 250);
+			w = 0.8;
+			h = 0.6 - (22 / 250);
+		};
+	
+		class Title : life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = -1;
+			text = "Player Menu";
+			x = 0.1;
+			y = 0.2;
+			w = 0.8;
+			h = (1 / 25);
+		};
+	
+		class moneyStatusInfo : Life_RscStructuredText
+		{
+			idc = 2015;
+			sizeEx = 0.020;
+			text = "";
+			x = 0.105;
+			y = 0.30;
+			w = 0.3; h = 0.6;
+		};
+	
+		class PlayersName : Title {
+			idc = carry_weight;
+			style = 1;
+			text = "";
+		};
     };
 
     class controls {
+		class itemHeader : Life_RscText
+		{
+			idc = -1;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			text = "Items";
+			sizeEx = 0.04;
 
-            class itemHeader : Life_RscText
-            {
-                    idc = -1;
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    text = "Items";
-                    sizeEx = 0.04;
+			x = 0.62; y = 0.26;
+			w = 0.275; h = 0.04;
+		};
 
-                    x = 0.62; y = 0.26;
-                    w = 0.275; h = 0.04;
-            };
+		class licenseHeader : Life_RscText
+		{
+			idc = -1;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			text = "Licenses";
+			sizeEx = 0.04;
 
-            class licenseHeader : Life_RscText
-            {
-                    idc = -1;
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    text = "Licenses";
-                    sizeEx = 0.04;
+			x = 0.336; y = 0.26;
+			w = 0.275; h = 0.04;
+		};
 
-                    x = 0.336; y = 0.26;
-                    w = 0.275; h = 0.04;
-            };
+		class moneySHeader : Life_RscText
+		{
+			idc = -1;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			text = "Money";
+			sizeEx = 0.04;
 
-            class moneySHeader : Life_RscText
-            {
-                    idc = -1;
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    text = "Money";
-                    sizeEx = 0.04;
+			x = 0.11; y = 0.26;
+			w = 0.219; h = 0.04;
+		};
 
-                    x = 0.11; y = 0.26;
-                    w = 0.219; h = 0.04;
-            };
+		class itemList : life_RscListBox 
+		{
+			idc = item_list;
+			sizeEx = 0.030;
 
-            class itemList : life_RscListBox 
-            {
-                    idc = item_list;
-                    sizeEx = 0.030;
+			x = 0.62; y = 0.30;
+			w = 0.275; h = 0.3;
+		};
 
-                    x = 0.62; y = 0.30;
-                    w = 0.275; h = 0.3;
-            };
+		class moneyEdit : Life_RscEdit 
+		{
+			idc = 2018;
 
-            class moneyEdit : Life_RscEdit 
-            {
-                    idc = 2018;
+			text = "1";
+			sizeEx = 0.030;
+			x = 0.12; y = 0.42;
+			w = 0.18; h = 0.03;
+		};
 
-                    text = "1";
-                    sizeEx = 0.030;
-                    x = 0.12; y = 0.42;
-                    w = 0.18; h = 0.03;
-            };
+		class NearPlayers : Life_RscCombo 
+		{
+			idc = 2022;
 
-            class NearPlayers : Life_RscCombo 
-            {
-                    idc = 2022;
+			x = 0.12; y = 0.46;
+			w = 0.18; h = 0.03;
+		};
 
-                    x = 0.12; y = 0.46;
-                    w = 0.18; h = 0.03;
-            };
+		class moneyDrop : Life_RscButtonMenu
+		{
+			idc = 2001;
+			text = "Give";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "[] call life_fnc_giveMoney";
+			sizeEx = 0.025;
+			x = 0.135; y = 0.50;
+			w = 0.13; h = 0.036;
+		};
 
-            class moneyDrop : Life_RscButtonMenu
-            {
-                    idc = 2001;
-                    text = "Give";
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    onButtonClick = "[] call life_fnc_giveMoney";
-                    sizeEx = 0.025;
-                    x = 0.135; y = 0.50;
-                    w = 0.13; h = 0.036;
-            };
+		class itemEdit : Life_RscEdit {		
+			idc = 2010;
+			text = "1";
+			sizeEx = 0.030;
+			x = 0.62; y = 0.61;
+			w = 0.275; h = 0.03;		
+		};
+		
+		class iNearPlayers : Life_RscCombo {
+			idc = 2023;
+			x = 0.62; y = 0.65;
+			w = 0.275; h = 0.03;
+		};
 
-            class itemEdit : Life_RscEdit {		
-            idc = 2010;
-            text = "1";
-            sizeEx = 0.030;
-            x = 0.62; y = 0.61;
-            w = 0.275; h = 0.03;		
-            };
-            class iNearPlayers : Life_RscCombo
-            {
-                    idc = 2023;
+		class DropButton : life_RscButtonMenu {
+			idc = 2002;
+			text = "Drop";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "";
 
-                    x = 0.62; y = 0.65;
-                    w = 0.275; h = 0.03;
-            };
+			x = 0.765;
+			y = 0.70;
+			w = (5.25 / 40);
+			h = (1 / 25);
 
-            class DropButton : life_RscButtonMenu {
+		};
 
-                    idc = 2002;
-                    text = "Drop";
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    onButtonClick = "";
-
-                    x = 0.765;
-                    y = 0.70;
-                    w = (5.25 / 40);
-                    h = (1 / 25);
-
-            };
-
-            class UseButton : life_RscButtonMenu {
-
-                    text = "Use";
-                    colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-                    onButtonClick = "";
-
-                    x = 0.62;
-                    y = 0.70;
-                    w = (5.25 / 40);
-                    h = (1 / 25);
-
-            };
+		class UseButton : life_RscButtonMenu {
+			text = "Use";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "";
+		
+			x = 0.62;
+			y = 0.70;
+			w = (5.25 / 40);
+			h = (1 / 25);
+		};
 
             class RemoveButton : life_RscButtonMenu {
 
@@ -407,7 +401,7 @@ class ArmiPhone {
 	movingEnable = 1;
 	enableSimulation = true;
 
-  class controlsBackground {
+	class controlsBackground {
     class bgPhone: ARM_RscPicture
     {
     	idc = 1200;

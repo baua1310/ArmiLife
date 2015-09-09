@@ -16,9 +16,9 @@ dmgCap = 0.99;
 bankSafes = [100000000,100000000];
 canRobBank = true;
 
+moveBusy = ["AinvPknlMstpSnonWrflDnon_medic"];
 moveSurrender = ["amovpercmstpssurwnondnon"];
 
-isBusy = false;
 furnances = ["FirePlace_burning_F","i_stone_housebig_v2"];
 laws = [
 	[
@@ -33,14 +33,16 @@ laws = [
 taxes = [0,0];
 
 profs = [
-	["Medic","STR_prof_medic",5000,"((PLAYERDATA select 11) > 0)"],
-	["Judge","STR_prof_judge",30000,"((PLAYERDATA select 11) > 0)"]
+	["Medic","STR_prof_medic",5000,"(PLAYERDATA select 11) > 0"],
+	["Judge","STR_prof_judge",30000,"(PLAYERDATA select 11) > 0"]
 ];
 
 isNMayor = false;
 isCMayor = false;
 isAMayor = false;
 
-// ArmiPhone [received?, by, to, title, msg, unread?]
+// ArmiPhone
 smsArray = [ [true, "[DEV] Armitxes", "You","Welcome to ArmiLife","ArmiLife combines all your favorite missions - redone, and more performant! ArmiLife is a journey you will never forget!",true] ];
 emMarkers = [];
+
+vclKeys = [];
