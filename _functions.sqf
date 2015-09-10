@@ -78,6 +78,7 @@ if(!isDedicated) then {
   
 	fnc_setNutrition = {
 		_amount = _this select 1;
+		if(_amount > 0) then { /* play eating sound */ };
 		if (typeName _amount == "SCALAR") then {
 			PLAYERDATA set [10, (PLAYERDATA select 10)+_amount];
 		};
