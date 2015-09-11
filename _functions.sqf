@@ -78,7 +78,7 @@ if(!isDedicated) then {
   
 	fnc_setNutrition = {
 		_amount = _this select 1;
-		if(_amount > 0) then { /* play eating sound */ };
+		if(_amount > 0) then { playSound3D ["ArmiLife_Sounds\Man\eating.ogg", player, false, getPosASL player, 1, 1, 5]; };
 		if (typeName _amount == "SCALAR") then {
 			PLAYERDATA set [10, (PLAYERDATA select 10)+_amount];
 		};

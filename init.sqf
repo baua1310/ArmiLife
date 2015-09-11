@@ -7,7 +7,7 @@ RESISTANCE setFriend [WEST, 1];
 WEST setFriend [RESISTANCE, 1];
 
 enableDebug = !isDedicated && isServer;
-        
+
 _w = execVM "masterarray.sqf";
 waitUntil { scriptDone _w; };
 _w = execVM "variables.sqf";
