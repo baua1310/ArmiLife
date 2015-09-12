@@ -11,7 +11,6 @@ switch (_action) do {
 		if (!(createDialog "YesNo")) exitWith {hint "Dialog Error!";};
 		disableSerialization;
 		_display = findDisplay 1000;
-		_capData = (capAreas select capWar);
 		(_display displayCtrl 1) ctrlSetText format ["Do you really want to use 1 item of %1?",_itemClass];
 		antwort = 2;
 		waitUntil { isNull(findDisplay 1000); };
@@ -19,7 +18,7 @@ switch (_action) do {
 		if(antwort == 1) then {
 			_r = true;
 			
-			if(!isNull("_itemClass")) then {
+			if(!isNil("_itemClass")) then {
 				_mapFurnance = [furnances,10] call getMapObjects;
 				if(count _mapFurnance > 0) then {
 					[10,"Cooking...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer;

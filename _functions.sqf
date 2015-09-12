@@ -77,10 +77,11 @@ if(!isDedicated) then {
 	};
   
 	fnc_setNutrition = {
-		_amount = _this select 1;
+		_amount = _this select 0;
 		if(_amount > 0) then { playSound3D ["ArmiLife_Sounds\Man\eating.ogg", player, false, getPosASL player, 1, 1, 5]; };
 		if (typeName _amount == "SCALAR") then {
 			PLAYERDATA set [10, (PLAYERDATA select 10)+_amount];
+			if((PLAYERDATA select 10) > 100) then {PLAYERDATA set [10,100];};
 		};
 	};
   
@@ -176,10 +177,10 @@ if(!isDedicated) then {
 		{
 			_add = true;
 			for [{_i = 0;}, {_i < count _got}, {_i=_i+1;}] do {
-				_cn = (_got select _i) select 0;
-				if(_cn == _x) exitWith { _cn set [1,(_cn select 1)+1]; _got set [_i,_cn]; _add=false; }
+				_entry = (_got select _i); _cn = (_got select _i) select 0;
+				if(_cn == _x) exitWith { _entry set [1,(_entry select 1)+1]; _got set [_i,_entry]; _add=false; }
 			};
-			if(_add) then { _got = _got + [ _x, 1 ]; };
+			if(_add) then { _got = _got + [ [ _x, 1 ] ]; };
 		} forEach (items player);
 		_got
 	};
