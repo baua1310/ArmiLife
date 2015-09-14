@@ -15,7 +15,8 @@ switch (_tool) do {
 			if(player distance _vcl < 5) then {   
 				_dam = damage _vcl;
 				if(_dam >= 1) exitWith { systemChat "This vehicle is a mess, no chance I can repair it."; };
-				[(_dam * 15 + 7),"Repairing...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				_w = [(_dam * 15 + 7),"Repairing...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				waitUntil { scriptDone _w; };
 				if(player != vehicle player) exitWith { hint "You canceled the car repair"; };
 				_vcl setDamage 0; systemChat "The vehicle looks like new.";
 			} else { systemChat "What am I supposed to repair?"; };
@@ -28,8 +29,7 @@ switch (_tool) do {
 			sleep 5;
 		
 			if (player distance _vcl < 10) then {
-				_vcl setVectorUp [0.001,0.001,1.2];
-				systemChat "I made it!";
+				_vcl setVectorUp [0.001,0.001,1.2]; systemChat "I made it!";
 			} else { systemChat "Damn, I slipped of! I should stay closer."; };		
 		};
 	};
@@ -40,7 +40,8 @@ switch (_tool) do {
 				_fuel = fuel _vcl;
 				if(_fuel > 0.95) exitWith { hint "This vehicle needs no refuel"; };
 				_vcl lock true;
-				[((1-_fuel) * 10 + 7),"Refueling...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				_w = [((1-_fuel) * 10 + 7),"Refueling...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				waitUntil { scriptDone _w; };
 				_vcl setFuel 1;
 			};
 		};
@@ -49,14 +50,33 @@ switch (_tool) do {
 		if (!(isNull(_vcl))) then {
 			if ((animationState player) in moveBusy) exitWith {systemChat "Wait, I am busy...";};
 			if (_vcl in vclKeys) then { systemChat "Why should I lockpick this vehicle again?"; } else {
-				[7,"Lockpicking...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				_w = [7,"Lockpicking...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
+				waitUntil { scriptDone _w; };
 				if ((random 100) < 41) then {
 					systemChat "I got this vehicle!";
 					vclKeys = vclKeys + [_vcl];
 				} else { systemChat "Damn this vehicle, I failed!"; };
 				player removeItem "AL_lockpick";
-				if (count (nearestObjects [player, ["Man"], 10]) > 0) then { [4000] call fnc_setBounty; hint format["You were seen lockpicking a vehicle!"]; };
+				if (count (nearestObjects [player, ["Man"], 10]) > 1) then { [4000] call fnc_setBounty; hint format["You were seen lockpicking a vehicle!"]; };
 			};
 		} else { systemChat "There is nothing that I could lockpick..."; };
+	};
+	case "siren": {
+		{
+			if(!(_x in localSirens)) then {
+				localSirens = localSirens + [_x];
+				[_x] spawn {
+					private ["_vcl"];
+					_vcl = _this select 0;
+					while ( _vcl in vclSirens ) do {
+						if(isNull "_vcl" || !(alive _vcl)) exitWith {
+							vclSirens = vclSirens - [_vcl];
+							localSirens = localSirens - [_vcl];
+						};
+						_vcl say ["AL_Siren", 1]; sleep 3;
+					};
+				}; 
+			};
+		} forEach vclSirens;		
 	};
 };

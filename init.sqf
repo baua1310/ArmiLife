@@ -26,9 +26,10 @@ if (isServer) then {
 	waitUntil { scriptDone _w; };
 };
 
+_w = execVM "events\onPublicVar.sqf"; waitUntil { scriptDone _w; };
+
 if(!isDedicated) then {
-	_w = execVM "events\onLogin.sqf";
-	waitUntil { scriptDone _w; };
+	_w = execVM "events\onLogin.sqf"; waitUntil { scriptDone _w; };
 	//Stats loaded
 	["init"] execVM "gui\_controller.sqf";
 	execVM "events\onRespawn.sqf";
