@@ -21,7 +21,7 @@ switch (_action) do {
 			if(!isNil("_itemClass")) then {
 				_mapFurnance = [furnances,10] call getMapObjects;
 				if(count _mapFurnance > 0) then {
-					[10,"Cooking...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer;
+					[10,"Cooking...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 					switch (_itemClass) do {
 						case "AL_potato": { [15] call fnc_setNutrition; };
 						default { _r = false; systemChat "This leads to nothing, but atleast I feel warm now..."; };

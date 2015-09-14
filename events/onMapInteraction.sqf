@@ -1,6 +1,6 @@
 if (!((animationState player) in moveBusy)) then {
 	_a = [];
-	switch (handItem) do {
+	switch (handItems select handItem) do {
 		case "Empty Hands": {
 			_mapObjects = [["water","sacks_goods","b_ficusc1s","b_ficusc2d","bricks","garbage","atm_","phone"],2] call getMapObjects;
 			if(count _mapObjects > 0 && isNull cursorTarget) then {

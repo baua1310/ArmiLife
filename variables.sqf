@@ -1,8 +1,10 @@
 PLAYERDATA = [0];
+
 playerarray=[p1];
 
-handItem = "Empty Hands";
-handItems = ["Empty Hands","Fists"];
+handItem = 0;
+handItems = ["Empty Hands","Fists","Credit Card"];
+
 capWar = nil;
 antwort = 2;
 allowTP = false;
