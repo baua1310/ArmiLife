@@ -1,5 +1,12 @@
 PLAYERDATA = [0];
+
 playerarray=[p1];
+capWar = nil;
+
+dmgSkip = false;
+dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
+dmgCap = 0.99;
+
 
 laws = [
 	[
@@ -19,9 +26,8 @@ bankSafes = [100000000,100000000];
 canRobBank = true;
 
 if(!isDedicated) then {
-	handItem = "Empty Hands";
-	handItems = ["Empty Hands","Fists"];
-	capWar = nil;
+	handItem = 0;
+	handItems = ["Empty Hands","Fists","Credit Card"];
 	antwort = 2;
 	allowTP = false;
 	INV_isOpen = false;

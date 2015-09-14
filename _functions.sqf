@@ -63,15 +63,13 @@ if(!isDedicated) then {
 		private["_hud","_id","_count","_string"];        
 		disableSerialization;
 		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
-		_id = (handItems find handItem);
 		
 		_count = count handItems;
-		if(_this == 1 && _count > 1) then { if (_id != 0) then { _id = _id-1; } else { _id = _count-1; };  };
-		if(_this == 2 && _count > 1) then { if (_id != (_count-1)) then { _id = _id+1; } else { _id = 0; };  };
+		if(_this == 1 && _count > 1) then { if (handItem != 0) then { handItem = handItem-1; } else { handItem = _count-1; };  };
+		if(_this == 2 && _count > 1) then { if (handItem != (_count-1)) then { handItem = handItem+1; } else { handItem = 0; };  };
 		
-		_string = (handItems select _id);
-		_target = (_hud displayCtrl 1003);
-		handItem = _string;
+		_string = handItems select handItem;
+		_target = _hud displayCtrl 1003;
 		_target ctrlSetText _string;
 		_target ctrlCommit 0;   
 	};
