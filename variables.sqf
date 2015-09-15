@@ -24,6 +24,7 @@ taxes = [0,0];
 // 0 = NATO | 1 = CSAT (get from DB, start with 100mio)
 bankSafes = [100000000,100000000];
 canRobBank = true;
+robbedTotal = 0;
 
 if(!isDedicated) then {
 	handItem = 0;

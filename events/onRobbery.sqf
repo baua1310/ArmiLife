@@ -30,7 +30,7 @@ switch (_kind) do {
 			[{systemChat "$$ Someone successfully robbed the bank and stole $50k!";},"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
 			
 			["cash",50000] call fnc_setMoney; systemChat "I got 50k! Now I shall get my ass out of here!";
-			
+			robbedTotal = robbedTotal + 50000;		
 		} else { systemChat "Doing a robbery during a robbery? Better not..."; };
 	};
 	case "player": {
