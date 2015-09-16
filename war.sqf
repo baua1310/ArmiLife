@@ -37,7 +37,7 @@ switch (_action) do {
 					systemChat "War declared!";
 					(_capData select 0) setMarkerColor "ColorWhite";
 					capFlag = "Flag_White_F" createVehicle (getMarkerPos (_capData select 0));
-					[[[PLAYERDATA select 6,capWar,PLAYERDATA select 14,"declared",capFlag],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
+					[[[PLAYERDATA select 6,capWar,PLAYERDATA select 13,"declared",capFlag],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
 					switch (_capData select 1) do {
 						case 0: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_white_CO.paa"};
 						case 1: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";};

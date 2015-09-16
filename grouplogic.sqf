@@ -1,5 +1,5 @@
 _action = _this select 0;
-_grpData = PLAYERDATA select 16;
+_grpData = PLAYERDATA select 14;
 _grpName = _groupData select 0;
 
 switch (_action) do {

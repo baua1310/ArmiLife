@@ -45,7 +45,7 @@ switch (_action) do {
 		if(!dialog) then { createDialog "ArmiID"; };
 		disableSerialization;
 		_display = findDisplay 1601;
-		(_display displayCtrl 1) ctrlSetText format ["Name: %1",PLAYERDATA select 14];
+		(_display displayCtrl 1) ctrlSetText format ["Name: %1",PLAYERDATA select 13];
 		(_display displayCtrl 4) ctrlSetText format ["Nation: %1",(PLAYERDATA select 6) call fnc_nationIDtoName];
 		(_display displayCtrl 5) ctrlSetText format ["%1",getPlayerUID player];
 	};

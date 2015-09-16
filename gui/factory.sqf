@@ -1,4 +1,4 @@
-_items = PLAYERDATA select 12;
+_items = plrStorage;
 
 if (typeName _this == "ARRAY") then {
   _itemArr = _this call fnc_getItemArray;
@@ -8,7 +8,7 @@ if (typeName _this == "ARRAY") then {
   
   _canProduce = true;
   {
-    _amount = [PLAYERDATA select 12, _x] call fnc_getItemAmount;
+    _amount = [plrStorage, _x] call fnc_getItemAmount;
     if(_this select 2 > _amount) exitWith { _canProduce = false; };
   } forEach _prodItems;
   

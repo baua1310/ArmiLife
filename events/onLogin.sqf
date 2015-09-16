@@ -7,8 +7,8 @@ _pubPlrData = [
 	PLAYERDATA select 6,
 	[PLAYERDATA select 7, PLAYERDATA select 8],
 	PLAYERDATA select 9,
-	(PLAYERDATA select 16) select 0
+	(PLAYERDATA select 14) select 0
 ];
 player setVariable ["pubPlrData",_pubPlrData,true];
-_plrInit = compile format["%1 setName '%2';", player, PLAYERDATA select 14];
+_plrInit = compile format["%1 setName '%2';", player, PLAYERDATA select 13];
 [_plrInit,"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
