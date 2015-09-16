@@ -16,11 +16,7 @@ class Header
 	maxPlayers = 75;
 };
 
-class CfgSounds 
-{
-	sounds[] = {}; 
-	#include "\ArmiLife_Sounds\config.hpp"
-};
+#include "\ArmiLife_Sounds\config.hpp"
 
 wreckLimit = 3;
 wreckRemovalMinTime = 30;
