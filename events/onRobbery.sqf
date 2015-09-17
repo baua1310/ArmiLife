@@ -33,6 +33,9 @@ switch (_kind) do {
 			robbedTotal = robbedTotal + 50000;		
 		} else { systemChat "Doing a robbery during a robbery? Better not..."; };
 	};
+	case "shop": {
+	
+	};
 	case "player": {
 		_victim = _this select 1;
 		if((animationState _victim) in moveSurrender) then {

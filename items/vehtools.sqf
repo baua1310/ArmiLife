@@ -69,7 +69,7 @@ switch (_tool) do {
 					private ["_vcl"];
 					_vcl = _this select 0;
 					while ( _vcl in vclSirens ) do {
-						if(isNull "_vcl" || !(alive _vcl)) exitWith {
+						if( isNull "_vcl" || !(alive _vcl) ) exitWith {
 							vclSirens = vclSirens - [_vcl];
 							localSirens = localSirens - [_vcl];
 						};

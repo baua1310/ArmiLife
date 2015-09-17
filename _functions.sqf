@@ -1,4 +1,11 @@
-// SECTORS
+// Protects your functions from manipulations by script kiddies 
+fnc_applyAC = {
+	if ( typeName _this == "ARRAY" ) then {
+		{ [] spawn compile (format ["%1 = compileFinal %2;",_x,compile _x]); } forEach _this;
+	};
+};
+["fnc_applyAC"] call fnc_applyAC;
+
 // ["capBorder",0,50] call fnc_set_sector;
 fnc_set_sector = {
 	private ["_markerName","_newOwner","_elec"];
@@ -38,7 +45,7 @@ if(!isDedicated) then {
 	};
   
 	fnc_setMoney = {
-		if (typename (_this select 1) == "SCALAR") then {
+		if (typeName (_this select 1) == "SCALAR") then {
 			private["_hud","_acc","_cash","_target","_pubPlrData"];
 			disableSerialization;
 			_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
@@ -57,6 +64,14 @@ if(!isDedicated) then {
 			_target ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
 			_target ctrlCommit 0; 
 		};
+	};
+	
+	fnc_setBankMoney = {
+		private ["_bankId","_amount"]
+		_bankId = _this select 0; _amount = _this select 1;
+		if (_bankId < 2 && typeName (_amount) == "SCALAR") then {
+			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";d
+		}
 	};
   
 	fnc_setHand = {
