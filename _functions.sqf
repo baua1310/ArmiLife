@@ -1,13 +1,5 @@
-// Protects your functions from manipulations by script kiddies 
-fnc_applyAC = {
-	if ( typeName _this == "ARRAY" ) then {
-		{ [] spawn compile (format ["%1 = compileFinal %2;",_x,compile _x]); } forEach _this;
-	};
-};
-["fnc_applyAC"] call fnc_applyAC;
-
 // ["capBorder",0,50] call fnc_set_sector;
-fnc_set_sector = {
+fnc_set_sector = compileFinal str {
 	private ["_markerName","_newOwner","_elec"];
 	_markerName = _this select 0;
 	_newOwner = _this select 1;
@@ -28,23 +20,10 @@ fnc_set_sector = {
 		case 2: { _markerName setMarkerColor "ColorEAST"; };
 		case 3: { _markerName setMarkerColor "ColorGUER"; };
 	};
-	
-	// Add save
 };
 
 if(!isDedicated) then {
-	fnc_getItemArray = {
-		_fncreturn = [];  
-		switch (_this select 0) do {
-			case 0: { _fncreturn = productionResources select (_this select 1); };
-			case 1: { _fncreturn = productionComponents select (_this select 1); };
-			case 2: { _fncreturn = vehiclesArray select (_this select 1); };
-			case 3: { _fncreturn = placeableObjects select (_this select 1); };
-		}; 
-		_fncreturn
-	};
-  
-	fnc_setMoney = {
+	fnc_setMoney = compileFinal str {
 		if (typeName (_this select 1) == "SCALAR") then {
 			private["_hud","_acc","_cash","_target","_pubPlrData"];
 			disableSerialization;
@@ -59,37 +38,38 @@ if(!isDedicated) then {
 				case "bank": { _pubPlrData set [1,[PLAYERDATA select 2,_acc]]; PLAYERDATA set [1,_acc]; };
 			};
 			player setVariable ["pubPlrData",_pubPlrData,true];
-			
+
 			_target = (_hud displayCtrl 1001);
 			_target ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
 			_target ctrlCommit 0; 
 		};
 	};
-	
+
+	/*
 	fnc_setBankMoney = {
 		private ["_bankId","_amount"]
 		_bankId = _this select 0; _amount = _this select 1;
-		if (_bankId < 2 && typeName (_amount) == "SCALAR") then {
-			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";d
-		}
-	};
-  
-	fnc_setHand = {
-		private["_hud","_id","_count","_string"];        
+		if (_bankId < 2 && (typeName _amount) == "SCALAR") then {
+			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
+		};
+	};*/
+
+	fnc_setHand = compileFinal str {
+		private ["_hud","_id","_count","_string"];        
 		disableSerialization;
-		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
-		
+		_hud = uiNamespace getVariable ["mainOverlay",displayNull];
+
 		_count = count handItems;
 		if(_this == 1 && _count > 1) then { if (handItem != 0) then { handItem = handItem-1; } else { handItem = _count-1; };  };
 		if(_this == 2 && _count > 1) then { if (handItem != (_count-1)) then { handItem = handItem+1; } else { handItem = 0; };  };
-		
+
 		_string = handItems select handItem;
 		_target = _hud displayCtrl 1003;
 		_target ctrlSetText _string;
 		_target ctrlCommit 0;   
 	};
-  
-	fnc_setNutrition = {
+	
+	fnc_setNutrition = compileFinal str {
 		_amount = _this select 0;
 		if(_amount > 0) then { playSound3D ["ArmiLife_Sounds\Man\eating.ogg",player,false,position player, 1, 1, 35]; };
 		if (typeName _amount == "SCALAR") then {
@@ -98,24 +78,23 @@ if(!isDedicated) then {
 		};
 	};
   
-	fnc_getItemAmount = {
+	fnc_getItemAmount = compileFinal str {
 		private ["_sArray","_findItem"];
 		_result = 0;
 		_sArray = _this select 0;
 		_findItem = _this select 1;
-		
+
 		{
 			if((_x select 0) == (_findItem select 0) && (_x select 1) == (_findItem select 1)) then {
 				_result = _x select 2;
 			};
 		} forEach _sArray;
-		
-		_result
+		_result;
 	};
 
 	// call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
 	// call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects
-	fnc_isInMarker = {
+	fnc_isInMarker = compileFinal str {
 		private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
 		
 		_p = _this select 0; // object
@@ -145,19 +124,8 @@ if(!isDedicated) then {
 		};
 		_ret;
 	};
-
-	fnc_nationIDtoName = {
-		private ["_faction"];
-		_faction = "Factionless";
-		switch (_this) do {
-			case 1: { _faction = "Democratic Republic"; };
-			case 2: { _faction = "Communists"; };
-			case 3: { _faction = "Anarchists"; };
-		};
-		_faction
-	};
-
-	fnc_timer = {
+	
+	fnc_timer = compileFinal str {
 		private ["_dsp","_op","_rt","_time","_smove","_txt"];
 		_time = _this select 0;
 		_txt =  _this select 1;
@@ -181,10 +149,10 @@ if(!isDedicated) then {
 			if (!isNil "_emove") then { player playMove _emove; };
 			closeDialog 2459;
 		} else {diag_log "ERROR: fnc_timer - param not scalar";};
-		true
+		true;
 	};
-	
-	fnc_getGearItems = {
+
+	fnc_getGearItems = compileFinal str {
 		private ["_got"];
 		_got = [];
 		{
@@ -195,15 +163,28 @@ if(!isDedicated) then {
 			};
 			if(_add) then { _got = _got + [ [ _x, 1 ] ]; };
 		} forEach (items player);
-		_got
+		_got;
 	};
-	
-	fnc_setBounty = {
-		if (typename (_this select 0) == "SCALAR") then {
+
+	fnc_setBounty = compileFinal str {
+		if (typeName (_this select 0) == "SCALAR") then {
 			PLAYERDATA set [9,(PLAYERDATA select 9) + (_this select 0)];
 			_pubPlrData = player getVariable "pubPlrData";
 			_pubPlrData set [5,PLAYERDATA select 9];
 			player setVariable ["pubPlrData",_pubPlrData,true];
 		};
 	};
-};           
+	
+	
+	fnc_nationIDtoName = {
+		private ["_faction"];
+		_faction = "Factionless";
+
+		switch (_this) do {
+			case 1: { _faction = "Democratic Republic"; };
+			case 2: { _faction = "Communists"; };
+			case 3: { _faction = "Anarchists"; };
+		};
+		_faction;
+	};
+};
