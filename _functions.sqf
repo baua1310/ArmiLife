@@ -45,15 +45,6 @@ if(!isDedicated) then {
 		};
 	};
 
-	/*
-	fnc_setBankMoney = {
-		private ["_bankId","_amount"]
-		_bankId = _this select 0; _amount = _this select 1;
-		if (_bankId < 2 && (typeName _amount) == "SCALAR") then {
-			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
-		};
-	};*/
-
 	fnc_setHand = compileFinal str {
 		private ["_hud","_id","_count","_string"];        
 		disableSerialization;
@@ -174,17 +165,24 @@ if(!isDedicated) then {
 			player setVariable ["pubPlrData",_pubPlrData,true];
 		};
 	};
-	
-	
-	fnc_nationIDtoName = {
+
+
+	fnc_getNation = compileFinal str {
 		private ["_faction"];
 		_faction = "Factionless";
-
 		switch (_this) do {
 			case 1: { _faction = "Democratic Republic"; };
 			case 2: { _faction = "Communists"; };
 			case 3: { _faction = "Anarchists"; };
 		};
 		_faction;
+	};
+
+	fnc_setBankMoney = compileFinal str {
+		private ["_bankId","_amount"]
+		_bankId = _this select 0; _amount = _this select 1;
+		if (_bankId < 2 && (typeName _amount) == "SCALAR") then {
+			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
+		};
 	};
 };

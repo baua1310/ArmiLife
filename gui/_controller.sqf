@@ -12,7 +12,7 @@ switch (_action) do {
 
 		_faction = (_hud displayCtrl 1000);
 		if (PLAYERDATA select 11 > 250) then { onMapSingleClick "if (allowTP) then { allowTP = false; player setpos _pos; };"; };
-		_faction ctrlSetText ((PLAYERDATA select 6) call fnc_nationIDtoName);
+		_faction ctrlSetText ((PLAYERDATA select 6) call fnc_getNation);
 
 		_money ctrlCommit 0;
 		_faction ctrlCommit 0;
@@ -46,7 +46,7 @@ switch (_action) do {
 		disableSerialization;
 		_display = findDisplay 1601;
 		(_display displayCtrl 1) ctrlSetText format ["Name: %1",PLAYERDATA select 13];
-		(_display displayCtrl 4) ctrlSetText format ["Nation: %1",(PLAYERDATA select 6) call fnc_nationIDtoName];
+		(_display displayCtrl 4) ctrlSetText format ["Nation: %1",(PLAYERDATA select 6) call fnc_getNation];
 		(_display displayCtrl 5) ctrlSetText format ["%1",getPlayerUID player];
 	};
 	case "profession": {
