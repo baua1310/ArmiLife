@@ -1,5 +1,5 @@
 // ["capBorder",0,50] call fnc_set_sector;
-fnc_set_sector = compileFinal str {
+fnc_set_sector = {
 	private ["_markerName","_newOwner","_elec"];
 	_markerName = _this select 0;
 	_newOwner = _this select 1;
@@ -23,15 +23,15 @@ fnc_set_sector = compileFinal str {
 };
 
 if(!isDedicated) then {
-	fnc_setMoney = compileFinal str {
+	fnc_setMoney = {
 		if (typeName (_this select 1) == "SCALAR") then {
 			private["_hud","_acc","_cash","_target","_pubPlrData"];
 			disableSerialization;
 			_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
 			_pubPlrData = player getVariable "pubPlrData";
 			
-			_acc = PLAYERDATA select 1 + (_this select 1);
-			_cash = PLAYERDATA select 2 + (_this select 1);
+			_acc = (PLAYERDATA select 1) + (_this select 1);
+			_cash = (PLAYERDATA select 2) + (_this select 1);
 			
 			switch (_this select 0) do {
 				case "cash": { _pubPlrData set [1,[_cash,PLAYERDATA select 1]]; PLAYERDATA set [2,_cash]; };
@@ -45,7 +45,7 @@ if(!isDedicated) then {
 		};
 	};
 
-	fnc_setHand = compileFinal str {
+	fnc_setHand = {
 		private ["_hud","_id","_count","_string"];        
 		disableSerialization;
 		_hud = uiNamespace getVariable ["mainOverlay",displayNull];
@@ -60,7 +60,7 @@ if(!isDedicated) then {
 		_target ctrlCommit 0;   
 	};
 	
-	fnc_setNutrition = compileFinal str {
+	fnc_setNutrition = {
 		_amount = _this select 0;
 		if(_amount > 0) then { playSound3D ["ArmiLife_Sounds\Man\eating.ogg",player,false,position player, 1, 1, 35]; };
 		if (typeName _amount == "SCALAR") then {
@@ -69,7 +69,7 @@ if(!isDedicated) then {
 		};
 	};
   
-	fnc_getItemAmount = compileFinal str {
+	fnc_getItemAmount = {
 		private ["_sArray","_findItem"];
 		_result = 0;
 		_sArray = _this select 0;
@@ -85,7 +85,7 @@ if(!isDedicated) then {
 
 	// call with check = ["markerpoint", "markertocheckagainst"] call fnc_isInMarker; for markers
 	// call with check = [object, "markertocheckagainst"] call fnc_isInMarker; for objects
-	fnc_isInMarker = compileFinal str {
+	fnc_isInMarker = {
 		private ["_p","_m", "_px", "_py", "_mpx", "_mpy", "_msx", "_msy", "_rpx", "_rpy", "_xmin", "_xmax", "_ymin", "_ymax", "_ma", "_res", "_ret"];
 		
 		_p = _this select 0; // object
@@ -116,7 +116,7 @@ if(!isDedicated) then {
 		_ret;
 	};
 	
-	fnc_timer = compileFinal str {
+	fnc_timer = {
 		private ["_dsp","_op","_rt","_time","_smove","_txt"];
 		_time = _this select 0;
 		_txt =  _this select 1;
@@ -143,7 +143,7 @@ if(!isDedicated) then {
 		true;
 	};
 
-	fnc_getGearItems = compileFinal str {
+	fnc_getGearItems = {
 		private ["_got"];
 		_got = [];
 		{
@@ -157,7 +157,7 @@ if(!isDedicated) then {
 		_got;
 	};
 
-	fnc_setBounty = compileFinal str {
+	fnc_setBounty = {
 		if (typeName (_this select 0) == "SCALAR") then {
 			PLAYERDATA set [9,(PLAYERDATA select 9) + (_this select 0)];
 			_pubPlrData = player getVariable "pubPlrData";
@@ -166,8 +166,7 @@ if(!isDedicated) then {
 		};
 	};
 
-
-	fnc_getNation = compileFinal str {
+	fnc_getNation = {
 		private ["_faction"];
 		_faction = "Factionless";
 		switch (_this) do {
@@ -178,8 +177,8 @@ if(!isDedicated) then {
 		_faction;
 	};
 
-	fnc_setBankMoney = compileFinal str {
-		private ["_bankId","_amount"]
+	fnc_setBankMoney = {
+		private ["_bankId","_amount"];
 		_bankId = _this select 0; _amount = _this select 1;
 		if (_bankId < 2 && (typeName _amount) == "SCALAR") then {
 			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
