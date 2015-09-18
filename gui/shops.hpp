@@ -5,8 +5,7 @@ class shops_menu {
 	enableSimulation = true;
 	
 	class controlsBackground {
-		class Life_RscTitleBackground:Life_RscText {
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+		class Life_RscTitleBackground:AL_RscText {
 			idc = -1;
 			x = 0.1;
 			y = 0.2;
@@ -14,7 +13,7 @@ class shops_menu {
 			h = (1 / 25);
 		};
 		
-		class MainBackground:Life_RscText {
+		class MainBackground:AL_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
 			x = 0.1;
@@ -23,7 +22,7 @@ class shops_menu {
 			h = 0.6 - (22 / 250);
 		};
 		
-		class vasText : Life_RscText
+		class vasText : AL_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
@@ -33,7 +32,7 @@ class shops_menu {
 			w = 0.275; h = 0.04;
 		};
 		
-		class vasgText : Life_RscText
+		class vasgText : AL_RscText
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};

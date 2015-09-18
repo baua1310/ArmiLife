@@ -96,7 +96,7 @@ class Life_RscListNBox
 };
 
 
-class Life_RscText {
+class AL_RscText {
 	x = 0;
 	y = 0;
 	h = 0.037;
@@ -109,41 +109,14 @@ class Life_RscText {
 	SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	colorText[] = {1, 1, 1, 1.0};
-	colorBackground[] = {0, 0, 0, 0};
+	colorBackground[] = {0,0,0,0};
 	linespacing = 1;
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscLine : Life_RscText {
-	idc = -1;
-	style = 176;
-	x = 0.17;
-	y = 0.48;
-	w = 0.66;
-	h = 0;
-	text = "";
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1.0};
-};
-
-class Life_RscTree {
-	style = 2;
-	font = "PuristaMedium";
-	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-	expandedTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\expandedTexture_ca.paa";
-	hiddenTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\hiddenTexture_ca.paa";
-	rowHeight = 0.0439091;
-	color[] = {1, 1, 1, 1};
-	colorSelect[] = {0.7, 0.7, 0.7, 1};
-	colorBackground[] = {0, 0, 0, 0};
-	colorSelectBackground[] = {0, 0, 0, 0.5};
-	colorBorder[] = {0, 0, 0, 0};
-	borderSize = 0;
-};
-
-class Life_RscTitle : Life_RscText {
+class Life_RscTitle : AL_RscText {
 	style = 0;
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95, 0.95, 0.95, 1};
@@ -164,17 +137,6 @@ class ARM_RscPicture {
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
-};
-
-class Life_RscTextMulti : Life_RscText
-{
-	linespacing = 1;
-	style = 0 + 16 + 0x200;
-};
-
-class Life_RscPictureKeepAspect : ARM_RscPicture 
-{
-	style = 0x30 + 0x800;
 };
 
 class Life_RscStructuredText {
@@ -273,6 +235,143 @@ class Life_RscButtonTextOnly : Life_RscButton {
 	colorFocused[] = {1, 1, 1, 0};
 	colorShadow[] = {1, 1, 1, 0};
 	borderSize = 0.0;
+};
+
+class Life_RscCheckbox {
+	idc = -1;
+	type = 7;
+	style = 0;
+	x = "LINE_X(XVAL)";
+	y = LINE_Y;
+	w = "LINE_W(WVAL)";
+	h = 0.029412;
+	colorText[] = {1, 0, 0, 1};
+	color[] = {0, 0, 0, 0};
+	colorBackground[] = {0, 0, 1, 1};
+	colorTextSelect[] = {0, 0.8, 0, 1};
+	colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+	colorSelect[] = {0, 0, 0, 1};
+	colorTextDisable[] = {0.4, 0.4, 0.4, 1};
+	colorDisable[] = {0.4, 0.4, 0.4, 1};
+	font = "PuristaMedium";
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	rows = 1;
+	5ns = 1;
+	strings[] = {UNCHECKED};
+	checked_strings[] = {CHECKED};
+};
+
+class AL_RscProgress 
+{
+	type = 8;
+	style = 0;
+	x = 0.344;
+	y = 0.619;
+	w = 0.313726;
+	h = 0.0261438;
+	texture = "";
+	shadow = 2;
+	colorFrame[] = {0, 0, 0, 1};
+	colorBackground[] = {0,0,0,0.7};
+	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+};
+
+class Life_RscListBox 
+{
+	style = 16;
+	idc = -1;
+	type = 5;
+	w = 0.275;
+	h = 0.04;
+	font = "PuristaMedium";
+	colorSelect[] = {1, 1, 1, 1};
+	colorText[] = {1, 1, 1, 1};
+	colorBackground[] = {0.28,0.28,0.28,0.28};
+	colorSelect2[] = {1, 1, 1, 1};
+	colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
+	colorSelectBackground2[] = {1, 1, 1, 0.5};
+	colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+	wholeHeight = 0.45;
+	rowHeight = 0.04;
+	color[] = {0.7, 0.7, 0.7, 1};
+	colorActive[] = {0,0,0,1};
+	colorDisabled[] = {0,0,0,0.3};
+	sizeEx = 0.023;
+	soundSelect[] = {"",0.1,1};
+	soundExpand[] = {"",0.1,1};
+	soundCollapse[] = {"",0.1,1};
+	maxHistoryDelay = 1;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
+	class ListScrollBar: Life_RscScrollBar
+	{
+		color[] = {1,1,1,1};
+		autoScrollEnabled = 1;
+	};
+};
+
+class Life_RscEdit {
+	type = 2;
+	style = 0x00 + 0x40;
+	font = "PuristaMedium";
+	shadow = 2;
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	colorBackground[] = {0, 0, 0, 1};
+	soundSelect[] = {"",0.1,1};
+	soundExpand[] = {"",0.1,1};
+	colorText[] = {0.95, 0.95, 0.95, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	autocomplete = false;
+	colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+	canModify = 1;
+};
+
+class Life_RscSlider {
+	h = 0.025;
+	color[] = {1, 1, 1, 0.8};
+	colorActive[] = {1, 1, 1, 1};
+};
+
+class life_RscXSliderH 
+{
+	style = 1024;
+	type = 43;
+	shadow = 2;
+	x = 0;
+	y = 0;
+	h = 0.029412;
+	w = 0.400000;
+	color[] = {
+			1, 1, 1, 0.7
+	};
+	colorActive[] = {
+			1, 1, 1, 1
+	};
+	colorDisabled[] = {
+			1, 1, 1, 0.500000
+	};
+	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
+	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
+	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
+};
+
+class Life_RscFrame {
+	type = 0;
+	idc = -1;
+	style = 64;
+	shadow = 2;
+	colorBackground[] = {0, 0, 0, 0};
+	colorText[] = {1, 1, 1, 1};
+	font = "PuristaMedium";
+	sizeEx = 0.02;
+	text = "";
 };
 
 class Life_RscShortcutButton {
@@ -403,204 +502,7 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
 	textureNoShortcut = "";
 };
 
-class Life_RscShortcutButtonMain : Life_RscShortcutButton {
-	idc = -1;
-	style = 0;
-	default = 0;
-	w = 0.313726;
-	h = 0.104575;
-	color[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	
-	class HitZone {
-		left = 0.0;
-		top = 0.0;
-		right = 0.0;
-		bottom = 0.0;
-	};
-	
-	class ShortcutPos {
-		left = 0.0145;
-		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
-		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2) * (3/4)";
-		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
-	};
-	
-	class TextPos {
-		left = "(		((safezoneW / safezoneH) min 1.2) / 32) * 1.5";
-		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20)*2 - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
-		right = 0.005;
-		bottom = 0.0;
-	};
-	animTextureNormal = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\normal_ca.paa";
-	animTextureDisabled = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\disabled_ca.paa";
-	animTextureOver = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\over_ca.paa";
-	animTextureFocused = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\focus_ca.paa";
-	animTexturePressed = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\down_ca.paa";
-	animTextureDefault = "\A3\ui_f\data\GUI\RscCommon\RscShortcutButtonMain\normal_ca.paa";
-	period = 0.5;
-	font = "PuristaMedium";
-	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
-	text = "";
-	soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-	soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
-	action = "";
-	
-	class Attributes {
-		font = "PuristaMedium";
-		color = "#E5E5E5";
-		align = "left";
-		shadow = "false";
-	};
-	
-	class AttributesImage {
-		font = "PuristaMedium";
-		color = "#E5E5E5";
-		align = "false";
-	};
-};
-
-class Life_RscCheckbox {
-	idc = -1;
-	type = 7;
-	style = 0;
-	x = "LINE_X(XVAL)";
-	y = LINE_Y;
-	w = "LINE_W(WVAL)";
-	h = 0.029412;
-	colorText[] = {1, 0, 0, 1};
-	color[] = {0, 0, 0, 0};
-	colorBackground[] = {0, 0, 1, 1};
-	colorTextSelect[] = {0, 0.8, 0, 1};
-	colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	colorSelect[] = {0, 0, 0, 1};
-	colorTextDisable[] = {0.4, 0.4, 0.4, 1};
-	colorDisable[] = {0.4, 0.4, 0.4, 1};
-	font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-	rows = 1;
-	5ns = 1;
-	strings[] = {UNCHECKED};
-	checked_strings[] = {CHECKED};
-};
-
-class Life_RscProgress 
-{
-	type = 8;
-	style = 0;
-	x = 0.344;
-	y = 0.619;
-	w = 0.313726;
-	h = 0.0261438;
-	texture = "";
-	shadow = 2;
-	colorFrame[] = {0, 0, 0, 1};
-	colorBackground[] = {0,0,0,0.7};
-	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-};
-
-class Life_RscListBox 
-{
-	style = 16;
-	idc = -1;
-	type = 5;
-	w = 0.275;
-	h = 0.04;
-	font = "PuristaMedium";
-	colorSelect[] = {1, 1, 1, 1};
-	colorText[] = {1, 1, 1, 1};
-	colorBackground[] = {0.28,0.28,0.28,0.28};
-	colorSelect2[] = {1, 1, 1, 1};
-	colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
-	colorSelectBackground2[] = {1, 1, 1, 0.5};
-	colorScrollbar[] = {0.2, 0.2, 0.2, 1};
-	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-	wholeHeight = 0.45;
-	rowHeight = 0.04;
-	color[] = {0.7, 0.7, 0.7, 1};
-	colorActive[] = {0,0,0,1};
-	colorDisabled[] = {0,0,0,0.3};
-	sizeEx = 0.023;
-	soundSelect[] = {"",0.1,1};
-	soundExpand[] = {"",0.1,1};
-	soundCollapse[] = {"",0.1,1};
-	maxHistoryDelay = 1;
-	autoScrollSpeed = -1;
-	autoScrollDelay = 5;
-	autoScrollRewind = 0;
-	tooltipColorText[] = {1,1,1,1};
-	tooltipColorBox[] = {1,1,1,1};
-	tooltipColorShade[] = {0,0,0,0.65};
-	class ListScrollBar: Life_RscScrollBar
-	{
-		color[] = {1,1,1,1};
-		autoScrollEnabled = 1;
-	};
-};
-
-class Life_RscEdit {
-	type = 2;
-	style = 0x00 + 0x40;
-	font = "PuristaMedium";
-	shadow = 2;
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorBackground[] = {0, 0, 0, 1};
-	soundSelect[] = {"",0.1,1};
-	soundExpand[] = {"",0.1,1};
-	colorText[] = {0.95, 0.95, 0.95, 1};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	autocomplete = false;
-	colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	canModify = 1;
-};
-
-class Life_RscSlider {
-	h = 0.025;
-	color[] = {1, 1, 1, 0.8};
-	colorActive[] = {1, 1, 1, 1};
-};
-
-class life_RscXSliderH 
-{
-	style = 1024;
-	type = 43;
-	shadow = 2;
-	x = 0;
-	y = 0;
-	h = 0.029412;
-	w = 0.400000;
-	color[] = {
-			1, 1, 1, 0.7
-	};
-	colorActive[] = {
-			1, 1, 1, 1
-	};
-	colorDisabled[] = {
-			1, 1, 1, 0.500000
-	};
-	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
-	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
-	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
-	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
-};
-
-class Life_RscFrame {
-	type = 0;
-	idc = -1;
-	style = 64;
-	shadow = 2;
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1};
-	font = "PuristaMedium";
-	sizeEx = 0.02;
-	text = "";
-};
-
-class Life_RscBackground : Life_RscText {
+class AL_RscBackground : AL_RscText {
 	type = 0;
 	IDC = -1;
 	style = 512;
@@ -610,7 +512,7 @@ class Life_RscBackground : Life_RscText {
 	w = 1.0;
 	h = 1.0;
 	text = "";
-	ColorBackground[] = {0.48, 0.5, 0.35, 1};
+	ColorBackground[] = {0.5, 0.5, 0.4, 1};
 	ColorText[] = {0.1, 0.1, 0.1, 1};
 	font = "PuristaMedium";
 	SizeEx = 1;

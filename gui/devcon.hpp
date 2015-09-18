@@ -8,7 +8,7 @@ class devcon {
 	name="devcon";
   
 	class controlsBackground {
-		class bgAdmin: Life_RscText
+		class bgAdmin: AL_RscText
 		{
 			idc = 2200;
 			x = 0.0359375 * safezoneW + safezoneX;

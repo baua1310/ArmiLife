@@ -2,9 +2,9 @@ class mainOverlay {
 	idd = -1;
 	movingEnable = 0;
 	enableSimulation = 0;
-  fadein=0;
+	fadein=0;
 	duration = 99999999999999999999999999999999999999999999;
-  fadeout=0;
+	fadeout=0;
 	name="mainOverlay";
 	onLoad="uiNamespace setVariable ['mainOverlay',_this select 0]";
   

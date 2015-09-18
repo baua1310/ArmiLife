@@ -25,16 +25,6 @@ switch (_action) do {
 		_display = findDisplay 2001;
 		(_display displayCtrl 2015) ctrlSetText format [" Cash: $%2\n Bank: $%1",(PLAYERDATA select 1),(PLAYERDATA select 2)];
 
-		_c = 0;
-		{
-			_amount = _x select 2;
-			_itemarr = _x call fnc_getItemArray;
-			if(_x select 0 == 0) then { _itemarr = [_itemarr]; };
-			(_display displayCtrl 2005) lbAdd format["%1 (%2)",(_itemarr select 0),_amount];
-			(_display displayCtrl 2005) lbSetData [_c,str([_x,_itemarr])];
-			_c = _c + 1;
-		} forEach (PLAYERDATA select 3);
-
 		_lics = "";
 		{
 		  _lics = _lics + format["%1\n",(licenseArray select _x) select 0];
