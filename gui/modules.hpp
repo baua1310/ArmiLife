@@ -5,8 +5,9 @@ class lbPlayers {
 
     class controlsBackground {
 		class plrBG : AL_RscBackground {
-			x = 0; y = 0.15;
-			w = 0.275; h = 0.57;
+			x = 0.15 * safezoneW + safezoneX;
+			y = 0.16 * safezoneH + safezoneY;
+			w = 0.15 * safezoneW; h = 0.47 * safezoneH;
 		}
 	};
 
@@ -16,23 +17,27 @@ class lbPlayers {
 			idc = -1;
 			text = "Players";
 			sizeEx = 0.04;
-			x = 0; y = 0.15;
-			w = 0.275; h = 0.04;
+			x = 0.15 * safezoneW + safezoneX;
+			y = 0.16 * safezoneH + safezoneY;
+			w = 0.15 * safezoneW;
+			h = 0.04 * safezoneH;
 			colorBackground[] = {0,0,0.2,0.8};
 		};
 
 		class grpList : Life_RscCombo {
 			idc = 2023;
-			x = 0; y = 0.19;
-			w = 0.275; h = 0.03;
+			x = 0.15 * safezoneW + safezoneX;
+			y = 0.20 * safezoneH + safezoneY;
+			w = 0.15 * safezoneW; h = 0.03 * safezoneH;
 		};
 		
 		class plrList : life_RscListBox 
 		{
 			idc = item_list;
 			sizeEx = 0.030;
-			x = 0; y = 0.22;
-			w = 0.275; h = 0.5;
+			x = 0.15 * safezoneW + safezoneX;
+			y = 0.23 * safezoneH + safezoneY;
+			w = 0.15 * safezoneW; h = 0.4 * safezoneH;
 		};
 		
     };

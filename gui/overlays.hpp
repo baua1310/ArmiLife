@@ -9,48 +9,20 @@ class mainOverlay {
 	onLoad="uiNamespace setVariable ['mainOverlay',_this select 0]";
   
 	class controlsBackground {
-		class lblFaction: Life_RscStructuredText
-		{
+		class lblFaction: Life_RscStructuredText {
 			idc = 1000;
 			text = "Faction";
-			x = 0.00593747 * safezoneW + safezoneX;
-			y = 0.00697736 * safezoneH + safezoneY;
-			w = 0.262969 * safezoneW;
-			h = 0.05;
-			colorBackground[] = {0,0,0,0.6};
-			class Attributes {
-				valign = "middle";
-			};
-		};
-		class lblBalance: Life_RscStructuredText
-		{
-			idc = 1001;
-			text = "Money";
-			x = 0.587656 * safezoneW + safezoneX;
+			x = 0.192 * safezoneW + safezoneX;
 			y = 0.00697734 * safezoneH + safezoneY;
-			w = 0.262969 * safezoneW;
+			w = 0.22 * safezoneW;
 			h = 0.05;
 			colorBackground[] = {0,0,0,0.6};
 			class Attributes {
-				align = "right";
+				align = "left";
 				valign = "middle";
 			};
 		};
-		class lblFame: Life_RscStructuredText
-		{
-			idc = 1002;
-			x = 0.276875 * safezoneW + safezoneX;
-			y = 0.00697734 * safezoneH + safezoneY;
-			w = 0.135469 * safezoneW;
-			h = 0.05;
-			colorBackground[] = {0,0,0,0.6};
-			class Attributes {
-				align = "center";
-				valign = "middle";
-			};
-		};
-		class lblHand: Life_RscStructuredText
-		{
+		class lblHand: Life_RscStructuredText {
 			idc = 1003;
 			x = 0.420312 * safezoneW + safezoneX;
 			y = 0.00697734 * safezoneH + safezoneY;
@@ -59,6 +31,19 @@ class mainOverlay {
 			colorBackground[] = {0,0,0,0.6};
 			class Attributes {
 				align = "center";
+				valign = "middle";
+			};
+		};
+		class lblBalance: Life_RscStructuredText {
+			idc = 1001;
+			text = "Money";
+			x = 0.587656 * safezoneW + safezoneX;
+			y = 0.00697734 * safezoneH + safezoneY;
+			w = 0.22 * safezoneW;
+			h = 0.05;
+			colorBackground[] = {0,0,0,0.6};
+			class Attributes {
+				align = "right";
 				valign = "middle";
 			};
 		};

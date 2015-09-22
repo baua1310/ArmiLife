@@ -168,7 +168,7 @@ if(!isDedicated) then {
 
 	fnc_getNation = {
 		private ["_faction"];
-		_faction = "Factionless";
+		_faction = "Refugee";
 		switch (_this) do {
 			case 1: { _faction = "Democratic Republic"; };
 			case 2: { _faction = "Communists"; };
