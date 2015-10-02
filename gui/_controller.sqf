@@ -4,9 +4,13 @@ switch (_action) do {
 	case "init": {
 	private ["_hud","_target"];
 		2 cutRsc ["mainOverlay","PLAIN"];
-
+		3 cutRsc ["hints","PLAIN"];
+		
 		disableSerialization;
-		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];    
+		_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
+		_hints = uiNameSpace getVariable ["hints",displayNull];    
+		
+		// MAIN HUD
 		_money = (_hud displayCtrl 1001);
 		_money ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
 
@@ -18,6 +22,10 @@ switch (_action) do {
 		_faction ctrlCommit 0;
 		    
 		0 call fnc_setHand;
+		// END MAIN HUD
+		
+		/*_lblHint = (_hints displayCtrl 1);
+		_lblHint setText "Ay Caramba!"*/
 	};
 	case "inv": {
 		if(!dialog) then { createDialog "playerSettings"; };

@@ -1,4 +1,4 @@
-if (!((animationState player) in moveBusy)) then {
+if (!(call fnc_isBusy)) then {
 	_a = [];
 	switch (handItems select handItem) do {
 		case "Empty Hands": {

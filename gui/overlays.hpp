@@ -50,3 +50,32 @@ class mainOverlay {
 	};
 	class controls {};
 };
+
+	
+class hints
+{
+	idd=-1;
+	movingEnable = true;
+	fadein       =  0;
+	fadeout      =  0;
+	duration     =  0.1;
+	name="hints";
+	controls[]={"interact"};
+	onLoad="uiNamespace setVariable ['hints', _this select 0]";
+	
+	class interact
+	{
+		type = 0;
+		idc = 1;
+		style = 0;
+		x = 0.50;
+		y = 0.47;
+		w = 0.3;
+		h = 0.2;
+		font = "Zeppelin33Italic";
+		sizeEx = 0.03;
+		colorText[] = {255, 255, 255, 0.8};
+		colorBackground[]={0,0,0,0.8};
+		text = "Interact (Space)";
+	};
+};

@@ -4,13 +4,13 @@ class Mission
 	addOns[]=
 	{
 		"a3_map_altis",
-		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Civil",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Soft_F_TruckHeavy",
 		"rds_A2_Civilians",
-		"A3_Structures_F_Civ_InfoBoards"
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Characters_F_BLUFOR"
 	};
 	addOnsAuto[]=
 	{
@@ -43,7 +43,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			side="CIV";
@@ -85,20 +85,39 @@ class Mission
 		};
 		class Item2
 		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3687.813,54.290691,12470.15};
+					id=2;
+					side="CIV";
+					vehicle="C_man_1";
+					leader=1;
+					skill=0.60000002;
+					text="p1";
+					description="p1";
+				};
+			};
+		};
+		class Item3
+		{
 			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={3686.2063,54.549435,12469.267};
-					id=2;
+					position[]={3579.7102,9.7536278,13032.713};
+					id=3;
 					side="WEST";
-					vehicle="B_soldier_exp_F";
+					vehicle="B_Soldier_A_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					text="p1";
+					text="p2";
 				};
 			};
 		};
@@ -110,7 +129,7 @@ class Mission
 		{
 			position[]={16553.717,11.058635,12794.12};
 			azimut=125.774;
-			id=3;
+			id=4;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			skill=0.60000002;
@@ -121,7 +140,7 @@ class Mission
 		{
 			position[]={3598.9917,12.47351,12967.934};
 			azimut=217.93068;
-			id=4;
+			id=5;
 			side="EMPTY";
 			vehicle="I_Truck_02_covered_F";
 			skill=0.60000002;
@@ -131,7 +150,7 @@ class Mission
 		{
 			position[]={3695.7366,10.379351,13150.771};
 			azimut=91.022903;
-			id=5;
+			id=6;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;

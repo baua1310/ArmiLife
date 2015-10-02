@@ -33,8 +33,8 @@ productionResources = [
 	["Copper","AL_Copper"],["Wheat","AL_Wheat"],["Oil","AL_Oil"],["Fish","AL_Fish"],["Stone","AL_Stone"],
 	["Metal","AL_Metal"],["Diamond","AL_Diamond"],["Apple","AL_Apple"],["Generator","AL_Generator"],["Bauxite","AL_Bauxite"],
 	["Wool","AL_Wool"],["Dirt","AL_Dirt"],["Orange","AL_Orange"],["Potatoes","AL_Potatoes"],["Natural Rubber","AL_NRubber"],
-	["Turtle","AL_Turtle"],["Snake","AL_Snake"],["Fish","AL_Fish"],["Rabbit","AL_Rabbit"],["Shark","AL_Shark"],
-	["Plastic","AL_Plastic"],["Nitric Acid","AL_NAcid"] //5
+	["Turtle","AL_Turtle"],["Snake","AL_Snake"],["Rabbit","AL_Rabbit"],["Shark","AL_Shark"],["Plastic","AL_Plastic"],
+	["Nitric Acid","AL_NAcid"] //5
 ];
 productionComponents = [
 	["Wood Plank","",[ [[0,1,1] ],5],false ],
@@ -68,14 +68,17 @@ productionComponents = [
 	["Rice Box","Land_RiceBox_F",[[],0],false,"hunger = hunger - 60;" ],
 	["C4","Land_RiceBox_F",[[],1],false,"hunger = hunger - 60;" ]
 ];
+
+
 vehiclesArray = [
-	["Quadbike","C_Quadbike_01_F",[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],
-	["Hatchback","C_Hatchback_01_F",[ [[1,17,4],[1,12,5],[1,4,25]],1 ] ],
-	["SUV","C_SUV_01_F",[ [[1,17,4],[1,12,6],[1,4,28]],1 ] ],
-	["Pickup Offroad","C_Offroad_01_F",[ [[1,17,4],[1,12,7],[1,4,30]],1 ] ],
-	["Hatchback Sport","C_Hatchback_01_sport_F",[ [[1,17,4],[1,12,9],[1,4,34]],1 ] ],
-	["MH-9 Hummingbird","B_Heli_Light_01_F",[ [[1,10,4]],1 ] ]   // 5
+	["Quadbike","C_Quadbike_01_F",1500,[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],
+	["Hatchback","C_Hatchback_01_F",10000,[ [[1,17,4],[1,12,5],[1,4,25]],1 ] ],
+	["SUV","C_SUV_01_F",30000,[ [[1,17,4],[1,12,6],[1,4,28]],1 ] ],
+	["Pickup Offroad","C_Offroad_01_F",40000,[ [[1,17,4],[1,12,7],[1,4,30]],1 ] ],
+	["Hatchback Sport","C_Hatchback_01_sport_F",15000,[ [[1,17,4],[1,12,9],[1,4,34]],1 ] ],
+	["MH-9 Hummingbird","B_Heli_Light_01_F",135000,[ [[1,10,4]],1 ] ] // 5
 ];
+
 placeableObjects = [
 	["Fireplace","FirePlace_burning_F",[ [[0,9,5],[0,1,5]],1],false ]
 ];

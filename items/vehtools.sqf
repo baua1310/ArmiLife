@@ -1,5 +1,5 @@
 _tool = _this select 0;
-_vcl = (nearestobjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
+_vcl = (nearestObjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
 
 switch (_tool) do {
 	case "spikes": {
@@ -11,7 +11,7 @@ switch (_tool) do {
 	};
 	case "repair": {
 		if(player != vehicle player) then { systemChat "I cant repair a vehicle from the inside ^^"; } else {
-			if ((animationState player) in moveBusy) exitWith {systemChat "Wait, I am busy...";};
+			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
 			if(player distance _vcl < 5) then {   
 				_dam = damage _vcl;
 				if(_dam >= 1) exitWith { systemChat "This vehicle is a mess, no chance I can repair it."; };
@@ -24,7 +24,7 @@ switch (_tool) do {
 	};
 	case "carjack": {
 		if (isNil "_vcl") then {systemChat "There is no car here...";} else {
-			if ((animationState player) in moveBusy) exitWith {systemChat "Wait, I am busy...";};
+			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
 			systemChat "It works! Now I should slowly...";
 			sleep 5;
 		
@@ -35,7 +35,7 @@ switch (_tool) do {
 	};
 	case "refuel": {                              
 		if(player != vehicle player) then { systemChat "I must leave the vehicle to refuel it!"; } else {
-			if ((animationState player) in moveBusy) exitWith {systemChat "Wait, I am busy...";};
+			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
 			if(player distance _vcl < 5) then {   
 				_fuel = fuel _vcl;
 				if(_fuel > 0.95) exitWith { hint "This vehicle needs no refuel"; };
@@ -48,7 +48,7 @@ switch (_tool) do {
 	};
 	case "lockpick": {
 		if (!(isNull(_vcl))) then {
-			if ((animationState player) in moveBusy) exitWith {systemChat "Wait, I am busy...";};
+			if (call fnc_isBusy) exitWith {systemChat "Wait, I am busy...";};
 			if (_vcl in vclKeys) then { systemChat "Why should I lockpick this vehicle again?"; } else {
 				_w = [7,"Lockpicking...","AinvPknlMstpSnonWrflDnon_medic","AinvPknlMstpSnonWrflDnon_medicEnd"] spawn fnc_timer;
 				waitUntil { scriptDone _w; };
@@ -78,5 +78,25 @@ switch (_tool) do {
 				}; 
 			};
 		} forEach vclSirens;		
+	};
+	case "tow": {
+		_plrVcl = vehicle player;
+		if (_plrVcl != player) then {
+			_vcl = ((nearestObjects [_plrVcl,["LandVehicle"], 20]) - [_plrVcl]) select 0;
+			if (!isNil "_vcl") then {
+				if (speed _vcl == 0) then {
+					if (_plrVcl isKindOf "Air") then { _vcl attachTo [_plrVcl,[0,-0.2,-1]]; } else { _vcl attachTo [_plrVcl,[0,-4,0.5]]; };
+				} else { systemChat "I can't tow a moving vehicle, the risk is too high."; };
+			} else { systemChat "There is no vehicle close..."; };
+		} else { systemChat "I'm not that strong..."; };
+	};
+	case "untow": {
+		_vcls = nearestObjects [vehicle player,["LandVehicle"], 10];
+		if(count _vcls > 0) then {
+			{
+				_objs = attachedObjects _x;
+				if(count _objs > 0) then { _vcl = (_objs select 0); _vcl attachTo [vehicle player,[0,-11,0.5]]; detach _vcl; };
+			} forEach _vcls;
+		} else { systemChat "There is nothing around..."; };
 	};
 };

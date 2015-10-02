@@ -35,8 +35,7 @@ if(!isDedicated) then {
 	dmgSkip = false;
 	dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 	dmgCap = 0.99;
-	
-	moveBusy = ["AinvPknlMstpSnonWrflDnon_medic"];
+
 	moveSurrender = ["amovpercmstpssurwnondnon"];
 	
 	furnances = ["FirePlace_burning_F","i_stone_housebig_v2"];

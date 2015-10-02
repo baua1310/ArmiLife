@@ -2,7 +2,7 @@ _action = _this select 0;
 
 switch (_action) do {
 	case "gear_use": {
-		if (!((animationState player) in moveBusy)) then {
+		if (!(call fnc_isBusy)) then {
 			_selId= (_this select 1) select 1;
 			_items = call fnc_getGearItems;
 			_item = _items select _selId;
