@@ -8,22 +8,16 @@ WEST setFriend [RESISTANCE, 1];
 
 enableDebug = !isDedicated && isServer;
 
-_w = execVM "masterarray.sqf";
-waitUntil { scriptDone _w; };
-_w = execVM "variables.sqf";
-waitUntil { scriptDone _w; };
-if (enableDebug) then {
-	_w = execVM "debug.sqf";
-	waitUntil { scriptDone _w; };
-};
-_w = execVM "_functions.sqf";
-waitUntil { scriptDone _w; };
+_w = execVM "masterarray.sqf"; waitUntil { scriptDone _w; };
+_w = execVM "variables.sqf"; waitUntil { scriptDone _w; };
+
+if (enableDebug) then { _w = execVM "debug.sqf"; waitUntil { scriptDone _w; }; };
+
+_w = execVM "_functions.sqf"; waitUntil { scriptDone _w; };
 
 if (isServer) then {
-	_w = execVM "server\init.sqf";
-	waitUntil { scriptDone _w; };
-	_w = execVM "server\mapInit.sqf";
-	waitUntil { scriptDone _w; };
+	_w = execVM "server\init.sqf"; waitUntil { scriptDone _w; };
+	_w = execVM "server\mapInit.sqf"; waitUntil { scriptDone _w; };
 };
 
 _w = execVM "events\onPublicVar.sqf"; waitUntil { scriptDone _w; };
@@ -42,4 +36,6 @@ if(!isDedicated) then {
 	waitUntil {!(isNull (findDisplay 46))};
 	(findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyDown"];
 	(findDisplay 46) displaySetEventHandler ["KeyUp", "_this call onKeyPress"];
+	
+	execVM "clientloop.sqf";
 };

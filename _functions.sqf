@@ -22,7 +22,36 @@ fnc_set_sector = {
 	};
 };
 
-if(!isDedicated) then {
+if(!isDedicated) then {  
+	/*
+	* DO NOT REMOVE THIS COMMENT!
+	* Script written by Armitxes.
+	* For usage visit: http://forums.bistudio.com/showthread.php?192645-RELEASE-Map-Interaction-Script
+	*/  
+	getMapObjects = {
+		private ["_check","_near","_haystack","_compare","_needle"];
+		_check = _this select 0; _distance = _this select 1; _near = [];
+		
+		_haystack = [];
+		{ _haystack = _haystack + (toArray str(_x)); } forEach ((nearestObjects [player, [], _distance]) - [player]);
+		
+		{
+			_needle = toArray _x;
+			_needleLength = count _needle;
+			
+			for [{_i=0}, {_i<(count _haystack)}, {_i=_i+1}] do {
+				if((_haystack select _i) == (_needle select 0) && (_haystack select (_i+1)) == (_needle select 1)) then {
+					_compare = [];
+					for [{_l=0}, {_l<_needleLength}, {_l=_l+1}] do {
+						_compare = _compare + [_haystack select (_i+_l)];
+					};
+					if(count (_compare-_needle) == 0) then { _near = _near + [_x]; };
+				};
+			};    
+		} forEach _check;
+		_near
+	};
+
 	fnc_setMoney = {
 		if (typeName (_this select 1) == "SCALAR") then {
 			private["_hud","_acc","_cash","_target","_pubPlrData"];
@@ -90,6 +119,7 @@ if(!isDedicated) then {
 		
 		_p = _this select 0; // object
 		_m = _this select 1; // marker
+		_ret = false;
 		
 		if (typeName _p == "OBJECT") then {
 			_px = position _p select 0;
@@ -108,11 +138,12 @@ if(!isDedicated) then {
 		_rpy = (-(_px - _mpx) * sin(_ma) ) + ( (_py - _mpy) * cos(_ma) ) + _mpy;
 		if ((markerShape _m) == "RECTANGLE") then {
 			_xmin = _mpx - _msx;_xmax = _mpx + _msx;_ymin = _mpy - _msy;_ymax = _mpy + _msy;
-			if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; } else { _ret=false; };
+			if (((_rpx > _xmin) && (_rpx < _xmax)) && ((_rpy > _ymin) && (_rpy < _ymax))) then { _ret=true; };
 		} else {
 			_res = (((_rpx-_mpx)^2)/(_msx^2)) + (((_rpy-_mpy)^2)/(_msy^2));
-			if ( _res < 1 ) then{ _ret=true; }else{ _ret=false; };
+			if ( _res < 1 ) then{ _ret=true; };
 		};
+
 		_ret;
 	};
 	

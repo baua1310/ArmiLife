@@ -34,6 +34,7 @@ switch (_action) do {
 							case "AL_refuelkit": { ["refuel"] execVM "items\vehtools.sqf"; _r = false; };
 							case "AL_repairkit": { ["repair"] execVM "items\vehtools.sqf"; _r = false; };
 							case "AL_carjack": { ["carjack"] execVM "items\vehtools.sqf"; _r = false; };
+							case "AL_razorstrip": { _deploy = "Land_Razorwire_F" createVehicle (position player); _deploy setDamage 1; };
 							default { _r = false; systemChat "I don't know what to do with this..."; };
 						};
 					};

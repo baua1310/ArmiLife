@@ -18,7 +18,6 @@ laws = [
 	"Somebody needs to claim the government"
 	]
 ];
-taxes = [0,0];
 
 
 // 0 = NATO | 1 = CSAT (get from DB, start with 100mio)
@@ -31,6 +30,8 @@ if(!isDedicated) then {
 	antwort = 2;
 	allowTP = false;
 	INV_isOpen = false;
+	
+	curCap = ["Borderline",0,100];
 	
 	dmgSkip = false;
 	dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;

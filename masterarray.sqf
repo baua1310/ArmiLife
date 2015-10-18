@@ -27,63 +27,80 @@ capAreas = [
 	["capBowls",2,100]
 ];
 
-// Items
-productionResources = [
-	["Iron","AL_Iron"],["Wood","AL_Wood"],["Clean Water","AL_Water"],["Gold","AL_Gold"],["Silver","AL_Silver"],
-	["Copper","AL_Copper"],["Wheat","AL_Wheat"],["Oil","AL_Oil"],["Fish","AL_Fish"],["Stone","AL_Stone"],
-	["Metal","AL_Metal"],["Diamond","AL_Diamond"],["Apple","AL_Apple"],["Generator","AL_Generator"],["Bauxite","AL_Bauxite"],
-	["Wool","AL_Wool"],["Dirt","AL_Dirt"],["Orange","AL_Orange"],["Potatoes","AL_Potatoes"],["Natural Rubber","AL_NRubber"],
-	["Turtle","AL_Turtle"],["Snake","AL_Snake"],["Rabbit","AL_Rabbit"],["Shark","AL_Shark"],["Plastic","AL_Plastic"],
-	["Nitric Acid","AL_NAcid"] //5
-];
-productionComponents = [
-	["Wood Plank","",[ [[0,1,1] ],5],false ],
-	["Stick","",[ [[1,0,2] ],2],false ],
-	["Axe","",[ [[1,1,2],[0,0,3] ],1],true ],
-	["Pickaxe","",[[[1,1,2],[0,0,3]],1],true ],
-	["Aluminium","",[ [[0,14,2]],1],false ],
-	["String","",[ [[1,15,1]],5 ],false], //5
-	["Fishing Hook","",[ [[0,0,3]],1],false ],
-	["Fishing Rod","",[ [[1,1,2],[1,5,2],[1,6,1]],1],true ],
-	["Sand","",[ [[0,16,1]],1],false ],
-	["Glass","",[ [[1,8,1]],1,"Furnance" ],false ],
-	["Shovel","",[ [[1,1,2],[0,0,3] ],1],true ], //10
-	["Diamond Ring","",[ [[0,11,3], [0,4,9]] ,6],false],
-	["Cable","",[ [[1,13,1],[0,19,3]] ,4],false],
-	["Copper Plate","",[ [[0,5,1]] ,1],false],
-	["Fiber Optic Cable","",[ [[1,9,3],[0,19,3]], 2],false],
-	["Stone Bricks","",[ [[0,9,3]], 1], false], // 15
-	["Credit Card","",[ [[1,4,1]], 1], true],
-	["Tires","",[ [[0,19,10],[1,4,3]], 1],false],
-	["Bandage","Land_Bandage_F",[[],0,nil,5] ],
-	["Defibrillator","Land_Defibrillator_F",[[],0,nil,1000] ],
-	["Blood Bag","Land_BloodBag_F",[[],0],false ], // 20
-	["Heat Pack","Land_HeatPack_F",[[],0,nil,5],false ],
-	["Vitamin Bottle","Land_VitaminBottle_F",[[],0,nil,200],false,"player enableFatigue false;" ],
-	["Baked Beans","Land_BakedBeans_F",[[],0],false,"hunger = hunger - 60;" ],
-	["Water Bottle","Land_BottlePlastic_V2_F",[[],0],false,"durst = durst - 60;" ],
-	["Water Canteen","Land_Canteen_F",[[],0],false,"durst = durst - 80;" ], //25
-	["Cereals Box","Land_CerealsBox_F",[[],0],false,"hunger = hunger - 40;" ],
-	["Powdered Milk","Land_PowderedMilk_F",[[],0],false,"hunger = hunger - 15; durst = durst - 100;" ],
-	["Rice Box","Land_RiceBox_F",[[],0],false,"hunger = hunger - 60;" ],
-	["C4","Land_RiceBox_F",[[],1],false,"hunger = hunger - 60;" ]
-];
+/*
+	ONLY ARMITXES DEVS MAY MODIFY - SERVER DEVS MAY ADD A OWN ARRAY FOR THEIR ITEMS.
+	IF YOU REALLY NEED A NEW ITEM ADDED HERE, REQUEST/SUGGEST IT IN THE ARMITXES FORUMS.
 
-
-vehiclesArray = [
-	["Quadbike","C_Quadbike_01_F",1500,[ [[1,17,4],[1,12,3],[0,25,20]],1 ] ],
-	["Hatchback","C_Hatchback_01_F",10000,[ [[1,17,4],[1,12,5],[1,4,25]],1 ] ],
-	["SUV","C_SUV_01_F",30000,[ [[1,17,4],[1,12,6],[1,4,28]],1 ] ],
-	["Pickup Offroad","C_Offroad_01_F",40000,[ [[1,17,4],[1,12,7],[1,4,30]],1 ] ],
-	["Hatchback Sport","C_Hatchback_01_sport_F",15000,[ [[1,17,4],[1,12,9],[1,4,34]],1 ] ],
-	["MH-9 Hummingbird","B_Heli_Light_01_F",135000,[ [[1,10,4]],1 ] ] // 5
+	ALWAYS ADD NEW ITEMS TO THE END!
+	NEVER REMOVE OR REPLACE AN EXISTING ITEM
+	ELSE IT'LL CAUSE DB PROBLEMS. ABUSE WILL LEAD TO
+	SERVER-IP BLACKLIST.
+*/
+itemList = [
+	["Iron","AL_Iron",8,[0,0] ],
+	["Wood","AL_Wood",3,[0,0] ],
+	["Clean Water","AL_Water",1,[0,0] ],
+	["Gold","AL_Gold",300,[0,0] ],
+	["Silver","AL_Silver",100,[0,0] ],
+	["Copper","AL_Copper",50,[0,0] ],
+	["Wheat","AL_Wheat",3,[0,0] ],
+	["Oil","AL_Oil",60,[0,0] ],
+	["Fish","AL_Fish",4,[0,0] ],
+	["Stone","AL_Stone",1,[0,0] ],
+	["Metal","AL_Metal",6,[0,0] ],
+	["Diamond","AL_Diamond",800,[0,0] ],
+	["Apple","AL_Apple",1,[0,0] ],
+	["Generator","AL_Generator",2500,[0,0] ],
+	["Bauxite","AL_Bauxite",30,[0,0] ],
+	["Wool","AL_Wool",20,[0,0] ],
+	["Dirt","AL_Dirt",0,[0,0] ],
+	["Orange","AL_Orange",1,[0,0] ],
+	["Potatoes","AL_Potatoes",2,[0,0] ],
+	["Natural Rubber","AL_NRubber",3,[0,0] ],
+	["Turtle","AL_Turtle",200,[0,0] ],
+	["Snake","AL_Snake",2,[0,0] ],
+	["Rabbit","AL_Rabbit",2,[0,0] ],
+	["Shark","AL_Shark",400,[0,0] ],
+	["Plastic","AL_Plastic",120,[0,0] ],
+	["Nitric Acid","AL_NAcid",40,[0,0] ],
+	["Wood Plank","",6,[0,0] ],
+	["Stick","",1,[0,0] ],
+	["Axe","",100,[0,0] ],
+	["Pickaxe","",100,[0,0] ],
+	["Aluminium","",10,[0,0] ],
+	["String","",1,[0,0] ],
+	["Fishing Hook",""],
+	["Fishing Rod",""],
+	["Sand",""],
+	["Glass",""],
+	["Shovel",""],
+	["Diamond Ring",""],
+	["Cable",""],
+	["Copper Plate",""],
+	["Fiber Optic Cable",""],
+	["Stone Bricks","",2,[0,0] ],
+	["Credit Card","",0,[0,0] ],
+	["Tires","",60,[50,50] ],
+	["Bandage","Land_Bandage_F",2, [200,200] ],
+	["Defibrillator","Land_Defibrillator_F",200,[10,10] ],
+	["Blood Bag","Land_BloodBag_F",20, [200,200] ],
+	["Heat Pack","Land_HeatPack_F",3, [1000,1000] ],
+	["Vitamin Bottle","Land_VitaminBottle_F",2, [1000,1000] ],
+	["Baked Beans","Land_BakedBeans_F",2,100],
+	["Water Bottle","Land_BottlePlastic_V2_F",1, [10000,10000] ],
+	["Water Canteen","Land_Canteen_F",10, [20,20] ],
+	["Cereals Box","Land_CerealsBox_F"],
+	["Powdered Milk","Land_PowderedMilk_F"],
+	["Rice Box","Land_RiceBox_F"],
+	["C4","",30000,[0,0] ],
+	["Quadbike","C_Quadbike_01_F",1500,[0,0] ],
+	["Hatchback","C_Hatchback_01_F",10000,[0,0] ],
+	["SUV","C_SUV_01_F",30000,[0,0] ],
+	["Pickup Offroad","C_Offroad_01_F",40000,[0,0] ],
+	["Hatchback Sport","C_Hatchback_01_sport_F",15000,[0,0] ],
+	["MH-9 Hummingbird","B_Heli_Light_01_F",135000,[0,0] ],
+	["Fireplace","FirePlace_burning_F",0,[0,0] ]
 ];
-
-placeableObjects = [
-	["Fireplace","FirePlace_burning_F",[ [[0,9,5],[0,1,5]],1],false ]
-];
-// End Items
-masterarray = [productionComponents, vehiclesArray, placeableObjects];
 
 licenseArray = [
 	["Drivers License",2020],
@@ -93,62 +110,3 @@ licenseArray = [
 	["Pistol License",3000],
 	["Rifle License",10000]
 ];
-
-/* type: 0->Prod,1=Veh,2=place */
-if(!isDedicated) then {
-  getALObject = {
-    private ["_type","_id","_obj"];
-    _type = -1;
-    _id = -1;
-    _obj = -1;
-    
-    for [{_tid=0},{_tid<(count masterarray)},{_tid=_tid+1}] do {
-      _curId = 0;
-      {
-        _ident = (_x select 0);
-        _found = false;
-        switch (typeName _ident) do {
-          case "STRING": { if(_ident == _this) then { _found = true; }; };
-          case "ARRAY": { if(_this in _ident) then { _found = true; }; };
-        };
-        if(_found) exitWith { _id = _curId; _obj = _x; };
-        _curId = _curId + 1;
-      } forEach (masterarray select _tid);
-      if(!(_id == -1)) exitWith { _type = _tid; };
-    };
-    
-    [_type,_id,_obj]
-  };
-  
-	/*
-	* DO NOT REMOVE THIS COMMENT!
-	* Script written by Armitxes.
-	* For usage visit: http://forums.bistudio.com/showthread.php?192645-RELEASE-Map-Interaction-Script
-	*/  
-	getMapObjects = {
-		private ["_check","_near","_haystack","_compare","_needle"];
-		_check = _this select 0;
-		_distance = _this select 1;
-		_near = [];
-		
-		_haystack = [];
-		{ _haystack = _haystack + (toArray str(_x)); } forEach ((nearestObjects [player, [], _distance]) - [player]);
-		
-		{
-			_needle = toArray _x;
-			_needleLength = count _needle;
-			
-			for [{_i=0}, {_i<(count _haystack)}, {_i=_i+1}] do {
-				if((_haystack select _i) == (_needle select 0) && (_haystack select (_i+1)) == (_needle select 1)) then {
-					_compare = [];
-					for [{_l=0}, {_l<_needleLength}, {_l=_l+1}] do {
-						_compare = _compare + [_haystack select (_i+_l)];
-					};
-				
-					if(count (_compare-_needle) == 0) then { _near = _near + [_x]; };
-				};
-			};    
-		} forEach _check;
-		_near
-	};
-};
