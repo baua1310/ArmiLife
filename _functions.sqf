@@ -22,7 +22,7 @@ fnc_set_sector = {
 	};
 };
 
-if(!isDedicated) then {  
+if(!isDedicated) then {
 	/*
 	* DO NOT REMOVE THIS COMMENT!
 	* Script written by Armitxes.
@@ -70,12 +70,28 @@ if(!isDedicated) then {
 
 			_target = (_hud displayCtrl 1001);
 			_target ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
-			_target ctrlCommit 0; 
+			_target ctrlCommit 0;
 		};
+	};
+	
+	fnc_updateCurCap = {
+		private ["_hud","_texture","_target"];
+		_texture = "\A3\Data_F\Flags\Flag_white_CO.paa";
+		switch (curCap select 1) do {
+			case 0: {_texture = "\A3\Data_F\Flags\Flag_white_CO.paa"};
+			case 1: {_texture = "\A3\Data_F\Flags\Flag_nato_CO.paa";};
+			case 2: {_texture = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";};
+			case 3: {_texture = "\A3\Data_F\Flags\Flag_FIA_CO.paa";};
+		};
+		disableSerialization;
+		_hud = uiNamespace getVariable ["mainOverlay",displayNull];
+		_target = _hud displayCtrl 1004;
+		_target ctrlSetText _texture;
+		_target ctrlCommit 0;
 	};
 
 	fnc_setHand = {
-		private ["_hud","_id","_count","_string"];        
+		private ["_hud","_id","_count","_string","_target"];
 		disableSerialization;
 		_hud = uiNamespace getVariable ["mainOverlay",displayNull];
 
@@ -86,7 +102,7 @@ if(!isDedicated) then {
 		_string = handItems select handItem;
 		_target = _hud displayCtrl 1003;
 		_target ctrlSetText _string;
-		_target ctrlCommit 0;   
+		_target ctrlCommit 0;
 	};
 	
 	fnc_setNutrition = {

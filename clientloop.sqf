@@ -3,8 +3,9 @@
 	while { true } do {
 		_f = false;
 		if (curCap select 0 != "Borderline") then { while { ([player,curCap select 0] call fnc_isInMarker) } do { sleep 5; }; };
-		{ if( ([player,_x select 0] call fnc_isInMarker) ) then { curCap = _x; }; _f = true; } forEach capAreas;
+		{ if( ([player,_x select 0] call fnc_isInMarker) ) exitWith { curCap = _x; _f = true; }; } forEach capAreas;
 		if (!_f) then { curCap = ["Borderline",0,100]; };
+		call fnc_updateCurCap;
 		sleep 5;
 	};
 };

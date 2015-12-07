@@ -11,7 +11,7 @@ class YesNo {
     class controlsBackground {};
 
     class controls {
-        class btnYes:Life_RscButtonMenu
+        class btnYes: RscButtonMenu
         {
             idc = 1600;
             text = "Yes";
@@ -27,7 +27,7 @@ class YesNo {
                 valign = "middle";
             };
         };
-        class btnNo:Life_RscButtonMenu
+        class btnNo: RscButtonMenu
         {
             idc = 1601;
             text = "No";
@@ -52,7 +52,7 @@ class YesNo {
             w = 0.252748 * safezoneW;
             h = 0.165046 * safezoneH;
         };
-        class lblQuestion:life_RscStructuredText
+        class lblQuestion: RscStructuredText
         {
             idc = 1;
             text = "Loading...";
@@ -79,7 +79,7 @@ class progressBar
 			y = 0.195 * safezoneH + safezoneY;
 			h = 0.025 * safezoneH;
 		};
-		class lblText:life_RscStructuredText
+		class lblText: RscStructuredText
         {
             idc = 2;
             text = "Loading...";
@@ -98,83 +98,83 @@ class ArmiPhone {
 	enableSimulation = true;
 
 	class controlsBackground {
-    class bgPhone: ARM_RscPicture
-    {
-    	idc = 1200;
-    	text = "img\phone.paa";
-    	x = 0.0818 * safezoneW + safezoneX;
-    	y = 0.17 * safezoneH + safezoneY;
-    	w = 0.244375 * safezoneW;
-    	h = 0.396 * safezoneH;
-        colorText[] = {1,1,1,1};
-    };  
-  };
-  class objects {};  
-  class controls {
-    class RscFrame_1800: ARM_RscFrameButton
-    {
-    	idc = 1800;
-    	x = 0.0931719 * safezoneW + safezoneX;
-    	y = 0.202 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_cop'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1801: ARM_RscFrameButton
-    {
-    	idc = 1801;
-    	x = 0.131741 * safezoneW + safezoneX;
-    	y = 0.2019 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_medic'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1802: ARM_RscFrameButton
-    {
-    	idc = 1802;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.2019 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['call_un'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1803: ARM_RscFrameButton
-    {
-    	idc = 1803;
-    	x = 0.0931719 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "openMap true; closeDialog 0;";
-    };
-    class RscFrame_1804: ARM_RscFrameButton
-    {
-    	idc = 1804;
-    	x = 0.131741 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['use'] execVM 'handy.sqf';";
-    };
-    class RscFrame_1805: ARM_RscFrameButton
-    {
-    	idc = 1805;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.26482 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "['vote'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
-    };
-    class RscFrame_1806: ARM_RscFrameButton
-    {
-    	idc = 1806;
-    	x = 0.170309 * safezoneW + safezoneX;
-    	y = 0.4527 * safezoneH + safezoneY;
-    	w = 0.0373437 * safezoneW;
-    	h = 0.0598519 * safezoneH;
-      action = "createDialog 'MainMenu';";
-    };
-  };
+		class bgPhone: ARM_RscPicture
+		{
+			idc = 1200;
+			text = "img\phone.paa";
+			x = 0.0818 * safezoneW + safezoneX;
+			y = 0.17 * safezoneH + safezoneY;
+			w = 0.244375 * safezoneW;
+			h = 0.396 * safezoneH;
+			colorText[] = {1,1,1,1};
+		};  
+	};
+	class objects {};  
+	class controls {
+		class RscFrame_1800: ARM_RscFrameButton
+		{
+			idc = 1800;
+			x = 0.0931719 * safezoneW + safezoneX;
+			y = 0.202 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_cop'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1801: ARM_RscFrameButton
+		{
+			idc = 1801;
+			x = 0.131741 * safezoneW + safezoneX;
+			y = 0.2019 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_medic'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1802: ARM_RscFrameButton
+		{
+			idc = 1802;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.2019 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['call_un'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1803: ARM_RscFrameButton
+		{
+			idc = 1803;
+			x = 0.0931719 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "openMap true; closeDialog 0;";
+		};
+		class RscFrame_1804: ARM_RscFrameButton
+		{
+			idc = 1804;
+			x = 0.131741 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['use'] execVM 'handy.sqf';";
+		};
+		class RscFrame_1805: ARM_RscFrameButton
+		{
+			idc = 1805;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.26482 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "['vote'] execVM 'armitxes\phone.sqf'; closeDialog 0;";
+		};
+		class RscFrame_1806: ARM_RscFrameButton
+		{
+			idc = 1806;
+			x = 0.170309 * safezoneW + safezoneX;
+			y = 0.4527 * safezoneH + safezoneY;
+			w = 0.0373437 * safezoneW;
+			h = 0.0598519 * safezoneH;
+			action = "createDialog 'MainMenu';";
+		};
+	};
 };
 
 class ArmiID {
@@ -267,7 +267,7 @@ class professions {
     };
     class objects {};  
     class controls {
-        class lstProfessions: Life_RscListNBox
+        class lstProfessions: RscListNBox
         {
         	idc = 1;
         	x = 0.249107 * safezoneW + safezoneX;
@@ -275,7 +275,7 @@ class professions {
         	w = 0.151856 * safezoneW;
         	h = 0.588121 * safezoneH;
         };
-        class lblProfessions: Life_RscStructuredText
+        class lblProfessions: RscStructuredText
         {
         	idc = -1;
         	text = "Professions";
@@ -284,7 +284,7 @@ class professions {
         	w = 0.0726269 * safezoneW;
         	h = 0.0280057 * safezoneH;
         };
-        class lblProfDesc: Life_RscStructuredText
+        class lblProfDesc: RscStructuredText
         {
         	idc = 2;
         	text = "Please select a profession for more details.";
@@ -293,7 +293,7 @@ class professions {
         	w = 0.336725 * safezoneW;
         	h = 0.532109 * safezoneH;
         };
-        class btnJob: Life_RscButtonMenu
+        class btnJob: RscButtonMenu
         {
         	text = "Accept Profession";
         	x = 0.618844 * safezoneW + safezoneX;
@@ -302,4 +302,99 @@ class professions {
         	h = 0.0280057 * safezoneH;
         };
     };
+};
+
+class shop
+{
+	idd = 1203;
+    movingEnable = 1;
+    enableSimulation = true;
+	onLoad = "shopDialogOpen = true;";
+	onUnload = "shopDialogOpen = false;";
+
+	class controlsBackground {
+		class bgShopBuy: AL_RscBackground
+		{
+			idc = 2200;
+			x = 0.242543 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.151834 * safezoneW;
+			h = 0.672 * safezoneH;
+			colorBackground[] = {-1,-1,-1,0.8};
+		};
+		class bgShopSell: AL_RscBackground
+		{
+			idc = 2201;
+			x = 0.466993 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.151834 * safezoneW;
+			h = 0.672 * safezoneH;
+			colorBackground[] = {-1,-1,-1,0.8};
+		};
+		class bgShopInfo: AL_RscBackground
+		{
+			idc = 2202;
+			x = 0.625428 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.132029 * safezoneW;
+			h = 0.672 * safezoneH;
+			colorBackground[] = {-1,-1,-1,0.8};
+		};
+	};
+	class controls
+	{
+		class txtAmount: RscEdit
+		{
+			idc = 1400;
+			text = "";
+			x = 0.400978 * safezoneW + safezoneX;
+			y = 0.444 * safezoneH + safezoneY;
+			w = 0.0594132 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class lsbShopBuy: RscListbox
+		{
+			idc = 1500;
+			x = 0.242543 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.151834 * safezoneW;
+			h = 0.672 * safezoneH;
+		};
+		class lsbShopSell: RscListbox
+		{
+			idc = 1501;
+			x = 0.466993 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.151834 * safezoneW;
+			h = 0.672 * safezoneH;
+		};
+		class btnShopSell: RscButtonMenu
+		{
+			idc = 2400;
+			text = " Sell ";
+			action = "['sell'] execVM 'shops.sqf';";
+			x = 0.400978 * safezoneW + safezoneX;
+			y = 0.486 * safezoneH + safezoneY;
+			w = 0.0594132 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class btnShopBuy: RscButtonMenu
+		{
+			idc = 2401;
+			text = " Buy ";
+			action = "['buy'] execVM 'shops.sqf';";
+			x = 0.400978 * safezoneW + safezoneX;
+			y = 0.402 * safezoneH + safezoneY;
+			w = 0.0594132 * safezoneW;
+			h = 0.028 * safezoneH;
+		};
+		class lblItemInfo: RscStructuredText
+		{
+			idc = 1000;
+			x = 0.625428 * safezoneW + safezoneX;
+			y = 0.164 * safezoneH + safezoneY;
+			w = 0.132029 * safezoneW;
+			h = 0.672 * safezoneH;
+		};
+	};
 };

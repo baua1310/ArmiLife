@@ -9,7 +9,7 @@ class mainOverlay {
 	onLoad="uiNamespace setVariable ['mainOverlay',_this select 0]";
   
 	class controlsBackground {
-		class lblFaction: Life_RscStructuredText {
+		class lblFaction: RscStructuredText {
 			idc = 1000;
 			text = "Faction";
 			x = 0.192 * safezoneW + safezoneX;
@@ -22,7 +22,7 @@ class mainOverlay {
 				valign = "middle";
 			};
 		};
-		class lblHand: Life_RscStructuredText {
+		class lblHand: RscStructuredText {
 			idc = 1003;
 			x = 0.420312 * safezoneW + safezoneX;
 			y = 0.00697734 * safezoneH + safezoneY;
@@ -34,7 +34,7 @@ class mainOverlay {
 				valign = "middle";
 			};
 		};
-		class lblBalance: Life_RscStructuredText {
+		class lblBalance: RscStructuredText {
 			idc = 1001;
 			text = "Money";
 			x = 0.587656 * safezoneW + safezoneX;
@@ -47,6 +47,15 @@ class mainOverlay {
 				valign = "middle";
 			};
 		};
+        class picCapNation: ARM_RscPicture
+        {
+            idc = 1004;
+            text = "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+            x = 0.9 * safezoneW + safezoneX;
+            y = 0.7 * safezoneH + safezoneY;
+            w = 0.04 * safezoneW;
+            h = 0.05 * safezoneH;
+        };
 	};
 	class controls {};
 };
@@ -72,7 +81,7 @@ class hints
 		y = 0.47;
 		w = 0.3;
 		h = 0.2;
-		font = "Zeppelin33Italic";
+		font = "PuristaMedium";
 		sizeEx = 0.03;
 		colorText[] = {255, 255, 255, 0.8};
 		colorBackground[]={0,0,0,0.8};

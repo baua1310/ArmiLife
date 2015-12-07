@@ -31,7 +31,7 @@ class lbPlayers {
 			w = 0.15 * safezoneW; h = 0.03 * safezoneH;
 		};
 		
-		class plrList : life_RscListBox 
+		class plrList : RscListBox 
 		{
 			idc = item_list;
 			sizeEx = 0.030;

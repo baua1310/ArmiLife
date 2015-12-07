@@ -64,7 +64,7 @@ class Life_RscHud
 	text = "";
 };
 
-class Life_RscListNBox
+class RscListNBox
 {
 	style = 16;
 	type = 102;
@@ -139,7 +139,7 @@ class ARM_RscPicture {
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscStructuredText {
+class RscStructuredText {
     type = 13;
     style = 0;
     x = 0;
@@ -276,7 +276,7 @@ class AL_RscProgress
 	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
 
-class Life_RscListBox 
+class RscListBox 
 {
 	style = 16;
 	idc = -1;
@@ -316,7 +316,7 @@ class Life_RscListBox
 	};
 };
 
-class Life_RscEdit {
+class RscEdit {
 	type = 2;
 	style = 0x00 + 0x40;
 	font = "PuristaMedium";
@@ -374,7 +374,7 @@ class Life_RscFrame {
 	text = "";
 };
 
-class Life_RscShortcutButton {
+class RscShortcutButton {
 	idc = -1;
 	style = 0;
 	default = 0;
@@ -442,7 +442,7 @@ class Life_RscShortcutButton {
 	};
 };
 
-class Life_RscButtonMenu : Life_RscShortcutButton {
+class RscButtonMenu : RscShortcutButton {
 	idc = -1;
 	type = 16;
 	style = "0x02 + 0xC0";
@@ -469,15 +469,15 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
 	period = 1.2;
 	periodFocus = 1.2;
 	periodOver = 1.2;
-	size = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
 	class TextPos
 	{
-		left = "0.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-		top = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
+		left = "0.25 * (((safezoneW / safezoneH) min 1.2) / 40)";
+		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
 		bottom = 0.0;
 	};
@@ -490,7 +490,7 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
 	};
 	class ShortcutPos
 	{
-		left = "(6.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
+		left = "(6.25 * (((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
 		top = 0.005;
 		w = 0.0225;
 		h = 0.03;

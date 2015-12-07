@@ -25,6 +25,7 @@ canRobBank = true;
 robbedTotal = 0;
 
 if(!isDedicated) then {
+	shopDialogOpen = false;
 	handItem = 0;
 	handItems = ["Empty Hands","Fists","Credit Card"];
 	antwort = 2;

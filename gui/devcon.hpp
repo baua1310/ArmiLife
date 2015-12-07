@@ -19,7 +19,7 @@ class devcon {
 		};
 	};
 	class controls {
-		class txtCmd: Life_RscEdit
+		class txtCmd: RscEdit
 		{
 			idc = 1400;
 			text = "";
@@ -28,7 +28,7 @@ class devcon {
 			w = 0.211406 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class btnExec: Life_RscButtonMenu
+		class btnExec: RscButtonMenu
 		{
 			idc = 2400;
 			text = "Execute";
@@ -39,7 +39,7 @@ class devcon {
 			colorBackground[] = {-1,-1,-1,0.8};
 			onButtonClick = "0 execVM ""gui\devcon.sqf"";";
 		};
-		class btnTeleport: Life_RscButtonMenu
+		class btnTeleport: RscButtonMenu
 		{
 			idc = 2401;
 			text = "Teleport";
@@ -50,7 +50,7 @@ class devcon {
 			colorBackground[] = {-1,-1,-1,0.8};
 			onButtonClick = "1 execVM ""gui\devcon.sqf"";";
 		};
-		class btnTP2ME: Life_RscButtonMenu
+		class btnTP2ME: RscButtonMenu
 		{
 			idc = 2402;
 			text = "Teleport to me";

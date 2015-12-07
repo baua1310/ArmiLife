@@ -7,8 +7,6 @@ class Mission
 		"a3_characters_f",
 		"A3_Characters_F_Civil",
 		"A3_Weapons_F_Ammoboxes",
-		"A3_Soft_F_TruckHeavy",
-		"rds_A2_Civilians",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Characters_F_BLUFOR"
 	};
@@ -18,7 +16,6 @@ class Mission
 		"a3_characters_f",
 		"A3_Characters_F_BLUFOR",
 		"A3_Weapons_F_Ammoboxes",
-		"A3_Soft_F_TruckHeavy",
 		"A3_Structures_F_Civ_InfoBoards",
 		"a3_map_altis"
 	};
@@ -71,34 +68,33 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3578.4241,9.8139162,13022.287};
-					azimut=44.7542;
-					id=1;
-					side="CIV";
-					vehicle="C_man_polo_1_F";
-					leader=1;
-					skill=0.60000002;
-					text="kavCivShop";
-					init="this setPos [getPos kavCivShop select 0,getPos kavCivShop select 1,3];";
-				};
-			};
-		};
-		class Item2
-		{
-			side="CIV";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
 					position[]={3687.813,54.290691,12470.15};
-					id=2;
+					id=1;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
 					skill=0.60000002;
 					text="p1";
 					description="p1";
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={24894.873,20.122549,20824.594};
+					id=2;
+					side="WEST";
+					vehicle="B_Soldier_A_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+					text="p2";
 				};
 			};
 		};
@@ -110,21 +106,20 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3579.7102,9.7536278,13032.713};
+					position[]={-9569.0518,0.072374165,13364.97};
 					id=3;
 					side="WEST";
 					vehicle="B_Soldier_A_F";
-					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					text="p2";
+					text="p2_1";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			position[]={16553.717,11.058635,12794.12};
@@ -138,29 +133,52 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={3598.9917,12.47351,12967.934};
-			azimut=217.93068;
-			id=5;
-			side="EMPTY";
-			vehicle="I_Truck_02_covered_F";
-			skill=0.60000002;
-			text="tp1";
-		};
-		class Item2
-		{
 			position[]={3695.7366,10.379351,13150.771};
 			azimut=91.022903;
-			id=6;
+			id=5;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
 			text="info";
 			init="this setPos (this modelToWorld[0,0,11.07]); this addAction [""<t color='#FF0000'>Declare War</t>"",""war.sqf"",""declare"",20,false,true,"""",""isNMayor""]; this enableSimulation false;";
 		};
+		class Item2
+		{
+			position[]={3578.2261,9.7904596,13022.285};
+			azimut=-136.64799;
+			id=6;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			text="kavCarShop";
+			init="this enableSimulation false; this setPos [(getPos this) select 0,(getPos this) select 1,2.04];";
+		};
+		class Item3
+		{
+			position[]={19367.508,37.426022,13283.055};
+			azimut=-212.56;
+			id=7;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			text="busHq";
+			init="this enableSimulation false; this setPos [(getPos this) select 0,(getPos this) select 1,0.83];";
+		};
+		class Item4
+		{
+			position[]={9679.8262,2.8449461,22290.271};
+			azimut=-358.883;
+			id=8;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			text="gasHq";
+			init="this enableSimulation false;";
+		};
 	};
 	class Markers
 	{
-		items=71;
+		items=102;
 		class Item0
 		{
 			position[]={9142.8018,16.911982,21480.648};
@@ -206,6 +224,7 @@ class Mission
 			position[]={14748.943,17.879999,16465.547};
 			name="airport";
 			type="c_plane";
+			colorName="ColorRed";
 			a=0.75;
 			b=0.75;
 		};
@@ -652,7 +671,7 @@ class Mission
 		};
 		class Item40
 		{
-			position[]={27281.459,10.496687,20809.26};
+			position[]={27250.586,9.6577072,20814.145};
 			name="capGatolia";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -901,10 +920,10 @@ class Mission
 		};
 		class Item61
 		{
-			position[]={3574.8032,9.1844301,13038.267};
-			name="kavCivShopSpawn";
+			position[]={3577.8701,9.549016,13035.108};
+			name="kavCarShopSpawn";
 			type="Empty";
-			angle=134.591;
+			angle=222.02548;
 		};
 		class Item62
 		{
@@ -921,7 +940,6 @@ class Mission
 		{
 			position[]={6154.1069,43,16240.847};
 			name="fac";
-			text="Factory";
 			type="loc_Stack";
 			colorName="ColorCIV";
 			a=0.75;
@@ -957,7 +975,6 @@ class Mission
 		{
 			position[]={12601.24,34.00404,16348.683};
 			name="fac2";
-			text="Factory";
 			type="loc_Stack";
 			colorName="ColorCIV";
 			a=0.75;
@@ -987,6 +1004,261 @@ class Mission
 			colorName="ColorWEST";
 			a=0.40000001;
 			b=0.40000001;
+		};
+		class Item71
+		{
+			position[]={21823.227,30.60479,21016.439};
+			name="rc";
+			text=" Camp";
+			type="mil_flag";
+			colorName="ColorWhite";
+			a=0.40000001;
+			b=0.40000001;
+		};
+		class Item72
+		{
+			position[]={19359.553,37.14431,13290.688};
+			name="mrkBus";
+			type="loc_BusStop";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item73
+		{
+			position[]={19357.031,37.07045,13291.451};
+			name="busHqSpawn";
+			type="Empty";
+			angle=411.371;
+		};
+		class Item74
+		{
+			position[]={9685.9736,3.0296118,22283.477};
+			name="mrkGas";
+			type="loc_Fuelstation";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item75
+		{
+			position[]={9695.9785,3.1105773,22278.182};
+			name="gasHqSpawn";
+			type="Empty";
+			angle=537.90302;
+		};
+		class Item76
+		{
+			position[]={16770.244,16.314131,12559.828};
+			name="busPyrgos";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item77
+		{
+			position[]={3599.0176,12.517249,12965.957};
+			name="busKavala";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item78
+		{
+			position[]={14568.088,17.91,16820.508};
+			name="busAirport";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item79
+		{
+			position[]={15446.296,10.93753,16236.291};
+			name="powerHq";
+			type="loc_PowerSolar";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item80
+		{
+			position[]={12489.979,18.962643,15894.006};
+			name="busLakka";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item81
+		{
+			position[]={9367.3105,119.54639,15878.97};
+			name="busAgios";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item82
+		{
+			position[]={6893.7866,62.505646,15995.775};
+			name="busKore";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item83
+		{
+			position[]={5365.2261,21.325788,14512.751};
+			name="fac3";
+			type="loc_Stack";
+			colorName="ColorCIV";
+			a=0.75;
+			b=0.75;
+		};
+		class Item84
+		{
+			position[]={5253.8799,19.163248,14482.538};
+			name="busStadium";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item85
+		{
+			position[]={16321.582,11.213035,15976.635};
+			name="busAnthrakia";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item86
+		{
+			position[]={17271.482,12.598245,13438.723};
+			name="busMilBase";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item87
+		{
+			position[]={15810.1,14.278563,17420.586};
+			name="busTelos";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item88
+		{
+			position[]={17435.211,14.369637,17917.771};
+			name="busKalithea";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item89
+		{
+			position[]={18804.299,33.227425,16713.73};
+			name="busRodopoli";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item90
+		{
+			position[]={20982.313,39.841888,17001.709};
+			name="busParos";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item91
+		{
+			position[]={22824.492,13.827148,19169.289};
+			name="busAlmyra";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item92
+		{
+			position[]={23914.027,14.983183,20172.289};
+			name="busDelfinaki";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item93
+		{
+			position[]={25708.623,20.580011,21371.766};
+			name="busSofia";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item94
+		{
+			position[]={26794.801,21.087648,23069.67};
+			name="busMolos";
+			type="loc_BusStop";
+			a=0.75;
+			b=0.75;
+		};
+		class Item95
+		{
+			position[]={22010.244,-6.4541044,4784.2236};
+			name="powerBowls";
+			type="loc_PowerWave";
+			a=0.75;
+			b=0.75;
+		};
+		class Item96
+		{
+			position[]={19944.066,60.758598,6244.9697};
+			name="powerWindmills2";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item97
+		{
+			position[]={21770.885,39.366749,8705.6748};
+			name="powerTrachia";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item98
+		{
+			position[]={18710.809,209.02583,10219.796};
+			name="powerWindmills";
+			type="loc_PowerWind";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item99
+		{
+			position[]={25444.879,9.8916655,20320.236};
+			name="fac4";
+			type="loc_Stack";
+			colorName="ColorCIV";
+			a=0.75;
+			b=0.75;
+		};
+		class Item100
+		{
+			position[]={3600.9111,-24.959768,9736.168};
+			name="powerAthanos";
+			type="loc_PowerWave";
+			a=0.75;
+			b=0.75;
+		};
+		class Item101
+		{
+			position[]={25392.42,9.6203127,20358.229};
+			name="power";
+			type="loc_Power";
+			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
 		};
 	};
 };
