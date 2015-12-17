@@ -59,8 +59,8 @@ if(!isDedicated) then {
 			_hud = uiNameSpace getVariable ["mainOverlay",displayNull];
 			_pubPlrData = player getVariable "pubPlrData";
 			
-			_acc = (PLAYERDATA select 1) + (_this select 1);
-			_cash = (PLAYERDATA select 2) + (_this select 1);
+			_acc = round((PLAYERDATA select 1) + (_this select 1));
+			_cash = round((PLAYERDATA select 2) + (_this select 1));
 			
 			switch (_this select 0) do {
 				case "cash": { _pubPlrData set [1,[_cash,PLAYERDATA select 1]]; PLAYERDATA set [2,_cash]; };

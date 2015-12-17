@@ -87,7 +87,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={24894.873,20.122549,20824.594};
+					position[]={3408.6113,2.4780872,12991.691};
 					id=2;
 					side="WEST";
 					vehicle="B_Soldier_A_F";
@@ -178,7 +178,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=102;
+		items=107;
 		class Item0
 		{
 			position[]={9142.8018,16.911982,21480.648};
@@ -346,7 +346,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={3085.1606,49.337303,10094.211};
+			position[]={3085.1606,46.515854,10103.35};
 			name="capAthanos";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -515,7 +515,7 @@ class Mission
 		};
 		class Item28
 		{
-			position[]={14387.766,19.613342,22703.162};
+			position[]={14387.766,22.783522,22676.469};
 			name="capAgrios";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -554,13 +554,13 @@ class Mission
 		};
 		class Item31
 		{
-			position[]={16324.637,13.778687,20779.693};
+			position[]={16339.201,13.642144,20803.068};
 			name="capNychi";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorWEST";
 			fillName="Border";
-			a=1600;
+			a=1650;
 			b=690;
 			angle=-45.200001;
 			drawBorder=1;
@@ -1257,6 +1257,47 @@ class Mission
 			name="power";
 			type="loc_Power";
 			colorName="ColorRed";
+			a=0.75;
+			b=0.75;
+		};
+		class Item102
+		{
+			position[]={7573.2339,58.631252,22686.559};
+			name="powerAtsalis";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item103
+		{
+			position[]={6146.3936,237.22321,19818.402};
+			name="powerOreo";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item104
+		{
+			position[]={3978.6909,261.38828,19246.523};
+			name="powerOreo2";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item105
+		{
+			position[]={4280.4844,293.0289,20681.004};
+			name="powerOreo3";
+			type="loc_PowerWind";
+			a=0.75;
+			b=0.75;
+		};
+		class Item106
+		{
+			position[]={3267.2041,20.120539,12961.603};
+			name="copKavala";
+			type="o_installation";
+			colorName="ColorWEST";
 			a=0.75;
 			b=0.75;
 		};

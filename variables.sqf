@@ -1,5 +1,4 @@
 PLAYERDATA = [0];
-
 playerarray=[p1];
 capWar = nil;
 
@@ -50,6 +49,8 @@ if(!isDedicated) then {
 	isNMayor = false;
 	isCMayor = false;
 	isAMayor = false;
+	
+	nextBusStop = 0;
 	
 	// ArmiPhone
 	smsArray = [ [true, "[DEV] Armitxes", "You","Welcome to ArmiLife","ArmiLife combines all your favorite missions - redone, and more performant! ArmiLife is a journey you will never forget!",true] ];
