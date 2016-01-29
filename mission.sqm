@@ -40,7 +40,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=4;
+		items=3;
 		class Item0
 		{
 			side="CIV";
@@ -87,7 +87,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3408.6113,2.4780872,12991.691};
+					position[]={3244.8145,2.0902855,12949.924};
 					id=2;
 					side="WEST";
 					vehicle="B_Soldier_A_F";
@@ -98,33 +98,15 @@ class Mission
 				};
 			};
 		};
-		class Item3
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={-9569.0518,0.072374165,13364.97};
-					id=3;
-					side="WEST";
-					vehicle="B_Soldier_A_F";
-					leader=1;
-					skill=0.60000002;
-					text="p2_1";
-				};
-			};
-		};
 	};
 	class Vehicles
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			position[]={16553.717,11.058635,12794.12};
 			azimut=125.774;
-			id=4;
+			id=3;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			skill=0.60000002;
@@ -135,7 +117,7 @@ class Mission
 		{
 			position[]={3695.7366,10.379351,13150.771};
 			azimut=91.022903;
-			id=5;
+			id=4;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -146,7 +128,7 @@ class Mission
 		{
 			position[]={3578.2261,9.7904596,13022.285};
 			azimut=-136.64799;
-			id=6;
+			id=5;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -157,7 +139,7 @@ class Mission
 		{
 			position[]={19367.508,37.426022,13283.055};
 			azimut=-212.56;
-			id=7;
+			id=6;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -168,17 +150,28 @@ class Mission
 		{
 			position[]={9679.8262,2.8449461,22290.271};
 			azimut=-358.883;
-			id=8;
+			id=7;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
 			text="gasHq";
 			init="this enableSimulation false;";
 		};
+		class Item5
+		{
+			position[]={3237.1875,2.1571665,12953.093};
+			azimut=-86.945;
+			id=8;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			text="kavCopCar";
+			init="this enableSimulation false;";
+		};
 	};
 	class Markers
 	{
-		items=107;
+		items=109;
 		class Item0
 		{
 			position[]={9142.8018,16.911982,21480.648};
@@ -1300,6 +1293,23 @@ class Mission
 			colorName="ColorWEST";
 			a=0.75;
 			b=0.75;
+		};
+		class Item107
+		{
+			position[]={3245.8733,2.1131117,12966.58};
+			name="kavCopCarSpawn";
+			type="Empty";
+			angle=179.481;
+		};
+		class Item108
+		{
+			position[]={3243.4304,2.1163795,12956.493};
+			name="KavShopCarCop";
+			type="c_car";
+			colorName="ColorUNKNOWN";
+			a=0.80000001;
+			b=0.80000001;
+			angle=1.64947;
 		};
 	};
 };

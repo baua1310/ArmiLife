@@ -16,8 +16,6 @@ class Header
 	maxPlayers = 75;
 };
 
-#include "\ArmiLife_Sounds\config.hpp"
-
 wreckLimit = 3;
 wreckRemovalMinTime = 30;
 wreckRemovalMaxTime = 320;

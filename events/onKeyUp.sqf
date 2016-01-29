@@ -5,7 +5,7 @@ _shift   = _this select 2;
 _handled = true;
 
 switch (_key) do {
-	case 57: { if(speed (vehicle player) == 0) then { execVM "events\onMapInteraction.sqf"; }; };
+	case 57: { if (speed (vehicle player) == 0) then { execVM "events\onMapInteraction.sqf"; }; };
 	case 3: {["inv"] execVM "gui\_controller.sqf";};
 	case 4: {
 		if((animationState player) in moveSurrender) then {
@@ -22,7 +22,7 @@ switch (_key) do {
 			};
 		};
 	};
-	case 15: {if (_shift) then {1 call fnc_setHand;} else {2 call fnc_setHand;};};
+	case 15: { if (_shift) then {1 call fnc_setHand;} else {2 call fnc_setHand;};};
 	case 18: {
 		_vehPlr = vehicle player;
 		if (_vehPlr != player) then {
@@ -35,18 +35,15 @@ switch (_key) do {
 			if ((count _shops) > 0) then { ["openShop",_shops select 0] execVM "shops.sqf"; } else {
 				_veh = _pos nearestObject "LandVehicle";
 				if((vehicle player == player) && (player distance2D _veh < 4) && (locked _veh) == 0) then {
-					if(isNull (driver _veh)) then { player moveInDriver _veh; } else { player moveInCargo _veh; };
-				} else {};
+					if (_veh isKindOf "StaticWeapon") then { player moveInGunner _veh; } else {
+						if(isNull (driver _veh)) then { player moveInDriver _veh; } else { player moveInCargo _veh; };
+					};
+				};
 			};
 		};
 	};
 	case 23: {INV_isOpen = true; ["icall"] execVM "gui\inventory.sqf";};
-	case 33: {
-		_vcl = vehicle player;
-		if(PLAYERDATA select 7 in [1,2] && _vcl != player && driver _vcl == player) then { 
-			[_plrInit,"BIS_fnc_call",true,false] call BIS_fnc_MP;
-		};
-	};
+	case 33: { ["switch"] execVM "events\onSiren.sqf"; };
 	case 38: {
 		_vcl = (nearestobjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
 		if (_vcl in vclKeys) then {

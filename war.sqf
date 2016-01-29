@@ -54,6 +54,7 @@ switch (_action) do {
 		capFlag = _this select 4;
 		_capData = (capAreas select capWar);
 		_facName = (_capData select 1) call fnc_getNation;
+		player say ["AL_Waralarm",1,1];
 		_message = format ['<t color="#FF0000" size="1.2">- WAR DECLARATION -</t><br /><br />%2 of the %1 was declared a warzone by %3',_facName,_capData select 0,_this select 2];
 		hint parseText _message;
 		warWinner = nil;

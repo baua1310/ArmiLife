@@ -20,8 +20,6 @@ if (isServer) then {
 	_w = execVM "server\mapInit.sqf"; waitUntil { scriptDone _w; };
 };
 
-_w = execVM "events\onPublicVar.sqf"; waitUntil { scriptDone _w; };
-
 if(!isDedicated) then {
 	_w = execVM "events\onLogin.sqf"; waitUntil { scriptDone _w; };
 	//Stats loaded

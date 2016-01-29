@@ -5,10 +5,10 @@ _key     = _this select 1;
 _handled = true;
 
 if(!(_key in _downKeys)) then {
-  _shift   = _this select 2; 
-  switch (_key) do {
-    default { _handled = false; };
-  };
+	_shift   = _this select 2; 
+	switch (_key) do {
+		default { _handled = false; };
+	};
 };
 
 _handled

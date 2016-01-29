@@ -61,24 +61,6 @@ switch (_tool) do {
 			};
 		} else { systemChat "There is nothing that I could lockpick..."; };
 	};
-	case "siren": {
-		{
-			if(!(_x in localSirens)) then {
-				localSirens = localSirens + [_x];
-				[_x] spawn {
-					private ["_vcl"];
-					_vcl = _this select 0;
-					while ( _vcl in vclSirens ) do {
-						if( isNull "_vcl" || !(alive _vcl) ) exitWith {
-							vclSirens = vclSirens - [_vcl];
-							localSirens = localSirens - [_vcl];
-						};
-						_vcl say ["AL_Siren", 1]; sleep 3;
-					};
-				}; 
-			};
-		} forEach vclSirens;		
-	};
 	case "tow": {
 		_plrVcl = vehicle player;
 		if (_plrVcl != player) then {

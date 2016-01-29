@@ -127,9 +127,3 @@ licenseArray = [
 	["Pistol License",3000],
 	["Rifle License",10000]
 ];
-
-
-/* SHOP ARRAYS */
-shopCar = [56,61,62,63,64,66,72,73,74,57,60,69,70,71,58,59,75,77];
-shopBus = [67,68];
-shopRefuel = [76];

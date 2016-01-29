@@ -23,7 +23,7 @@ switch (_act) do {
 					btnShopSellData = [_this select 2,_data];
 				};
 				_price = _data select 2;
-				
+
 				_descr = "";
 				switch _ctrlId do {
 					case 1500: { _descr = format ["\n%1\nPrice: $%2",_data select 0,_price]; };
@@ -34,9 +34,10 @@ switch (_act) do {
 
 			_shopArray = [];
 			switch _shop do {
-				case kavCarShop: { _shopArray = shopCar; };
-				case busHq: { _shopArray = shopBus; };
-				case gasHq: { _shopArray = shopRefuel; };
+				case kavCarShop: { _shopArray = [56,61,62,63,64,66,72,73,74,57,60,69,70,71,58,59,75,77]; };
+				case kavCopCar: { _shopArray = [65,59]; };
+				case busHq: { _shopArray = [67,68]; };
+				case gasHq: { _shopArray = [76]; };
 				default { systemChat "This shop seems currently closed..."; };
 			};
 

@@ -3,3 +3,8 @@
 PLAYERDATA = [1,0,2000,[ [0,2,5],[1,4,10] ],[0,4],[0,0,0],0,0,0,0,100,255,0,"John Armitxes",[]];
 
 // Storage, Garage loaded from outside on demand
+
+/* Factions
+0 = Civ, 1 = Gov, 2 = Cop
+
+*/
