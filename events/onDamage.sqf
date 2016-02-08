@@ -22,11 +22,26 @@ if((alive player) && !dmgSkip) then {
 				case "hands": { dmgHands = dmgHands + _damage; player setHit ["hands",dmgHands]; };
 				case "legs": { dmgLegs = dmgLegs + _damage; player setHit ["legs",dmgLegs]; };
 			};
-	
+
+			if (_damage > 0.15 && (vehicle player != player)) then {
+				player action ["Eject", vehicle player]; 
+				dmgHead=dmgHead+_damage; dmgBody=dmgBody+_damage;
+				player setHit ["body",0.5];
+				sleep 1;
+			};
+
 			if (dmgHead > dmgCap || dmgBody > dmgCap) then {
-				dmgSkip = true;
-				player playAction "Unconscious";
+				dmgSkip = true; player setHit ["body",0.5];
+				if (call fnc_hasDisadvantage) then { player setDamage 1; } else { player playAction "Unconscious"; player setDamage 0.8; sleep 2; };
 				dmgSkip = false;
+				
+				_bleeding = round (300-(_damage*30));
+				while { (alive player) && ((damage player) > 0.3) } do {
+					titleText [format ["You are bleeding! You will die due blood loss in %1 seconds!",_bleeding],"PLAIN DOWN",0.2];
+					_bleeding = _bleeding - 1;
+					sleep 1;
+					if (_bleeding < 1) then { player setDamage 1; };
+				};
 			};
 		};
 	};

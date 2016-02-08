@@ -47,9 +47,10 @@ switch (_key) do {
 	case 38: {
 		_vcl = (nearestobjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
 		if (_vcl in vclKeys) then {
-			if(locked _vcl > 1) then {_vcl lock 0;} else {
+			if(locked _vcl > 1) then {_vcl lock 0; titleText ["~ Vehicle unlocked ~","PLAIN DOWN",0.4]; } else {
 				_vcl lock 2;
 				playSound3D ["ArmiLife_Sounds\Vehicle\carlock.ogg",_vcl,false,position _vcl, 1, 1, 35];
+				titleText ["~ Vehicle locked ~","PLAIN DOWN",0.4];
 			};
 		};
 	};

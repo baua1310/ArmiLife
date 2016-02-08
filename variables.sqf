@@ -2,11 +2,6 @@ PLAYERDATA = [0];
 playerarray=[p1];
 capWar = nil;
 
-dmgSkip = false;
-dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
-dmgCap = 0.99;
-
-
 laws = [
 	[
 	"Government not formed - no existing laws",

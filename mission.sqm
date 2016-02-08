@@ -8,13 +8,15 @@ class Mission
 		"A3_Characters_F_Civil",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Civ_InfoBoards",
-		"A3_Characters_F_BLUFOR"
+		"A3_Characters_F_BLUFOR",
+		"A3_Soft_F_MRAP_01"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_Civil",
 		"a3_characters_f",
 		"A3_Characters_F_BLUFOR",
+		"A3_Soft_F_MRAP_01",
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Civ_InfoBoards",
 		"a3_map_altis"
@@ -84,10 +86,10 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
-					position[]={3244.8145,2.0902855,12949.924};
+					position[]={5294.604,21.109058,14456.972};
 					id=2;
 					side="WEST";
 					vehicle="B_Soldier_A_F";
@@ -95,6 +97,14 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="p2";
+				};
+				class Item1
+				{
+					position[]={5285.4741,21.034527,14475.613};
+					id=3;
+					side="WEST";
+					vehicle="B_MRAP_01_gmg_F";
+					skill=0.60000002;
 				};
 			};
 		};
@@ -106,7 +116,7 @@ class Mission
 		{
 			position[]={16553.717,11.058635,12794.12};
 			azimut=125.774;
-			id=3;
+			id=4;
 			side="EMPTY";
 			vehicle="Box_NATO_Ammo_F";
 			skill=0.60000002;
@@ -117,7 +127,7 @@ class Mission
 		{
 			position[]={3695.7366,10.379351,13150.771};
 			azimut=91.022903;
-			id=4;
+			id=5;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -128,7 +138,7 @@ class Mission
 		{
 			position[]={3578.2261,9.7904596,13022.285};
 			azimut=-136.64799;
-			id=5;
+			id=6;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -139,7 +149,7 @@ class Mission
 		{
 			position[]={19367.508,37.426022,13283.055};
 			azimut=-212.56;
-			id=6;
+			id=7;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -150,7 +160,7 @@ class Mission
 		{
 			position[]={9679.8262,2.8449461,22290.271};
 			azimut=-358.883;
-			id=7;
+			id=8;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
@@ -161,7 +171,7 @@ class Mission
 		{
 			position[]={3237.1875,2.1571665,12953.093};
 			azimut=-86.945;
-			id=8;
+			id=9;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;

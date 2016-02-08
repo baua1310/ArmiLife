@@ -231,7 +231,7 @@ if(!isDedicated) then {
 			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
 		};
 	};
-	
+
 	fnc_isBusy = {
 		private ["_moveBusy","_ret"];
 		_ret = false;
@@ -239,7 +239,19 @@ if(!isDedicated) then {
 			"ainvpknlmstpsnonwrfldnon_ainvpknlmstpsnonwrfldnon_medic",
 			"ainvpknlmstpsnonwrfldnon_medicend",
 			"amovpercmstpsnonwnondnon_ainvpknlmstpsnonwnondnon",
-			"ainvpknlmstpsnonwrfldnon_medic"
+			"ainvpknlmstpsnonwrfldnon_medic",
+			"unconscious"
+		];
+		if ( (animationState player) in _moveBusy || !((findDisplay 2459) isEqualTo displayNull) ) then { _ret = true; };
+		_moveBusy = nil; _ret;
+	};
+	
+	// Is unconscious, is restrained?
+	fnc_hasDisadvantage = {
+		private ["_moveBusy","_ret"];
+		_ret = false;
+		_moveBusy = [
+			"unconscious"
 		];
 		if ( (animationState player) in _moveBusy || !((findDisplay 2459) isEqualTo displayNull) ) then { _ret = true; };
 		_moveBusy = nil; _ret;

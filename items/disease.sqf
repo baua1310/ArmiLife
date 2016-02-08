@@ -1,6 +1,8 @@
 healed = false;
 _disease = _this select 0;
 
+
+// ToDo: Think of more symptoms
 switch (_disease) do {
 	case "hiv": {
 		systemChat "I feel hot..."; sleep 200; if (healed) exitWith {};
