@@ -1,7 +1,15 @@
-/* Usage: ["show","crimes"] execVM logs.sqf; */
+/* Usage: ["add","crimes"] execVM "logs.sqf"; */
 _exe = _this select 0;
-_log = _this select 1;
-_params = _this select 2;
+_log = 0;
+_params = 0;
+
+_c = count _this;
+if (_c > 1) then {
+	_log = _this select 1;
+	if (_c > 2) then {
+		_params = _this select 2;
+	};
+};
 
 switch (_exe) do {
 	case "wipe": {
@@ -16,9 +24,9 @@ switch (_exe) do {
 			_doNotify = true;
 			
 			switch (_log) do {
-				case "admin": { logAdmin = logAdmin + [_params]; };
-				case "police": { logPolice = logPolice + [_params]; _doNotify=false; };
-				case "finances": { logFinances = logFinances + [_params]; _doNotify=false; };
+				case "admin": { logAdmin = [_params] + logAdmin; };
+				case "police": { logPolice = [_params] + logPolice; _doNotify=false; };
+				case "finances": { logFinances = [_params] + logFinances; _doNotify=false; };
 				case "crimes": {
 					logCrimes = logCrimes + [_params];
 					if (PLAYERDATA select 7 != 2) then {_doNotify=false;};
@@ -26,12 +34,14 @@ switch (_exe) do {
 			};
 				
 			if (_doNotify) then {
-				tempNotifyLog = tempNotifyLog + [_params + "<br /><br />--------------<br /><br />"];
+				tempNotifyLog = [_params] + tempNotifyLog;
 				tempNotifyLog resize 3;
 
-				_txt = "";
+				_txt = "--------------<br /><br />";
 				{
-					_txt = _txt+_x;
+					if (!(isNil "_x")) then {
+						_txt = _txt + _x + "<br /><br />--------------<br /><br />" ;
+					};
 				} forEach tempNotifyLog;
 
 				hintSilent parseText _txt;
@@ -39,7 +49,7 @@ switch (_exe) do {
 		};
 	};
 	case "show": {
-		_logArray = []
+		_logArray = [];
 		switch (_log) do {
 			case "admin": { _logArray = logAdmin; };
 			case "police": { _logArray = logPolice; };
@@ -47,7 +57,7 @@ switch (_exe) do {
 			case "crimes": { _logArray = logCrimes; };
 		};
 		
-		if (!(createDialog "logList")) exitWith {hint "Dialog Error!";};
+		if (!(createDialog "liste_1_button")) exitWith {hint "Dialog Error!";};
 		disableSerialization;
 
 		{ lbAdd [1,_x]; } forEach _logArray;
