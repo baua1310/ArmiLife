@@ -42,7 +42,7 @@ switch (_this select 3) do {
 				if(speed (vehicle player) < 1) then {
 					if ( ((getPosATL player) distance2D lastGasPos) > 200 ) then {
 						lastGasPos = getPosATL (vehicle player);
-						["bank",500] call fnc_setMoney;
+						["bank",50] call fnc_setMoney;
 						systemChat "I earned $50 for this delivery.";
 					} else { systemChat "This station is already full."; };
 				} else { systemChat "I'm driving too fast..."; };

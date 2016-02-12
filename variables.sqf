@@ -32,8 +32,9 @@ if(!isDedicated) then {
 	dmgHead = 0; dmgBody = 0; dmgHands = 0; dmgLegs = 0;
 	dmgCap = 0.99;
 
+	["wipeold"] execVM "logs.sqf";
+
 	moveSurrender = ["amovpercmstpssurwnondnon"];
-	
 	furnances = ["FirePlace_burning_F","i_stone_housebig_v2"];
 	
 	profs = [

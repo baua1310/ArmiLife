@@ -7,7 +7,7 @@ if (!(call fnc_isBusy)) then {
 				switch (_mapObjects select 0) do {
 					case "sacks_goods": {
 						[3,"Stealing goods...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer; _a = [["AL_apple",1],["AL_orange",1],["AL_potatoes",1]];
-						if (count (nearestObjects [player, ["Man"], 10]) > 0) then { [5] call fnc_setBounty; hint format["You were seen stealing food!"]; };
+						if (count (nearestObjects [player, ["Man"], 10]) > 0) then { [2] call fnc_setBounty; ["add","crimes", "You were seen stealing food! Bounty: +2",true] execVM "logs.sqf"; };
 					};
 					case "water": { [5,"Gathering water...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer; _num = floor random 4; _a = [["AL_water",_num]]; };
 					case "b_ficusc1s": { [5,"Gathering wood...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer; _a = [["AL_wood",1]]; };
