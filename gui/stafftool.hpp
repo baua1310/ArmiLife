@@ -1,3 +1,69 @@
+class supportTool : lbPlayers {
+	idd=100;
+	movingEnable = true;
+	enableSimulation = true;
+	fadein=0;
+	duration = 99999999999999999999999999999999999999999999;
+	fadeout=0;
+	name="supportTool";
+
+	controls[] = {plrTitle, grpList, plrList, supportTitle, txtWarn, btnWarn, btnTS};
+	controlsBackground[] = {plrBG,supportBG};
+	objects[] = {};
+
+	class supportBG : AL_RscBackground {
+		x = 0.31 * safezoneW + safezoneX;
+		y = 0.16 * safezoneH + safezoneY;
+		w = 0.2 * safezoneW; h = 0.13 * safezoneH;	
+	};
+
+	class supportTitle : AL_RscText
+	{
+		idc = -1;
+		text = "Support Tools";
+		sizeEx = 0.04;
+		x = 0.31 * safezoneW + safezoneX;
+		y = 0.16 * safezoneH + safezoneY;
+		w = 0.2 * safezoneW;
+		h = 0.04 * safezoneH;
+		colorBackground[] = {0,0,0.2,0.8};
+	};
+	
+	class txtWarn: RscEdit
+	{
+		idc = 1400;
+		text = "";
+		x = 0.315 * safezoneW + safezoneX;
+		y = 0.21 * safezoneH + safezoneY;
+		w = 0.19 * safezoneW;
+		h = 0.033 * safezoneH;
+	};
+	
+	class btnWarn: RscButtonMenu
+	{
+		idc = 2400;
+		text = "Warn";
+		x = 0.315 * safezoneW + safezoneX;
+		y = 0.25 * safezoneH + safezoneY;
+		w = 0.05 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorBackground[] = {-1,-1,-1,0.8};
+		onButtonClick = """warn"" execVM ""gui\stafftool.sqf"";";
+	};
+	
+	class btnTS: RscButtonMenu
+	{
+		idc = 2400;
+		text = "TS3";
+		x = 0.375 * safezoneW + safezoneX;
+		y = 0.25 * safezoneH + safezoneY;
+		w = 0.03 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorBackground[] = {-1,-1,-1,0.8};
+		onButtonClick = """teamspeak"" execVM ""gui\stafftool.sqf"";";
+	};
+};
+
 class devcon {
 	idd = -1;
 	movingEnable = true;
