@@ -15,29 +15,13 @@ switch (_action) do {
 		_money ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
 
 		_faction = (_hud displayCtrl 1000);
-		if (PLAYERDATA select 11 > 250) then { onMapSingleClick "if (allowTP) then { allowTP = false; player setpos _pos; };"; };
+		if (PLAYERDATA select 11 > 250) then { onMapSingleClick "if (allowTP) then { allowTP = false; (vehicle player) setPos _pos; };"; };
 		_faction ctrlSetText ((PLAYERDATA select 6) call fnc_getNation);
 
 		_money ctrlCommit 0;
 		_faction ctrlCommit 0;
 		    
 		0 call fnc_setHand;
-		// END MAIN HUD
-		
-		/*_lblHint = (_hints displayCtrl 1);
-		_lblHint setText "Ay Caramba!"*/
-	};
-	case "inv": {
-		if(!dialog) then { createDialog "playerSettings"; };
-		disableSerialization;
-		_display = findDisplay 2001;
-		(_display displayCtrl 2015) ctrlSetText format [" Cash: $%2\n Bank: $%1",(PLAYERDATA select 1),(PLAYERDATA select 2)];
-
-		_lics = "";
-		{
-		  _lics = _lics + format["%1\n",(licenseArray select _x) select 0];
-		} forEach (PLAYERDATA select 4);
-		(_display displayCtrl 2014) ctrlSetText _lics;
 	};
 	case "idcard": {
 		if(!dialog) then { createDialog "ArmiID"; };
@@ -65,3 +49,9 @@ switch (_action) do {
 		} forEach profs;
 	};
 };
+
+/*_lics = "";
+{
+	_lics = _lics + format["%1\n",(licenseArray select _x) select 0];
+} forEach (PLAYERDATA select 4);
+(_display displayCtrl 2014) ctrlSetText _lics;*/

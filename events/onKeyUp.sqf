@@ -26,7 +26,7 @@ switch (_key) do {
 	case 18: {
 		_vehPlr = vehicle player;
 		if (_vehPlr != player) then {
-			if (locked _vehPlr == 0) then {
+			if (locked _vehPlr != 2) then {
 				if (speed _vehPlr < 10) then {  player action ["EJECT",_vehPlr];  } else { systemChat "Hell no, I'm not suiciding."; };
 			} else { systemChat "Jumping out of a locked door? Really?" };
 		} else {
@@ -42,13 +42,12 @@ switch (_key) do {
 			};
 		};
 	};
-	case 23: {INV_isOpen = true; ["icall"] execVM "gui\inventory.sqf";};
 	case 33: { ["switch"] execVM "events\onSiren.sqf"; };
 	case 38: {
 		_vcl = (nearestobjects [getpos player, ["LandVehicle","Air","Ship"], 10]) select 0;
 		if (_vcl in vclKeys) then {
-			if(locked _vcl > 1) then {_vcl lock 0; titleText ["~ Vehicle unlocked ~","PLAIN DOWN",0.4]; } else {
-				_vcl lock 2;
+			if(locked _vcl > 1) then {_vcl lock false; titleText ["~ Vehicle unlocked ~","PLAIN DOWN",0.4]; } else {
+				_vcl lock true;
 				playSound3D ["ArmiLife_Sounds\Vehicle\carlock.ogg",_vcl,false,position _vcl, 1, 1, 35];
 				titleText ["~ Vehicle locked ~","PLAIN DOWN",0.4];
 			};

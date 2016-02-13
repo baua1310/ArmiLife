@@ -31,14 +31,13 @@ class lbPlayers {
 			w = 0.15 * safezoneW; h = 0.03 * safezoneH;
 		};
 		
-		class plrList : RscListBox 
-		{
-			idc = item_list;
-			sizeEx = 0.030;
+		class plrList : RscListBox {
+			idc = 2024;
+			sizeEx = 0.04;
 			x = 0.15 * safezoneW + safezoneX;
 			y = 0.23 * safezoneH + safezoneY;
-			w = 0.15 * safezoneW; h = 0.4 * safezoneH;
+			w = 0.15 * safezoneW;
+			h = 0.4 * safezoneH;
 		};
-		
     };
 };

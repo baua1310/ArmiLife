@@ -338,8 +338,7 @@ class Life_RscSlider {
 	colorActive[] = {1, 1, 1, 1};
 };
 
-class life_RscXSliderH 
-{
+class life_RscXSliderH {
 	style = 1024;
 	type = 43;
 	shadow = 2;

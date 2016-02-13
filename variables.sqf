@@ -1,5 +1,5 @@
 PLAYERDATA = [0];
-playerarray=[p1];
+playerarray=[p1,p2];
 capWar = nil;
 
 laws = [
