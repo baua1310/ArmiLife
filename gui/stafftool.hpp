@@ -64,6 +64,72 @@ class supportTool : lbPlayers {
 	};
 };
 
+class moderatorTool : supportTool {
+	idd=100;
+	movingEnable = true;
+	enableSimulation = true;
+	fadein=0;
+	duration = 99999999999999999999999999999999999999999999;
+	fadeout=0;
+	name="moderatorTool";
+
+	controls[] = {plrTitle, grpList, plrList, supportTitle, modTitle, txtWarn, btnWarn, btnTS, txtMod, btnChatban, btnRemoteCam};
+	controlsBackground[] = {plrBG,supportBG,modBG};
+	objects[] = {};
+
+	class modBG : AL_RscBackground {
+		x = 0.31 * safezoneW + safezoneX;
+		y = 0.31 * safezoneH + safezoneY;
+		w = 0.2 * safezoneW; h = 0.13 * safezoneH;	
+	};
+
+	class modTitle : AL_RscText
+	{
+		idc = -1;
+		text = "Moderator Tools";
+		sizeEx = 0.04;
+		x = 0.31 * safezoneW + safezoneX;
+		y = 0.31 * safezoneH + safezoneY;
+		w = 0.2 * safezoneW;
+		h = 0.04 * safezoneH;
+		colorBackground[] = {0,0,0.2,0.8};
+	};
+	
+	class txtMod: RscEdit
+	{
+		idc = 1401;
+		text = "";
+		x = 0.315 * safezoneW + safezoneX;
+		y = 0.36 * safezoneH + safezoneY;
+		w = 0.19 * safezoneW;
+		h = 0.033 * safezoneH;
+	};
+	
+	class btnChatban: RscButtonMenu
+	{
+		idc = 2400;
+		text = "Chatban";
+		x = 0.315 * safezoneW + safezoneX;
+		y = 0.4 * safezoneH + safezoneY;
+		w = 0.07 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorBackground[] = {-1,-1,-1,0.8};
+		onButtonClick = """chatban"" execVM ""gui\stafftool.sqf"";";
+	};
+	
+	class btnRemoteCam: RscButtonMenu
+	{
+		idc = 2401;
+		text = "Remote Cam";
+		x = 0.39 * safezoneW + safezoneX;
+		y = 0.4 * safezoneH + safezoneY;
+		w = 0.09 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorBackground[] = {-1,-1,-1,0.8};
+		onButtonClick = """remoteCam"" execVM ""gui\stafftool.sqf"";";
+	};
+};
+
 class devcon {
 	idd = -1;
 	movingEnable = true;

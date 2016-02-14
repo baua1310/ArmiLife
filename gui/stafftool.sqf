@@ -16,6 +16,7 @@ if (_rank > 49) then {
 				
 			if (_rank > 99) then {
 				// Moderator [Trainee = 100, Full = 101, Head = 102];
+				if(!_dlgOpen) then { if (!(createDialog "moderatorTool")) exitWith {hint "Dialog Error!";}; _dlgOpen=true;};
 			};
 			// Support [Trainee = 50, Full = 51, Head = 52]
 			if(!_dlgOpen) then { if (!(createDialog "supportTool")) exitWith {hint "Dialog Error!";};};
@@ -52,6 +53,47 @@ if (_rank > 49) then {
 			_tar = true;
 			_txt = "<t color='#FF0000'>~ Staff Message ~</t><br />All Police, EMS and Government members MUST be on TeamSpeak! ~ Connect to bbts3.com";
 			[ [["add","admin",_txt],"logs.sqf"] ,"BIS_fnc_execVM",_tar,false ] call BIS_fnc_MP;
+		};
+		case "remoteCam": {
+			_dsp = findDisplay 100;
+			_ctrl = _dsp displayCtrl 2024;
+			_sel = lbCurSel 2024;_txt = ctrlText 1400;
+			_tar = _ctrl lbData _sel;
+
+			if (_sel != -1 && _sel != 0) then {
+				_tar = call compile _tar;
+				remoteStaffCam_nvg = false;
+				if (!(isNull remoteStaffCam)) then { adminCamOpen=false; sleep 2; };
+				if (isNil "remoteStaffCam_y") then {
+					_pos = getPos _tar;
+					remoteStaffCam_x = (_pos select 0)-1;
+					remoteStaffCam_z = (_pos select 1)-1;
+					remoteStaffCam_y = 3;
+					remoteStaffCam_fov = 1.1;
+				};
+				remoteStaffCam = "camera" camCreate (getPosATL _tar);
+				
+				adminCamOpen = true;
+				_slider1 = 0;
+				_slider2 = 0;
+
+				remoteStaffCam cameraEffect ["internal", "back"];
+				remoteStaffCam attachTo [_tar,[0,-3,2]];
+				remoteStaffCam camSetFov remoteStaffCam_fov;
+				remoteStaffCam camPreload 5;
+				remoteStaffCam camSetTarget _tar;
+				remoteStaffCam camCommit 0;
+				
+				
+				while { adminCamOpen } do {
+					sleep 1;
+				};
+				
+				remoteStaffCam cameraEffect ["terminate","back"]; sleep 2;
+				camDestroy remoteStaffCam;
+				remoteStaffCam_nvg = false;
+				remoteStaffCam_y = nil;
+			} else { systemChat "Please select a player to spectate."; };
 		};
 		case "exe": {
 			_code = ctrlText 2200;
