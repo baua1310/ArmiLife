@@ -72,7 +72,7 @@ if (_rank > 49) then {
 					remoteStaffCam_fov = 1.1;
 				};
 				remoteStaffCam = "camera" camCreate (getPosATL _tar);
-				
+
 				adminCamOpen = true;
 				_slider1 = 0;
 				_slider2 = 0;
@@ -83,8 +83,7 @@ if (_rank > 49) then {
 				remoteStaffCam camPreload 5;
 				remoteStaffCam camSetTarget _tar;
 				remoteStaffCam camCommit 0;
-				
-				
+
 				while { adminCamOpen } do {
 					sleep 1;
 				};
@@ -95,6 +94,7 @@ if (_rank > 49) then {
 				remoteStaffCam_y = nil;
 			} else { systemChat "Please select a player to spectate."; };
 		};
+		case "cleanServer": { { if (!alive _x) then { grpdel = group _x; deleteVehicle _x; deleteGroup grpdel; }; } forEach (nearestObjects [[15617,16069,0],["Man","Animal","Air","LandVehicle"], 9000]); };
 		case "exe": {
 			_code = ctrlText 2200;
 			hintSilent _code;

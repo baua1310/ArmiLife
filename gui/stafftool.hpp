@@ -55,9 +55,9 @@ class supportTool : lbPlayers {
 	{
 		idc = 2400;
 		text = "TS3";
-		x = 0.375 * safezoneW + safezoneX;
+		x = 0.37 * safezoneW + safezoneX;
 		y = 0.25 * safezoneH + safezoneY;
-		w = 0.03 * safezoneW;
+		w = 0.0305 * safezoneW;
 		h = 0.03 * safezoneH;
 		colorBackground[] = {-1,-1,-1,0.8};
 		onButtonClick = """teamspeak"" execVM ""gui\stafftool.sqf"";";
@@ -127,6 +127,17 @@ class moderatorTool : supportTool {
 		h = 0.03 * safezoneH;
 		colorBackground[] = {-1,-1,-1,0.8};
 		onButtonClick = """remoteCam"" execVM ""gui\stafftool.sqf"";";
+	};
+	class btnCleanServer: RscButtonMenu
+	{
+		idc = 2401;
+		text = "Clean Server";
+		x = 0.48 * safezoneW + safezoneX;
+		y = 0.4 * safezoneH + safezoneY;
+		w = 0.1 * safezoneW;
+		h = 0.03 * safezoneH;
+		colorBackground[] = {-1,-1,-1,0.8};
+		onButtonClick = """cleanServer"" execVM ""gui\stafftool.sqf"";";
 	};
 };
 

@@ -35,6 +35,7 @@ switch (_act) do {
 			_shopArray = [];
 			switch _shop do {
 				case kavCarShop: { _shopArray = [56,61,62,63,64,66,72,73,74,57,60,69,70,71,58,59,75,77]; };
+				case pyrCarShop: { _shopArray = [56,61,62,63,64,66,72,73,74,57,60,69,70,71,58,59,75,77]; };
 				case kavCopCar: { _shopArray = [65,59]; };
 				case busHq: { _shopArray = [67,68]; };
 				case gasHq: { _shopArray = [76]; };

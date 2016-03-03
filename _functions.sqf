@@ -66,8 +66,18 @@ if(!isDedicated) then {
 				case "cash": { _pubPlrData set [1,[_cash,PLAYERDATA select 1]]; PLAYERDATA set [2,_cash]; };
 				case "bank": { _pubPlrData set [1,[PLAYERDATA select 2,_acc]]; PLAYERDATA set [1,_acc]; };
 			};
-			player setVariable ["pubPlrData",_pubPlrData,true];
 
+			player setVariable ["pubPlrData",_pubPlrData,true];
+			if(count _this > 2) then {
+				_log = _this select 2;
+				if (typeName _log == "ARRAY") then {
+					(["add","finances"] + _log) execVM "logs.sqf";
+				} else {
+					_txt = format ["%1 [ %2 ] might me using money cheats!",name player,getPlayerUID player];
+					[ [["add","staffonly",_txt],"logs.sqf"] ,"BIS_fnc_execVM",_tar,false ] call BIS_fnc_MP;
+				};
+			};
+			
 			_target = (_hud displayCtrl 1001);
 			_target ctrlSetText format["$%2 || Bank: $%1",PLAYERDATA select 1,PLAYERDATA select 2];
 			_target ctrlCommit 0;
@@ -226,6 +236,7 @@ if(!isDedicated) then {
 
 	fnc_setBankMoney = {
 		private ["_bankId","_amount"];
+		// 0 = NATO, 1 = CSAT
 		_bankId = _this select 0; _amount = _this select 1;
 		if (_bankId < 2 && (typeName _amount) == "SCALAR") then {
 			bankSafes set [_bankId,(bankSafes select _bankId)-_amount]; publicVariable "bankSafes";
