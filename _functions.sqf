@@ -74,7 +74,7 @@ if(!isDedicated) then {
 					(["add","finances"] + _log) execVM "logs.sqf";
 				} else {
 					_txt = format ["%1 [ %2 ] might me using money cheats!",name player,getPlayerUID player];
-					[ [["add","staffonly",_txt],"logs.sqf"] ,"BIS_fnc_execVM",_tar,false ] call BIS_fnc_MP;
+					[["add","staffonly",_txt],"logs.sqf"] remoteExec ["BIS_fnc_execVM", 0];
 				};
 			};
 			

@@ -15,7 +15,7 @@ switch (_kind) do {
 			_endRob = round(time)+300;
 			
 			if (_bankId == 1) then { _bankName = "Communist"; };
-			[{titleText [format["$$$ The alarm of the %1 bank has been triggered! $$$",_bankName] "plain"];},"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
+			{ titleText [format["$$$ The alarm of the %1 bank has been triggered! $$$",_bankName] "plain"]; } remoteExecCall ["BIS_fnc_call"];
 			
 			while {
 				(_endRob > time) &&
@@ -23,11 +23,11 @@ switch (_kind) do {
 				(alive player) &&
 				!(player getVariable "restrained")
 			} do { hintSilent format ["%1 seconds until the safe is cracked!",round(_endRob-time)]; sleep 1; };
-			if(_endRob < time) exitWith { [[["add","crime",format["$$ %1 was caught robbing the bank!",name player]],"logs.sqf"],"BIS_fnc_execVM",true,false,true] call BIS_fnc_MP; };
+			if(_endRob < time) exitWith { [["add","crime",format["$$ %1 was caught robbing the bank!",name player],"logs.sqf"] remoteExecCall ["BIS_fnc_execVM", -2]; };
 			
 			[5,"Collecting money...","AinvPknlMstpSnonWrflDnon_medic","AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon"] spawn fnc_timer;
 			bankSafes set [_bankId,(bankSafes select _bankId)-50000]; publicVariable "bankSafes";
-			[[["add","crime","Someone successfully robbed the bank and stole $50k"],"logs.sqf"],"BIS_fnc_execVM",true,false,true] call BIS_fnc_MP;
+			[["add","crime","Someone successfully robbed the bank and stole $50k"],"logs.sqf"] remoteExec ["BIS_fnc_execVM", -2];
 			
 			["cash",50000] call fnc_setMoney; systemChat "I got 50k! Now I shall get my ass out of here!";
 			robbedTotal = robbedTotal + 50000;		
@@ -43,7 +43,7 @@ switch (_kind) do {
 			_cash = (_pubPlrData select 1) select 0;
 			_steal = _cash;
 			if(_steal > 500) then { _steal=500;  };
-			[["cash",-_steal,"robbed"],"fnc_setMoney",_victim,false] call BIS_fnc_MP;
+			["cash",-_steal,"robbed"] remoteExecCall ["fnc_setMoney"];
 			["cash",_steal] call fnc_setMoney;
 			systemChat format["You stole $%1!",_steal];
 		} else { systemChat "He hasn't even his hands up!"; };

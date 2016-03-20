@@ -12,8 +12,8 @@ switch (_do) do {
 				switch (_fID) do {
 					case 3: { _sName = "AL_Siren_EMS"; _sDur = 4.87; };
 				};
-			
-				[[["sync",_vcl,_sName,_sDur],"events\onSiren.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
+				
+				[["sync",_vcl,_sName,_sDur],"events\onSiren.sqf"] remoteExec ["BIS_fnc_execVM"];
 				titleText ["Siren on", "PLAIN DOWN"];
 			} else {
 				_vcl setVariable ["siren",false,true];

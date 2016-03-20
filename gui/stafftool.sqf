@@ -42,7 +42,7 @@ if (_rank > 49) then {
 			if (count _txt > 10) then {
 				_txt = "<t color='#FF0000'>~ Staff Message ~</t><br />" + _txt;
 				if (_sel == -1 || _sel == 0) then { _tar = true; } else { _tar = call compile _tar; };
-				[ [["add","admin",_txt],"logs.sqf"] ,"BIS_fnc_execVM",_tar,false ] call BIS_fnc_MP;
+				[["add","admin",_txt],"logs.sqf"] remoteExecCall ["BIS_fnc_execVM"];
 			} else { systemChat "Message too short"; };
 		};
 		case "teamspeak": {
@@ -52,7 +52,7 @@ if (_rank > 49) then {
 			
 			_tar = true;
 			_txt = "<t color='#FF0000'>~ Staff Message ~</t><br />All Police, EMS and Government members MUST be on TeamSpeak! ~ Connect to bbts3.com";
-			[ [["add","admin",_txt],"logs.sqf"] ,"BIS_fnc_execVM",_tar,false ] call BIS_fnc_MP;
+			[["add","admin",_txt],"logs.sqf"] remoteExecCall ["BIS_fnc_execVM"];
 		};
 		case "remoteCam": {
 			_dsp = findDisplay 100;
@@ -94,7 +94,7 @@ if (_rank > 49) then {
 				remoteStaffCam_y = nil;
 			} else { systemChat "Please select a player to spectate."; };
 		};
-		case "cleanServer": { { if (!alive _x) then { grpdel = group _x; deleteVehicle _x; deleteGroup grpdel; }; } forEach (nearestObjects [[15617,16069,0],["Man","Animal","Air","LandVehicle"], 9000]); };
+		case "cleanServer": { { if (!alive _x) then { grpdel = group _x; deleteVehicle _x; deleteGroup grpdel; }; } forEach (nearestObjects [[15617,16069,0],["Man","Animal","Air","LandVehicle","Ship"], 9000]); };
 		case "exe": {
 			_code = ctrlText 2200;
 			hintSilent _code;

@@ -37,7 +37,7 @@ switch (_action) do {
 				systemChat "War declared!";
 				(_capData select 0) setMarkerColor "ColorWhite";
 				capFlag = "Flag_White_F" createVehicle (getMarkerPos (_capData select 0));
-				[[[PLAYERDATA select 6,capWar,PLAYERDATA select 13,"declared",capFlag],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
+				[[PLAYERDATA select 6,capWar,PLAYERDATA select 13,"declared",capFlag],"war.sqf"] remoteExec ["BIS_fnc_execVM"];
 				switch (_capData select 1) do {
 					case 0: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_white_CO.paa"};
 					case 1: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";};
@@ -67,7 +67,7 @@ switch (_action) do {
 			if(time > _warTime) then {
 				player removeAction actionCapFlag;
 				if (isNil "warWinner") then {
-					[[[nil,nil,nil,"end"],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
+					[[nil,nil,nil,"end"],"war.sqf"] remoteExec ["BIS_fnc_execVM"];
 					warWinner = true;
 					_capData = (capAreas select capWar);
 					switch (_capData select 1) do {
@@ -93,8 +93,8 @@ switch (_action) do {
 							case 1: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";};
 							case 2: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";};
 							case 3: {capFlag setFlagTexture "\A3\Data_F\Flags\Flag_FIA_CO.paa";};
-					};						
-					[[[_playerFac,capWar,name player,"updateStatus"],"war.sqf"],"BIS_fnc_execVM",true] call BIS_fnc_MP;
+					};
+					[[_playerFac,capWar,name player,"updateStatus"],"war.sqf"] remoteExec ["BIS_fnc_execVM"];
 				};
 			};
 		} else { systemChat "Too late. The War is over."; };

@@ -32,7 +32,6 @@ switch (_exe) do {
 	case "add": {
 		if (typeName _log == "STRING" && typeName _params == "STRING") then {
 			_doNotify = true;
-			
 			switch (_log) do {
 				case "admin": { logAdmin = [_params] + logAdmin; };
 				case "other": { logOther = [_params] + logOther; };

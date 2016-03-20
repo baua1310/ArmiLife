@@ -43,7 +43,7 @@ if(_legit) then {
 			if(isNull "_caller") then { _by = "Anonymous"; };
 			_pck = [false,_caller,name _to,_title,_msg,false];
 			smsArray = smsArray + [ _pck ];
-			[[["receiveSms",_pck],"phone.sqf"],"BIS_fnc_execVM",_to,false] call BIS_fnc_MP;
+			[["receiveSms",_pck],"phone.sqf"] remoteExec ["BIS_fnc_execVM"];
 		};
 		case "receiveSms": {
 			_data = _caller; _caller = _data select 1;
